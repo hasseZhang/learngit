@@ -1,0 +1,105 @@
+    #video{
+    position:absolute;
+    width: 981px;
+    height: 549px;
+    left: 471px;
+    top: 380px;
+    z-index:2;
+    box-shadow:0px 0px 50px #000;
+    box-sizing: border-box;
+    }
+    .item{
+    width:878px;
+    height:487.5px;
+    position:absolute;
+    z-index:1;
+    top:42px;
+    box-shadow:0px 0px 50px #000;
+    }
+    .title{
+    height: 117px;
+    font-size: 48px;
+    font-family: Microsoft YaHei;
+    font-weight: 500;
+    color: #F1F1F1;
+    line-height: 117px;
+    position:absolute;
+    width:774px;
+    text-align:center;
+    left: 576px;
+    bottom: -84px;
+    }
+    .autoText {
+        text-overflow:ellipsis;
+        overflow:hidden;
+        white-space:nowrap;
+        text-align:center
+       }
+    .focusBorder{
+    border: 5px solid #fff;
+    box-shadow: #fff 0 0 5px 2px;	
+    }
+    .list{
+    position:relative;
+    width:1920px;
+    height:600px;
+    top:375px;
+    z-index:1;
+    }
+    .pic{
+    width:878px;
+    height:487.5px;
+    }
+    #video.fullPlay::after{
+    position:absolute;
+	left: 18px;
+	bottom: 18px;
+	width: 322px;
+	height: 51px;
+	display:block;
+	content:"";
+        background:url('../images/fullScreen.png') no-repeat;
+    }
+    #video.order::after{
+    position:absolute;
+    left: 18px;
+    bottom: 18px;
+    width: 322px;
+    height: 51px;
+    display:block;
+    content:"";
+    background:url('../images/toOrder.png') no-repeat;
+    }
+    #video.orderBg{
+        background:url('../images/orderBg.png') no-repeat;
+        background-size: cover;
+    }
+    #video.trySeeEnd{
+        background:url('../images/trySeeEnd.png') no-repeat;
+        background-size: cover;
+    }
+    #video.no4K{      
+        background:url('../images/no4K.png') no-repeat;
+        background-size: cover;
+    }
+    #video.trySee{
+        background:transparent;
+    }
+    #video.trySee::before {
+        content:'';
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        width: 175px;
+        height: 51px;
+        background:url('../images/trySee.png') no-repeat;
+    }
+    #video.no4K::before{
+        visibility: hidden;
+    }
+    .front{
+        left:-457.85px;
+        }
+    .back{
+        left:1499.85px;	
+     }

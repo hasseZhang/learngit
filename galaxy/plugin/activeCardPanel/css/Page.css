@@ -1,0 +1,161 @@
+/* 礼券路径优化 */
+.activeCardPanel {
+  position: absolute;
+  width: 1074px;
+  height: 574px;
+  top: 253px;
+  left: 428px;
+  background: url(../../../plugin/activeCardPanel/images/activeCardPanel.png) no-repeat;
+  z-index: 5
+}
+
+.activeCardPanel .btn#active {
+  left: 274px
+}
+
+.activeCardPanel .btn#back {
+  left: 582px
+}
+
+.activeCardPanel .input {
+  position: absolute;
+  left: 267px;
+  width: 628px;
+  height: 72px;
+  line-height: 72px;
+  font-size: 38px;
+  color: #fff;
+  text-indent: 20px
+}
+
+.activeCardPanel .input.focusBorder {
+  box-shadow: 0 0 0 5px #fff
+}
+
+.activeCardPanel .input#cardNum {
+  top: 184px
+}
+
+.activeCardPanel .input#password {
+  top: 298px
+}
+
+.activeCardPanel #hint {
+  position: absolute;
+  left: 267px;
+  top: 376px;
+  color: red;
+  font-size: 28px
+}
+
+/* 一键激活 */
+.OneClickPanel {
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+  top: 0px;
+  left: 0px;
+  background: url(../../../plugin/activeCardPanel/images/OneClickPanel.png) no-repeat;
+  z-index: 5
+}
+
+.OneClickName,
+.OneClickNum,
+.OneClickTime {
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+  font-size: 36px;
+  text-align: center;
+  color: #fff;
+}
+
+.OneClickPanel .OneClickName {
+  font-size: 40px;
+  top: 360px;
+}
+
+.OneClickPanel .OneClickNum {
+  top: 430px;
+}
+
+.OneClickPanel .OneClickTime {
+  top: 510px;
+}
+
+.OneClickPanel .btn#OneClickAc {
+  top: 630px;
+  left: 700px
+}
+
+.OneClickPanel .btn#OneClickBack {
+  top: 630px;
+  left: 1000px
+}
+
+/* 共同btn */
+.btn {
+  position: absolute;
+  width: 210px;
+  height: 60px;
+  top: 450px;
+  border: 3px solid #393638;
+  border-radius: 40px;
+  text-align: center;
+  color: #fff;
+  font-size: 36px;
+  line-height: 60px
+}
+
+.btn.focusBorder {
+  background: -webkit-linear-gradient(right, #e3802f, #e2ab13);
+  background-origin: border-box;
+  border: 3px solid rgba(52, 56, 65, 0);
+  color: #1b0f01
+}
+
+.cardError .cardInfo {
+  position: absolute;
+  width: 480px;
+  color: #fff;
+  font-size: 38px;
+  text-align: center;
+  left: 736px;
+  top: 405px;
+}
+
+.cardError {
+  position: absolute;
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+  top: 0px;
+  left: 0px;
+  background: url(../../../plugin/activeCardPanel/images/OneClickPanel.png) no-repeat;
+  z-index: 5
+}
+
+.cardError .btn {
+  position: absolute;
+  width: 210px;
+  height: 60px;
+  top: 340px;
+  border: 3px solid #393638;
+  border-radius: 40px;
+  text-align: center;
+  color: #fff;
+  font-size: 36px;
+  line-height: 60px
+}
+
+.cardError .btn.ensure {
+  left: 853px;
+  top: 612px
+}
+
+.nouseTime {
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+  background: url(../../../plugin/activeCardPanel/images/nouseBg.png) no-repeat;
+}

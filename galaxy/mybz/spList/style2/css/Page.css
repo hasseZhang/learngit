@@ -1,0 +1,92 @@
+body {
+    position:absolute;
+    width:1920px;
+    height:1080px;
+    margin: 0;
+    padding: 0;
+    background:#272d39
+}
+#content {
+    width: 1770px;
+    height: 928px;
+    position: absolute;
+    top: 114px;
+    left: 67px;
+    overflow: hidden
+}
+#pageTotalRow {
+    width: 169px;
+    height: 50px;
+    font-size: 36px;
+    color: #fff;
+    line-height: 33px;
+    position: absolute;
+    top: 66px;
+    right: 122px;
+    text-align: right
+}
+.listContent {
+    width: 1755px;
+    height: 896px;
+    position: absolute;
+    top: 20px;
+    left: 45px
+}
+.listContent>div {
+    overflow: inherit !important
+}
+.listContent .focusBorder {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 5px #fff, 0 0 16px 5px #fff;
+    z-index: 3
+}
+.listContent .list_item {
+    width: 301px;
+    height: 225px;
+    margin-right: 47px;
+    margin-bottom: 70px;
+    float: left
+}
+.listContent .list_item:nth-child(5n) {
+    width: 301px;
+    height: 225px;
+    margin-right: 0;
+    margin-bottom: 80px;
+    float: left
+}
+.listContent .list_item .poster {
+    width: 301px;
+    height: 225px;
+    position: absolute;
+    margin-bottom: 14px
+}
+.listContent .list_item img {
+    width: 100%;
+    height: 100%
+}
+.listContent .list_item .poster-name {
+    width: 301px;
+    height: 57px;
+    color: #fff;
+    font-size: 36px;
+    line-height: 50px;
+    text-align: center;
+    position: relative;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    top: 239px;
+}
+.listContent .list_item .poster .episode {
+    position: absolute;
+    background: rgba(0,0,0,.8);
+    height: 39px;
+    line-height: 39px;
+    font-size: 21px;
+    text-align: center;
+    padding: 0 7px 0 7px;
+    color: #fff;
+    left: 5px;
+    bottom: 5px;
+    border-radius: 3px
+}

@@ -1,0 +1,229 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    width: 1280px;
+    height: 720px;
+    background: url('../images/defaultbg.jpg') no-repeat;
+}
+
+
+/*页面样式开始*/
+
+#logo {
+    width: 194px;
+    height: 73px;
+    position: absolute;
+    top: 0px;
+    left: 60px;
+    /* background: url('../images/logo.png') no-repeat; */
+    background-size: 100% 100%;
+}
+
+#teamImg {
+    position: absolute;
+    top: 100px;
+    left: 157px;
+    width: 219px;
+    height: 219px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+#teamName {
+    width: 400px;
+    height: 50px;
+    line-height: 50px;
+    position: absolute;
+    top: 140px;
+    left: 419px;
+    font-size: 28px;
+    color: white;
+}
+
+#teamCity {
+    width: 523px;
+    height: 30px;
+    position: absolute;
+    top: 211px;
+    left: 419px;
+    font-size: 19px;
+    color: white;
+}
+
+#teamRom {
+    width: 523px;
+    height: 30px;
+    position: absolute;
+    top: 246px;
+    left: 419px;
+    font-size: 18px;
+    color: white;
+}
+
+#dataShow {
+    width: 1159px;
+    height: 290px;
+    position: absolute;
+    left: 60px;
+    top: 340px;
+    color: white;
+    background: url('../images/listbg.png') no-repeat;
+}
+
+#dataShow li {
+    position: relative;
+    list-style: none;
+    height: 57px;
+}
+
+.time,
+.title,
+.scord,
+.city span,
+.city2 span {
+    font-size: 19px;
+}
+
+li div {
+    position: absolute;
+    height: 57px;
+    line-height: 57px;
+    text-align: center;
+}
+
+.time {
+    width: 163px;
+    left: 99px;
+}
+
+.title {
+    width: 143px;
+    left: 262px;
+}
+
+.city {
+    width: 130px;
+    left: 430px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.city span {
+    width: 47px;
+    display: inline-block;
+    text-align: center;
+}
+
+.scord {
+    width: 104px;
+    left: 580px;
+}
+
+.city2 {
+    width: 130px;
+    left: 705px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.city2 span {
+    width: 47px;
+    display: inline-block;
+    text-align: center;
+}
+
+.btn-box {
+    position: relative;
+    width: 172px;
+    left: 881px;
+}
+
+.btn-box span {
+    position: absolute;
+    top: 13px;
+    width: 50px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 7px;
+    font-size: 18px;
+    background: #19283c;
+}
+
+.city img,
+.city2 img {
+    width: 50px;
+    height: 43px;
+    vertical-align: middle;
+}
+
+.btn1 {
+    left: 0;
+}
+
+.btn2 {
+    left: 60px;
+}
+
+.btn3 {
+    left: 120px;
+}
+
+.btn1.focusBorder,
+.btn2.focusBorder,
+.btn3.focusBorder {
+    background: url('../images/focus.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+#pageUpBtn,
+#pageDownBtn {
+    position: absolute;
+    top: 642px;
+    width: 98px;
+    height: 40px;
+    line-height: 40px;
+    color: white;
+    text-align: center;
+    border-radius: 9px;
+    font-size: 21px;
+    background: #19283c;
+}
+
+#pageUpBtn.focusBorder,
+#pageDownBtn.focusBorder {
+    background: url('../images/focusBtn.png') no-repeat;
+    background-size: 100% 100%;
+    border: none;
+    box-shadow: none;
+}
+
+#pageUpBtn {
+    left: 495px;
+}
+
+#pageDownBtn {
+    left: 687px;
+}
+
+#pageNumBox {
+    width: 91px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    position: absolute;
+    top: 642px;
+    left: 595px;
+    color: white;
+}
+
+.none {
+    display: none;
+}

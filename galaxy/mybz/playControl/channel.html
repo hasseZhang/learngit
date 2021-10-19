@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="page-view-size" content="1920*1080">
+	<title>channel</title>
+	<link rel="stylesheet" href="../../css/public.css">
+	<link rel="stylesheet" href="css/channel.css">
+	<style>
+		.channelInfo {
+			position: absolute;
+			width: 1920px;
+			height: 240px;
+			left: 0;
+			bottom: 0;
+			background: url(images/zhibo/channelInfo/bg.png) 0 0 repeat-x;
+		}
+
+		.channelInfo .cNum,
+		.channelInfo .cName {
+			position: absolute;
+			left: 5px;
+			width: 220px;
+			height: 30px;
+			line-height: 30px;
+			font-size: 30px;
+			text-align: center;
+			color: #fff;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis;
+		}
+
+		.channelInfo .cNum {
+			bottom: 67px;
+		}
+
+		.channelInfo .cName {
+			bottom: 24px;
+		}
+
+		.channelInfo .title {
+			position: absolute;
+			bottom: 23px;
+			left: 229px;
+			font-size: 30px;
+		}
+
+		.channelInfo .playing,
+		.channelInfo .nextChanenl {
+			line-height: 38px;
+			height: 38px;
+		}
+
+		.channelInfo .ti {
+			color: #ebaf08;
+		}
+
+		.channelInfo .playTime {
+			color: #e8e8e8;
+			margin-right: 29px;
+		}
+
+		.channelInfo .channelName {
+			color: #e8e8e8;
+		}
+
+		.channelCue {
+			position: absolute;
+			width: 759px;
+			height: 59px;
+			right: 30px;
+			top: 26px;
+			background: url(images/zhibo/cue/cue.png) 0 0 no-repeat;
+			border: 0;
+		}
+
+		#channelTry {
+			position: absolute;
+			width: 416px;
+			height: 60px;
+			right: 40px;
+			top: 26px;
+			background: url(images/zhibo/cue/tryW.png) 0 0 no-repeat;
+		}
+
+		#channelTry .count {
+			display: inline-block;
+			width: 46px;
+			color: #EB9906;
+			font-size: 28px;
+			margin-top: 12px;
+			margin-left: 15px;
+			text-align: right;
+		}
+
+		#vipChanBg {
+			width: 1920px;
+			height: 1080px;
+		}
+	</style>
+	<script src="../../puppy/common.js"></script>
+	<script src="/pub/galaxy/mybz/userSystem/service/service.js"></script>
+	<script src="js/channel.js"></script>
+	<script>
+		// 订阅发布模式
+		var Event = (function () {
+			var list = {},
+				listen,
+				trigger,
+				remove;
+			listen = function (key, fn) {
+				if (!list[key]) {
+					list[key] = [];
+				}
+				list[key].push(fn);
+			};
+			trigger = function () {
+				var key = Array.prototype.shift.call(arguments),
+					fns = list[key];
+				if (!fns || fns.length === 0) {
+					return false;
+				}
+				for (var i = 0, fn; fn = fns[i++];) {
+					fn.apply(this, arguments);
+				}
+			};
+			remove = function (key, fn) {
+				var fns = list[key];
+				if (!fns) {
+					return false;
+				}
+				if (!fn) {
+					fns && (fns.length = 0);
+				} else {
+					for (var i = fns.length - 1; i >= 0; i--) {
+						var _fn = fns[i];
+						if (_fn === fn) {
+							fns.splice(i, 1);
+						}
+					}
+				}
+			};
+			return {
+				listen: listen,
+				trigger: trigger,
+				remove: remove
+			}
+		})();
+		var mp = null;
+		var channelId = $.page.channelId;
+		var channelIdOriginal = $.getHelper("data:channel").CHANNEL_LIST_DS[0].channelId;
+		var channelIdOriginalPip;
+		var startTime = $.page.startTime;
+		var isLoad = false;
+		var lastDate = null;
+		var channelMap = {};
+		var $vipChanBg = null;
+		var timer = null;
+		var addPointsTime = 30 * 60 * 1e3;
+		var channelTryTime = $.page.channelTryTime || null;
+		var lastChannel  = channelId;
+		setTimeout(function () {
+			USER_SERVCICE.addPoints({
+				pointtype: "102"
+			}, {});
+		}, addPointsTime);
+		$.addBackUrlRedefine(function () { });
+		$.playVideoRedefine(true);
+		$.playLiveOrRecRedefine(true, function (param) {
+			//进入回看
+			if (param.endTime) {
+				return false;
+			}
+			if (param.channelId === channelId) {
+				return true;
+			}
+			$.pTool.get('changeChannel').addPreChannel(channelId);
+			lastChannel = channelId;
+			channelId = param.channelId;
+			lastDate = new Date();
+			sendLiveVs($.getChanNum(channelId));
+			//隐藏全部插件
+			$.pTool.deactive();
+			$.pTool.get('progress').hidePauseTip();
+			initInfo();
+			$.pTool.get('pip').hideLockPip();
+			//停止上一个视频
+			// mp.stop();
+			//播放视频
+			playVideo();
+			return true;
+		});
+		$.s.chanhis.query(null, {
+			success: function (ds) {
+				if (ds && ds.data.length) {
+					channelIdOriginal = ds.data[0].channelId;
+				}
+				setDftChannalId();
+			},
+			error: setDftChannalId
+		});
+
+		function setDftChannalId() {
+			if (!channelId) {
+				channelId = channelIdOriginal;
+				$(load);
+			}
+		}
+		var getChanOrderImg = (function () {
+			var gId = $.getVariable('EPG:isTest') ? '1100003754' : '1100005629';
+			var map = {};
+			var status = '';
+			var successCb = function () {
+				if ($.isVipChan(channelId)) {
+					$vipChanBg.css({
+						background: 'url(' + map[$.getChanNum(channelId)] + ') 0 0 no-repeat'
+					}).show();
+				}
+			};
+			var errorCb = function () { };
+			return function () {
+				if (status === 'success') {
+					successCb();
+				} else if (status === 'error') {
+					errorCb();
+				} else {
+					if (status !== 'loading') {
+						status = 'loading';
+						$.s.guidance.get({
+							id: gId
+						}, {
+							success: function (data) {
+								$.UTIL.each(data, function (value, index) {
+									map[value.contentName] = $.getPic(value.pics, [0]);
+								});
+								status = 'success';
+								successCb();
+							},
+							error: function () {
+								status = 'error';
+								errorCb();
+							}
+						});
+					}
+				}
+			};
+		})();
+
+		var channelTry = (function () {
+			var isNumber = function (val) {
+				return Object.prototype.toString.call(val)
+			}
+			return {
+				hide: function () {
+					document.getElementById('channelTry').className = 'hide'
+				},
+				show: function () {
+					document.getElementById('channelTry').className = ''
+				},
+				setCount: function (value) {
+					document.getElementById('channelTry').innerHTML = '<span class="count">' + value + '</span>'
+				},
+				getTryWatch: function () {
+					var _this = this;
+					var gId = $.getVariable('EPG:isTest') ? '1100003754' : '1100005629';
+					$.s.guidance.get({
+						id: gId
+					}, {
+						success: function (data) {
+							if (lastChannel === channelId && (channelTryTime || channelTryTime === '0')) {
+								Event.trigger('getTryTime', parseInt(channelTryTime));
+								return;
+							}
+							if ($.isVipChan(channelId)) {
+								var hasId = data.some(function (item) {
+									return item['contentName'] == $.getChanNum(channelId)
+								})
+								if (!hasId) {
+									Event.trigger('getTryTime', 60);
+									return;
+								}
+								for (var i = 0; i < data.length; i++) {
+									if (data[i]['contentName'] == $.getChanNum(channelId)) {
+										if (!data[i]['contentUri'] || isNaN(data[i]['contentUri'] - 0) || (data[i]['contentUri'] -
+											0) > 999) {
+											Event.trigger('getTryTime', 60)
+										} else {
+											Event.trigger('getTryTime', data[i]['contentUri'])
+										}
+										break;
+									}
+								}
+							}
+						},
+						error: function () {
+							if (lastChannel === channelId && (channelTryTime || channelTryTime === '0')) {
+								Event.trigger('getTryTime', parseInt(channelTryTime));
+								return;
+							}
+							Event.trigger('getTryTime', 60)
+						}
+					});
+				}
+			}
+		}())
+
+		var doVipChannel = (function () {
+			var isChannelAuthBack = false; //直播鉴权结果是否回来
+			var isBuyChannel = false; //是否通过直播鉴权
+			var isGettingChanAuth = false; //是否正在直播鉴权
+			var isWillFull = false;
+			var isWillPip = false;
+			var fullCb = function () {
+				if ($.isVipChan(channelId)) {
+					mpLoad();
+				}
+			};
+			var pipCb = null;
+
+			function auth(authChan) {
+				if (!isGettingChanAuth) {
+					isGettingChanAuth = true;
+					$.auth.authVipChannel(authChan, function (result) {
+						isGettingChanAuth = false;
+						isChannelAuthBack = true;
+						Event.trigger('isBuyChannel', false);
+						if (result) {
+							Event.trigger('isBuyChannel', true);
+							if (isWillFull) {
+								fullCb();
+							}
+							if (isWillPip) {
+								pipCb();
+							}
+						} else {
+							$.pTool.get('progress').setInfo({
+								isShouldBuy: true
+							});
+							if (isWillFull) {
+								getChanOrderImg();
+							}
+						}
+					});
+					Event.remove('isBuyChannel')
+				}
+			}
+			return {
+				full: function () {
+					if (timer) {
+						clearInterval(timer);
+					}
+					$vipChanBg.hide();
+					if ($.isVipChan(channelId)) {
+						$.pTool.get('progress').setInfo({
+							isNoControl: true
+						})
+						auth(channelId);
+						Event.listen('isBuyChannel', function (value) {
+							isBuyChannel = value;
+							if (!isBuyChannel) {
+								channelCue.hide();
+								channelTry.setCount('');
+								channelTry.show();
+								channelTry.getTryWatch();
+								Event.listen('getTryTime', function (value) {
+									clearInterval(timer);
+									isWillFull = false;
+									timer = setInterval(function () {
+										channelTry.setCount(value);
+										if (value <= 0) {
+											clearInterval(timer);
+											channelTry.hide();
+											isWillFull = true;
+											mpStop();
+											forwardOrder();
+											Authentication.CTCSetConfig("channelTryTime", value);
+										}
+										Authentication.CTCSetConfig("channelTryTime", value);
+										value--;
+										// auth(channelId);
+									}, 1000);
+								})
+								mpLoad();
+							} else {
+								Event.remove('getTryTime')
+								//付费频道不展示提示信息
+								channelCue.oldCue();
+								channelTry.hide();
+								$.pTool.get('progress').setInfo({
+									isNoControl: true
+								});
+								mpLoad();
+							}
+						})
+
+					} else {
+						Event.remove('isBuyChannel')
+						//channelCue.show();
+						channelTry.hide();
+						$.pTool.get('progress').setInfo({
+							isNoControl: false
+						});
+						mpLoad();
+					}
+				},
+				pip: function (pipNum, cb) {
+					if (!pipCb) {
+						pipCb = function () {
+							if ($.pTool.get('pip').getInfo().isShouldShow() || $.pTool.get('pip').getInfo()
+								.isShouldShowLock()) {
+								cb();
+							}
+						};
+					}
+					if ($.isVipChan(pipNum)) {
+						if (!isBuyChannel) {
+							$.pTool.get('pip').play(false);
+						}
+						if (isChannelAuthBack) {
+							if (isBuyChannel) {
+								cb();
+							}
+						} else {
+							isWillPip = true;
+							auth(pipNum);
+						}
+					} else {
+						cb();
+					}
+				},
+				isBuyChannel: function () {
+					return isBuyChannel;
+				}
+			};
+		})();
+
+		var getPlayBill = (function () {
+			var playBillObj = [];
+			return function (info, cb) {
+				var successCb = cb.success || function () { };
+				var errorCb = cb.error || function () { };
+				var key = info.date + '_' + info.id;
+				if (playBillObj[key] && playBillObj[key] !== 'loading' && playBillObj[key] !== 'error') {
+					successCb(playBillObj[key]);
+				} else if (playBillObj[key] === 'error') {
+					errorCb();
+				} else {
+					if (playBillObj[key] !== 'loading') {
+						playBillObj[key] = 'loading';
+						$.s.playbill.get({
+							date: info.date,
+							id: info.id
+						}, {
+							success: function (data) {
+								playBillObj[key] = data;
+								successCb(data);
+							},
+							error: function () {
+								playBillObj[key] = 'error';
+								errorCb();
+							}
+						});
+					}
+				}
+			};
+		})();
+
+		function load() {
+			if (!channelId || isLoad) {
+				return true;
+			}
+			if ((channelTryTime || channelTryTime === 0) && channelTryTime <= 0) {
+				$.auth.forwardOrder(1);
+				Authentication.CTCSetConfig("channelTryTime", 0);
+			}
+			$vipChanBg = $('#vipChanBg');
+			//channelCue.show();
+			isLoad = true;
+			lastDate = new Date();
+			setInterval(function () {
+				var now = new Date();
+				if (now - lastDate >= 1000 * 60 * 60) {
+					lastDate = now;
+					$.vs.liveContinue();
+				}
+			}, 1000 * 30);
+			sendLiveVs($.getChanNum(channelId));
+			playVideo();
+			$.pTool.get('channelList').init($.pTool.get('pip').play);
+			$.pTool.get('pip').init($.pTool.get('channelList').getInfo);
+			initInfo();			
+			$.s.chanpiphis.query(null, {
+				success: function (ds) {
+					channelIdOriginalPip = 'pipHisBack';
+					if (ds && ds.data.length) {
+						channelIdOriginalPip = ds.data[0].channelId;
+						if (channelIdOriginalPip && $.getChanNum(channelIdOriginalPip)) {
+							$.pTool.get('pip').showLockPip($.getChanById(channelIdOriginalPip));
+						}
+					}
+				}
+			});			
+		}
+
+		function upChannelMap(channelId, day, cb) {
+			var nowInfo = channelMap[channelId] && channelMap[channelId][day];
+			if (nowInfo) {
+				cb && cb();
+			} else {
+				channelMap[channelId] = {};
+				channelMap[channelId][day] = {
+					timeArr: [],
+					data: {}
+				};
+				getPlayBill({
+					date: day,
+					id: channelId
+				}, {
+					success: function (data) {
+						if (data.programs.length) {
+							$.UTIL.each(data.programs, function (value, index) {
+								var startTime = value.starttime;
+								var todayTime = startTime.split(' ')[1];
+								channelMap[channelId][day].timeArr.push(todayTime);
+								channelMap[channelId][day].data[todayTime] = {
+									playingTime: todayTime.slice(0, 5),
+									playingName: value.text,
+									nextTime: data.programs[index + 1] && data.programs[index + 1].starttime.split(' ')[1]
+										.slice(0, 5),
+									nextName: data.programs[index + 1] && data.programs[index + 1].text
+								}
+							});
+						}
+						cb && cb();
+					},
+					error: function () {
+						cb && cb();
+					}
+				});
+			}
+		}
+
+		function findChannelInfo(channelId, day, time) {
+			var channelInfo = {};
+			$.UTIL.each(channelMap[channelId][day].timeArr, function (value, index) {
+				if (value >= time) {
+					channelInfo = channelMap[channelId][day].data[channelMap[channelId][day].timeArr[index - 1]];
+					return true;
+				}
+				if (index === channelMap[channelId][day].timeArr.length - 1) {
+					channelInfo = channelMap[channelId][day].data[value];
+				}
+			});
+			return {
+				playingTime: channelInfo.playingTime || '',
+				playingName: channelInfo.playingName || '暂无信息',
+				nextTime: channelInfo.nextTime || '',
+				nextName: channelInfo.nextName || '暂无信息'
+			};
+		}
+
+		function sendLiveVs(num,channelName) {
+			$.vs.livePlay(num);
+		}
+
+		function initPauseAd(){
+			//暂停				
+			getAd(4,function(data) {
+				var obj = {}
+                if (data && data.type=="1" && data.resourceid) {
+                    obj = {
+						type: 'pic',
+						mp: mp,
+                        picPath: $.getVariable("EPG:pathPic") + '/' + top.getFTPFilePath(data.resourceid,data.extension),
+					}
+					$.pTool.get('advertPause').init(obj);
+					$.pTool.get('advertPause').active();			
+				}else{
+					obj.picPath=""
+					$.pTool.get('advertPause').init(obj);	
+				}
+            });						
+		}
+		function initVolumeAd(){
+			//音量
+			var obj={};
+			var tag = $.pTool.get("advertPause").getShowTag();
+			obj = {
+				type: 'pic',
+				mp: mp,
+				picPath: ""
+			}
+			$.pTool.get('advertVolume').init(obj);			
+			getAd(3,function(data) {
+				if (data && data.type=="1" && data.resourceid) {
+                    obj = {
+						type: 'pic',
+						mp: mp,
+                        picPath: $.getVariable("EPG:pathPic") + '/' + top.getFTPFilePath(data.resourceid,data.extension),
+					}					
+					$.pTool.get('advertVolume').setPic(obj);
+					$.pTool.get('advertVolume').active();
+					if(tag){
+						$.pTool.get("advertPause").hidden();
+					}else{
+						$.pTool.get("advertPause").deactive();
+					}				
+				}else{
+					obj.picPath=""
+					$.pTool.get('advertVolume').setPic(obj);	
+				}
+            });	
+		}
+		function initBottomAd(){
+			//换台
+			var obj={}
+			obj = {
+				type: 'pic',
+				mp: mp,
+				picPath: ""
+			}
+			$.pTool.get('advertRightBottom').init(obj);				
+			getAd(2,function(data) {
+				if (data && data.type=="1" && data.resourceid) {
+                    obj = {
+						type: 'pic',
+						mp: mp,
+                        picPath: $.getVariable("EPG:pathPic") + '/' + top.getFTPFilePath(data.resourceid,data.extension),
+					}					
+					$.pTool.get('advertRightBottom').setPic(obj);	
+					$.pTool.get('advertRightBottom').active();					
+				}else{
+					obj.picPath=""
+					$.pTool.get('advertRightBottom').setPic(obj);	
+				}
+            });		
+		}
+		// 广告
+		function getAd(typ,cb) {
+			// 1：视频前贴片广告
+			// 2：换台标版广告
+			// 3：音量标版广告
+			// 4：暂停标版广告
+			// 5：退出标版广告
+			// 9：回看贴片广告
+			$.getHelper("provider:ad").ad.getOtherAd({
+				action: typ,
+				playType: 3,
+				channel: $.getChanNum(channelId),
+				callback: cb
+			});
+		}
+
+		function initInfo() {
+			$.pTool.get('channelList').setInfo({
+				channelId: channelId
+			});
+			var now = new $.Date();
+			var day = new $.Date().format('yyyy-MM-dd');
+			var time = new $.Date().format('hh:mm:ss');
+			upChannelMap(channelId, day, function () {
+				var obj = findChannelInfo(channelId, day, time);
+				obj.channelId = channelId;
+				initBottomAd();
+				$.pTool.get('channel').init(obj);
+				if (!$.isVipChan(channelId)) {
+					channelCue.show();
+				}				
+			});
+		}
+
+		function playVideo() {
+			if (!mp) {
+				mp = new $.MP();
+			}
+			$.pTool.get('progress').init(mp, {
+				getInfo: function (day, time) {
+					upChannelMap(channelId, day);
+					return findChannelInfo(channelId, day, time);
+				},
+				forwardOrder: function () {
+					$.auth.forwardOrder(1);
+				}
+			});
+			$.pTool.get('channelList').changeMp(mp);
+			$.pTool.get("g_sys_num").show($.getChanNum(channelId));
+			doVipChannel.full();
+		}
+
+		function mpStop() {
+			mp && mp.stop();
+		}
+
+		function mpLoad() {
+			mp && mp.load($.getChanNum(channelId), startTime, $.MP.mediaType.TYPE_CHANNEL);
+		}
+
+		function unload() {
+			if (mp) {
+				mp.release();
+				$.vs.playQuit();
+			}
+			var channelIdPip = $.pTool.get('pip').getInfo().channelId;
+			$.pTool.get('pip').destroy();
+			if (channelIdOriginalPip && channelIdPip && channelIdOriginalPip !== channelIdPip && $.getChanNum(channelIdPip)) {
+				$.s.chanpiphis.add({
+					channelId: channelIdPip
+				});
+			}
+			//画中画进来有历史记录,退出时不存在小窗要删掉
+			if (!channelIdPip && channelIdOriginalPip && channelIdOriginalPip !== 'pipHisBack') {
+				$.s.chanpiphis.empty();
+			}
+			if (channelIdOriginal && channelId && channelIdOriginal !== channelId && $.getChanNum(channelId)) {
+				// if (!(!doVipChannel.isBuyChannel() && $.isVipChan(channelId))) {
+				$.s.chanhis.add({
+					channelId: channelId
+				});
+				// }
+			}
+		}
+
+		$.pTool.add("pip", (function () {
+			var key = 'pip';
+			var $pip = null,
+				$pipLock = null,
+				$pipCue = null;
+			var isPlaying = false;
+			var isLock = false;
+			var isPipShow = false;
+			var getChannelInfo = null;
+			var playChannelId = '';
+			var mpPIP;
+			var isShouldShow = false;
+			var isShouldShowLock = false;
+			var playTimer = null;
+
+			function playPip(opt) {
+				startPip('', false);
+				var mediaObj = {
+					mediaCode: opt.mediaId + '',
+					mediaURL: opt.num + '',
+					mediaType: 1,
+					streamType: 2
+				};
+				playChannelId = '' + opt.channelId;
+				mpPIP = new MediaPlayer('PIP');
+				mpPIP.setVideoDisplayMode(0);
+				mpPIP.setVideoDisplayArea(1414, 734, 472, 262);
+				mpPIP.refreshVideoDisplay();
+				mpPIP.setSingleMedia(JSON.stringify(mediaObj));
+				mpPIP.playFromStart();
+				isPlaying = true;
+				$pip.addClass('play');
+			}
+
+			function startPip(isPlay) {
+				if (isLock) {
+					return;
+				}
+				clearTimeout(playTimer);
+				if (isPlay) {
+					$pip.removeClass('play noPip');
+					playTimer = setTimeout(function () {
+						playPip(getChannelInfo().channelInfo);
+					}, 500);
+				} else {
+					if (isPlaying) {
+						stopPip();
+					}
+				}
+			}
+
+			function stopPip() {
+				if (mpPIP) {
+					mpPIP.releaseMediaPlayer(mpPIP.getNativePlayerInstanceID());
+					mpPIP = null;
+					console.log('stop');
+				}
+				isShouldShow = false;
+				isPlaying = false;
+				playChannelId = '';
+			}
+
+			function showPip(isShow) {
+				if (isLock) {
+					return;
+				}
+				if (isShow) {
+					isPipShow = true;
+					$pip.show();
+				} else {
+					isPipShow = false;
+					$pip.hide();
+				}
+			}
+
+			function pipPlayOrStop(is) {
+				startPip(is);
+				showPip(is);
+			}
+
+			function initDom() {
+				if (!$pip) {
+					$pip = $(`<div id="pip" class="hide">
+						<div class="pipCue">"<span>F1</span>"键锁定</div>
+						<div class="pipLock hide"></div>
+						<div class="loading"></div>
+					</div>`);
+					$pip.appendTo('body');
+					$pipLock = $('.pipLock', $pip);
+					$pipCue = $('.pipCue', $pip);
+				}
+			}
+
+			function doLock() {
+				$pipLock.show();
+				$pipCue.html('"<span>F1</span>"键解锁');
+			}
+
+			function doNolock() {
+				$pipLock.hide();
+				$pipCue.html('"<span>F1</span>"键锁定');
+			}
+
+			function showLockPip(channelInfo) {
+				if (channelInfo.channelId === getChannelInfo().liveChannelInfo.channelId) {
+					return true;
+				}
+				isShouldShowLock = true;
+				doVipChannel.pip(channelInfo.channelId, function () {
+					if (isPipShow) {
+						return;
+					}
+					playPip(channelInfo);
+					showPip(true);
+					isLock = true;
+					doLock();
+				});
+			}
+
+			function hideLockPip() {
+				if (isLock && playChannelId === getChannelInfo().liveChannelInfo.channelId) {
+					isLock = false;
+					startPip(false);
+					showPip(false);
+					doNolock();
+				}
+			}
+
+			return {
+				key: key,
+				dft: true,
+				keysDftMap: [
+					"KEY_PIP"
+				],
+				keysMap: {
+					"KEY_PIP": function () {
+						if (isPipShow) {
+							isLock = !isLock;
+							if (isLock) {
+								doLock();
+							} else {
+								if (getChannelInfo().isActive) {
+									if ((getChannelInfo().channelInfo.channelId + '') !== playChannelId) {
+										startPip(true);
+									}
+								} else {
+									startPip(false);
+									showPip(false);
+								}
+								doNolock();
+							}
+						}
+						return true;
+					}
+				},
+				init: function (fn) {
+					getChannelInfo = fn;
+					initDom();
+					return this;
+				},
+				play: function (is) {
+					if (is) {
+						isShouldShow = true;
+						doVipChannel.pip(getChannelInfo().channelInfo.channelId, function () {
+							pipPlayOrStop(is);
+						});
+					} else {
+						pipPlayOrStop(is);
+					}
+				},
+				showLockPip: showLockPip,
+				hideLockPip: hideLockPip,
+				getInfo: function () {
+					return {
+						channelId: isLock ? playChannelId : '',
+						showId: playChannelId,
+						isShouldShow: function () {
+							return isShouldShow;
+						},
+						isShouldShowLock: function () {
+							return isShouldShowLock;
+						}
+					};
+				},
+				destroy: function () {
+					stopPip();
+				}
+			};
+		})());
+
+		$.pTool.add("CH", (function () {
+			var CHANNEL_LIST_DS = $.getHelper("data:channel").CHANNEL_LIST_DS;
+			var length = $.getHelper("data:channel").CHANNEL_LIST_DS.length;
+			var index;
+
+			function prevChannel() {
+				var volTag=$.pTool.get("advertVolume").getShowTag()
+				var pauseTag=$.pTool.get("advertPause").getShowTag()
+				if(volTag){$.pTool.get("advertVolume").deactive()}
+				if(pauseTag){$.pTool.get("advertPause").deactive()}
+				for (var i = 0; i < length; i++) {
+					if (CHANNEL_LIST_DS[i].channelId == channelId) {
+						index = i;
+					}
+				}
+				index++;
+				index = index > length - 1 ? 0 : index;
+				//startTime = undefined; //不清空则从回看跳入直播后，会一直记录直播开始时间
+				$.playLiveOrRec({
+					channelId: CHANNEL_LIST_DS[index].channelId
+				});
+			}
+
+			function nextChannel() {
+				var volTag=$.pTool.get("advertVolume").getShowTag()
+				var pauseTag=$.pTool.get("advertPause").getShowTag()
+				if(volTag){$.pTool.get("advertVolume").deactive()}
+				if(pauseTag){$.pTool.get("advertPause").deactive()}
+				for (var i = 0; i < length; i++) {
+					if (CHANNEL_LIST_DS[i].channelId == channelId) {
+						index = i;
+					}
+				}
+				index--;
+				index = index < 0 ? length - 1 : index;
+				//startTime = undefined;
+				$.playLiveOrRec({
+					channelId: CHANNEL_LIST_DS[index].channelId
+				});
+			}
+			return {
+				key: "CH",
+				dft: true,
+				keysDftMap: ["KEY_CHANNEL_UP", "KEY_CHANNEL_DOWN", "KEY_UP", "KEY_DOWN","KEY_VOLUME_UP", "KEY_VOLUME_DOWN", "KEY_MUTE"],
+				keysMap: {
+					"KEY_CHANNEL_UP": function () {
+						startTime = undefined;
+						prevChannel();
+						return true;
+					},
+					"KEY_CHANNEL_DOWN": function () {
+						startTime = undefined;
+						nextChannel();
+						return true;
+					},
+					"KEY_UP": function () {
+						//放到按键回调中防止连续换台后右上角提示与下方提示时间不一致
+						startTime = undefined;
+						prevChannel();
+						return true;
+					},
+					"KEY_DOWN": function () {
+						startTime = undefined;
+						nextChannel();
+						return true;
+					},
+					"KEY_VOLUME_UP": function(){
+						var vol=mp.getVolume()+5;						
+						if(vol<=0){
+							$.pTool.get("advertVolume").deactive();
+						}else{
+							initVolumeAd();
+							$.pTool.get("advertRightBottom").deactive();
+						}
+					},
+					"KEY_VOLUME_DOWN": function(){
+						var vol=mp.getVolume()-5;						
+						if(vol<=0){
+							$.pTool.get("advertVolume").deactive();
+						}else{
+							initVolumeAd();
+							$.pTool.get("advertRightBottom").deactive();
+						}					
+					},
+					"KEY_MUTE": function () {
+						$.pTool.get("advertVolume").deactive();
+						// if(!mp.getMuteFlag()){
+						// 	$.pTool.get("advertVolume").deactive();
+						// }else{
+						// 	//setTimeout(function(){initVolumeAd()},100)
+						// 	$.pTool.get("advertPause").deactive();
+						// 	$.pTool.get("advertRightBottom").deactive();
+						// }
+					}
+				}
+			}
+		})());
+
+		//获取当前播放信息
+		function getPlayInfo() {
+			// LIVE
+			// {"type":"pull","code":"1","playVideoType":"0","mediaID":5,"mediaName":"快乐生活一点通","currentPlayTime":"20170317093555"}
+			var now = new $.Date();
+			var playTime = mp.getCurrentTime();
+			var beginTime = new $.Date((now / 1000 - totalTime) * 1000);
+			return {
+				"type": "pull",
+				"code": "1",
+				"playVideoType": "0",
+				"mediaID": "" + ($.getChanNum(channelId) || ''),
+				"mediaName": "" + (findChannelInfo(channelId, now.format('yyyy-MM-dd'), now.format('hh:mm')).playingName || ''),
+				"currentPlayTime": new $.Date((beginTime / 1000 + playTime) * 1000).format('yyyyMMddhhmmss')
+			};
+		}
+	</script>
+</head>
+
+<body onload="load()" onunload="unload()">
+	<div id="channelTry" class="hide"><span class="count"></span></div>
+	<div id="vipChanBg" class="hide"></div>
+</body>
+
+</html>

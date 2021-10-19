@@ -1,0 +1,104 @@
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 1280px;
+    height: 720px;
+    background: url('../images/bg.jpg') no-repeat;
+}
+
+li {
+    list-style: none;
+}
+
+#container {
+    display: none;
+    position: relative;
+    top: 71px;
+    left: 0;
+    padding: 40px 55px;
+}
+
+#container ul.main {
+    position: relative;
+}
+
+#container .main li {
+    width: 222px;
+    height: 265px;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    box-shadow: 2px 2px 6px 0px black;
+}
+
+#container .main .col {
+    position: absolute;
+}
+
+#container .main .col1 {
+    margin: 0;
+}
+
+#container .main li img {
+    width: 100%;
+    height: 100%;
+}
+
+#container .main .pName {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    color: white;
+    background: url('../images/name_bg.png') no-repeat;
+    background-size: 100% 90%;
+    background-position: bottom;
+    font-size: 20px;
+}
+
+#container .main li.focusBorder {
+    -webkit-transform: scale(1.1);
+    border: 2px solid white;
+    box-shadow: 0 0 5px 1px white;
+    z-index: 2;
+}
+
+.none {
+    display: none;
+}
+
+.row1 {
+    top: 0;
+}
+
+.row2 {
+    top: 277px;
+}
+
+.col1 {
+    left: 0;
+}
+
+.col2 {
+    left: 234px;
+}
+
+.col3 {
+    left: 468px;
+}
+
+.col4 {
+    left: 702px;
+}
+
+.col5 {
+    left: 936px;
+}

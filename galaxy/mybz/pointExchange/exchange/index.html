@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="page-view-size" content="1920*1080">
+  <title>myOrder</title>
+  <link rel="stylesheet" href="../../../css/public.css">
+  <link rel="stylesheet" href="css/Page.css">
+  <script src="../../../puppy/common.js"></script>
+  <script src="js/Page.js"></script>
+</head>
+
+<body onload="load()" onunload="unload()">
+  <div id="exchangeWords"></div>
+  <div id="line"></div>
+  <div id="checkPhone">
+    <div id="phoneNumContainer">
+      <span id="phoneNumLabel">手机号：</span>
+      <span id="phoneNumInput">请输入电信手机号</span>
+      <span id="phoneNumDanger">请输入正确的手机号</span>
+    </div>
+    <div id="verCodeContainer">
+      <span id="phoneVerCodeLabel">验证码：</span>
+      <span id="phoneVerCodeInput">请输入验证码</span>
+      <span id="getPhoneVerCode"></span>
+      <img src="images/getVerCode.png" id="verCodeImg">
+      <span id="verCodeDanger">请输入正确的验证码</span>
+      <span id="verCodeFrequently">验证码已发送，请使用当前验证码。</span>
+    </div>
+    <div id="confirmContainer">
+      <span id="confirmVerCode">确认</span>
+      <span id="cancleVerCode">返回</span>
+    </div>
+  </div>
+  <div id="cannotPay">
+    <div id="showInfo"></div>
+  </div>
+  <div id="showPay">
+    <div id="showPayShowInfo"></div>
+    <div id="confirmOk"></div>
+    <div id="confirmCancle"></div>
+  </div>
+  <div id="exchangeSuccess">
+    <div id="myOrder"></div>
+    <div id="exchangeSuccessBack"></div>
+  </div>
+  <div id="netError" class="hide">
+      <div id="tryAgain" class="btn">重试</div>
+      <div id="netErrorReturn" class="btn">返回</div>
+  </div>
+</body>
+
+</html>

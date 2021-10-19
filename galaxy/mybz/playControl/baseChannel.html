@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="page-view-size" content="1920*1080">
+  <title>baseChannel</title>
+  <link rel="stylesheet" href="../../css/public.css">
+  <style>
+    .channelPop{
+      width: 805px;
+      height: 374px;
+      background: -webkit-linear-gradient(146deg, #2B2A30 0%, #131313 100%);
+      box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.5);
+      border-radius: 15px;
+      opacity: 0.92;
+      position: absolute;
+      top: 353px;
+      left: 570px;
+    }
+    .popTitle{
+      width: 100%;
+      height: 65px;
+      padding-bottom: 43px;
+      padding-top: 40px;
+      font-size: 40px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      color: #FFFFFF;
+      line-height: 56px;
+      text-align: center;
+    }
+    .btnWrap{
+      width: 100%;
+      height: 65px;
+      position: relative;
+    }
+    .popbtn{
+      width: 214px;
+      height: 65px;
+      font-size: 34px;
+      font-family: PingFangSC-Regular, PingFang SC;
+      font-weight: 400;
+      line-height: 60px;
+      text-align: center;
+      border-radius: 35px;
+      border: 3px solid #FFFFFF;
+      color: #FFFFFF;
+      position: absolute;
+      top: 0;
+    }
+    .okBtn{
+      left: 137px;
+    }
+    .cancelBtn{
+      left: 427px;
+    }
+    .popbtn.active{
+      color: #1F1E1A;
+      border: 3px solid #F3A600;
+      background: -webkit-linear-gradient(270deg, #F3A600 0%, #EB8F0C 100%)
+    }
+  </style>
+  <script src="../../puppy/common.js"></script>
+  <script>
+    var mp = null,
+      channelId = $.page.channelNum;
+    channelNum = "";
+    var isHasBack = Number($.page.isHasBack);
+    var $channelInfo = null;
+    var popShow = false;
+
+    function load() {
+      if (!channelNum) return !0;
+      $.vs.livePlay(channelNum), playVideo()
+      if(isHasBack){
+        // $channelInfo = $(`<div class="channelPop hide">
+        //      <p class="popTitle">确定要退出吗？</p>
+        //      <div class="btnWrap">
+        //         <div class="popbtn okBtn active">确认</div>
+        //         <div class="popbtn cancelBtn">取消</div>
+        //       </div>                         
+        // </div>`);
+        $channelInfo = $('<div class="channelPop hide"><p class="popTitle">确定要退出吗？</p><div class="btnWrap"><div class="popbtn okBtn active">确认</div><div class="popbtn cancelBtn">取消</div></div></div>');
+        $channelInfo.appendTo($("body"));    
+        initEvent();
+        $.pTool.active('channelPop');
+      }      
+    }
+
+    function playVideo() {
+      (mp = new $.MP).load(channelNum, void 0, $.MP.mediaType.TYPE_CHANNEL), $.initVolume(mp)
+    }
+    function initEvent(){
+      $.pTool.add("channelPop", {
+          key: "channelPop",
+          keysMap: {
+              KEY_LEFT: function(){
+                var tag=$(".btnWrap .active").hasClass("cancelBtn")
+                if(tag){
+                  $(".btnWrap .okBtn").removeClass("active");
+                  $(".btnWrap .cancelBtn").removeClass("active");
+                  $(".btnWrap .okBtn").addClass("active");
+                }
+              },
+              KEY_RIGHT: function(){
+                var tag=$(".btnWrap .active").hasClass("okBtn")
+                if(tag){
+                  $(".btnWrap .okBtn").removeClass("active");
+                  $(".btnWrap .cancelBtn").removeClass("active");
+                  $(".btnWrap .cancelBtn").addClass("active");
+                }
+              },
+              KEY_OK: function () {
+                var tag=$(".btnWrap .active").hasClass("okBtn")
+                if(popShow){
+                  if(tag){
+                    if (mp) {
+                      $.back()
+                    }
+                  }else{
+                    $(".channelPop").addClass("hide")
+                    popShow = !popShow;
+                  }                  
+                }
+              },
+              KEY_RETURN: function () {
+                if(popShow){
+                  $(".channelPop").addClass("hide")
+                }else{
+                  $(".channelPop").removeClass("hide")
+                }
+                popShow = !popShow;
+                return true;
+              }
+          },
+          active: function () {
+          }
+        })
+    }
+
+    function unload() {
+      mp && (mp.release(), $.vs.playQuit())
+    }
+
+    function getChanByIdBase(n) {
+      return {
+        "30001110000000000000000000001421": {
+          channelId: "30001110000000000000000000001421",
+          num: 939,
+          name: "CBA赛事直播01"
+        },
+        "30001110000000000000000000001422": {
+          channelId: "30001110000000000000000000001422",
+          num: 938,
+          name: "CBA赛事直播02"
+        },
+        "30001110000000000000000000001423": {
+          channelId: "30001110000000000000000000001423",
+          num: 937,
+          name: "CBA赛事直播03"
+        },
+        "30001110000000000000000000001424": {
+          channelId: "30001110000000000000000000001424",
+          num: 936,
+          name: "CBA赛事直播04"
+        },
+        "30001110000000000000000000001425": {
+          channelId: "30001110000000000000000000001425",
+          num: 935,
+          name: "CBA赛事直播05"
+        },
+        "30001110000000000000000000001426": {
+          channelId: "30001110000000000000000000001426",
+          num: 934,
+          name: "CBA赛事直播06"
+        },
+        "30001110000000000000000000001427": {
+          channelId: "30001110000000000000000000001427",
+          num: 933,
+          name: "CBA赛事直播07"
+        },
+        "30001110000000000000000000001428": {
+          channelId: "30001110000000000000000000001428",
+          num: 932,
+          name: "CBA赛事直播08"
+        },
+        "30001110000000000000000000001429": {
+          channelId: "30001110000000000000000000001429",
+          num: 931,
+          name: "CBA赛事直播09"
+        },
+        "30001110000000000000000000001430": {
+          channelId: "30001110000000000000000000001430",
+          num: 930,
+          name: "CBA赛事直播10"
+        },
+        "30001110000000000000000000001562": {
+          channelId: "30001110000000000000000000001562",
+          num: 929,
+          name: "CBA赛事直播11"
+        }
+      }[n]
+    }
+    if (channelId && channelId.length > 3) {
+      channelNum = getChanByIdBase(channelId) ? getChanByIdBase(channelId).num : $.getChanNum(channelId)
+    } else {
+      channelNum = channelId
+    }
+    $.addBackUrlRedefine(function () { }), $.playVideoRedefine(!0), $.playLiveOrRecRedefine(!0) 
+  </script>
+</head>
+
+<body onload="load()" onunload="unload()"></body>
+
+</html>

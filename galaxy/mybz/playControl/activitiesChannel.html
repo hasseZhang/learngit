@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="page-view-size" content="1920*1080">
+  <title>baseChannel</title>
+  <link rel="stylesheet" href="../../css/public.css">
+  <style>
+	  .channelName {
+			position: absolute;
+			width: 1920px;
+			height: 240px;
+			left: 0;
+			bottom: 0;
+			background: url(images/zhibo/channelInfo/bg.png) 0 0 repeat-x;
+		}
+	  .channelName span{
+			position: absolute;
+			font-size: 30px;
+			left: 75px;
+			width: 150px;
+			height: 30px;
+			line-height: 30px;
+			font-size: 30px;
+			bottom: 47px;
+		}
+	  .channelName .ti{
+			color: #ebaf08;
+		}
+	  .channelName .name{
+			left: 225px;
+			width: 450px;
+			color: #fff;
+		}
+		#channelTry {
+			position: absolute;
+			width: 416px;
+			height: 60px;
+			right: 40px;
+			top: 26px;
+			background: url(images/zhibo/cue/tryW.png) 0 0 no-repeat;
+		}
+		#channelTry .count {
+			display: inline-block;
+			width: 46px;
+			color: #EB9906;
+			font-size: 28px;
+			margin-top: 12px;
+			margin-left: 15px;
+			text-align: right;
+		}
+  </style>
+  <script src="../../puppy/common.js"></script>
+  <script src="./js/activitiesChannel.js"></script>
+  <script>
+    var mp = null,
+	channelNum = $.page.channelNum,
+	channelName = $.page.channelName && decodeURI($.page.channelName),
+	isAuth = $.page.productId,
+	package = [];
+	
+    function load() {
+	if (!channelNum) return !0;
+	$.vs.livePlay(channelNum), playVideo();
+	  if(channelName){
+		$.pTool.get('activitiesChannel').init({
+		  channelName:channelName
+	  });
+	  }
+    }
+
+    function playVideo() {
+		if (!mp) {
+				mp = new $.MP();
+			}
+		// 判断是否要鉴权
+		if(isAuth){
+		package.push({
+			chargeId:isAuth
+		})
+		doVipChannel.auth(package,channelNum);
+		}else{
+			mpLoad()
+		}
+    }
+	function mpLoad() {
+			mp && mp.load(channelNum, void 0, $.MP.mediaType.TYPE_CHANNEL), $.initVolume(mp)
+		}
+	function mpStop() {
+			mp && mp.stop();
+		}
+    function unload() {
+      mp && (mp.release(), $.vs.playQuit())
+    }
+
+	$.addBackUrlRedefine(function () {}), $.playVideoRedefine(!0), $.playLiveOrRecRedefine(!0)
+  </script>
+</head>
+<body onload="load()" onunload="unload()">
+	<div id="channelTry" class="hide"><span class="count"></span></div>
+</body>
+
+</html>

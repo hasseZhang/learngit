@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="page-view-size" content="1920*1080">
+	<title>aiqiyi中间页</title>
+	<link rel="stylesheet" href="../../../../plugin/apk/Page.css">
+	<script src="../../../../puppy/common.js"></script>
+	<script src="../../../../plugin/apk/page.js"></script>
+	<script>
+		function load() {
+			var searchInfo = $.search.get();
+
+			var contentId = searchInfo.contentId;
+
+			var contentName = searchInfo.contentName;
+
+			var userId = $.getVariable("EPG:userId");
+
+			var stbId = $.getVariable("EPG:stbId"); // 埋点用
+
+			var stbtype = $.getVariable("EPG:node") === "huawei" ? 2 : 1; // 埋点用
+
+			var areaId = $.getVariable("EPG:areaId"); // 埋点用
+
+			var edition = top.$.linnEdition === "standardEdition" ? 'WE3U' : top.$.linnEdition === "simplifiedEdition" ?
+				'SWE3U' : top.$.linnEdition === "childrenEdition" ? 'CWE3U' : ''; // 埋点用
+
+			var version = 2; // 埋点用
+
+			var categoryId = searchInfo.categoryId || 'aiqiyi';
+
+			var jSessionID = Authentication.CTCGetConfig('SessionID');
+
+			var token = Authentication.CUGetConfig('AuthToken');
+
+			var platform = $.getVariable("EPG:isTest") ? 'dx_test' : 'dx_online';
+
+			var node = $.getVariable("EPG:node");
+
+			var origin = $.getVariable("EPG:domain");
+
+			var appName = "com.jliptv.aiqiyi";
+
+			var sign = $.getVariable("EPG:isTest") ? 'aiqiyi_test' : 'aiqiyi';
+
+			var params = "{ \"intentType\":0, \"appName\":\"" +
+				appName + "\",\"extra\":[{\"name\":\"userId\",\"value\":\"" + userId +
+				"\"},{\"name\":\"sessionId\",\"value\":\"" + jSessionID +
+				"\"},{\"name\":\"areaId\",\"value\":\"" + areaId +
+				"\"},{\"name\":\"stbid\",\"value\":\"" + stbId +
+				"\"},{\"name\":\"stbtype\",\"value\":\"" + stbtype +
+				"\"},{\"name\":\"edition\",\"value\":\"" + edition +
+				"\"},{\"name\":\"version\",\"value\":\"" + version +
+				"\"},{\"name\":\"platform\",\"value\":\"" + platform +
+				"\"},{\"name\":\"hwIp\",\"value\":\"" + origin +
+				"\"},{\"name\":\"node\",\"value\":\"" + node +
+				"\"},{\"name\":\"contentId\",\"value\":\"" + contentId +
+				"\"},{\"name\":\"daoduId\",\"value\":\"" + categoryId +
+				"\"},{\"name\":\"token\",\"value\":\"" + token +
+				"\"},{\"name\":\"contentName\",\"value\":\"" + contentName + "\"}]}";
+
+			APK.pullApk(sign, appName, params, callback);
+
+			function callback() {
+				$.back();
+			}
+			// top.APKTopic.once('EVENT_IPTV_RESUME', function () {
+			// 	$.back()
+			// });
+		}
+
+		function unload() {
+			APK.clearTime();
+		}
+	</script>
+</head>
+
+<body onload="load()" onunload="unload()">
+</body>
+
+</html>

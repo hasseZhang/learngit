@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="page-view-size" content="1920*1080">
+	<title>彣尚教育</title>
+	<link rel="stylesheet" href="../../../plugin/apk/Page.css">
+	<script src="../../../puppy/common.js"></script>
+	<script src="../../../plugin/apk/page.js"></script>
+	<script>
+		var appName = 'com.shida.iptv.edu';
+
+		var sign = $.getVariable("EPG:isTest") ? 'edu_test' : 'edu';
+
+		var apkUrl = "";
+
+        var userId = $.getVariable("EPG:userId");
+
+        var node = 'huawei';
+
+        var origin = $.getVariable("EPG:domain");
+
+        var jSessionID = Authentication.CTCGetConfig('SessionID');
+
+		function GetQueryString(name) {
+			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+			var r = ("?" + window.location.href.split('?')[1]).substr(1).match(reg);
+			if (r != null) return unescape(r[2]);
+			return null;
+		}
+
+		function load() {
+            apkUrl = GetQueryString("url");
+				var params = "{ \"intentType\":0,\"appName\":\"" +
+					appName + "\",\"extra\":[{\"name\":\"userId\",\"value\":\"" + userId +
+					"\"},{\"name\":\"origin\",\"value\":\"" + origin +
+					"\"},{\"name\":\"jSessionID\",\"value\":\"" + jSessionID +
+					"\"},{\"name\":\"node\",\"value\":\"" + node +
+					"\"},{\"name\":\"activity\",\"value\":\"" + apkUrl +
+                    "\"},{\"name\":\"platform\",\"value\":\"" + "dx" + 
+                    "\"},{\"name\":\"version\",\"value\":\"" + "2.0" + "\"}]}"
+				APK.pullApk(sign, appName, params);
+				top.APKTopic.once('EVENT_IPTV_RESUME', function () {
+					$.back();
+				});
+		}
+
+		function unload() {
+			APK.clearTime();
+		}
+		
+	</script>
+</head>
+
+<body onload="load()" onunload="unload()">
+
+</body>
+
+</html>

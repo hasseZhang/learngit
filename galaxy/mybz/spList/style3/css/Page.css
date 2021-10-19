@@ -1,0 +1,231 @@
+body {
+    width: 1920px;
+    height: 1080px;
+    margin: 0;
+    background: 0 0;
+    position: relative
+}
+
+#listBg {
+    position: absolute;
+    width: 783px;
+    height: 850px;
+    left: 96px;
+    top: 156px
+}
+
+#leftList {
+    position: absolute;
+    width: 205px;
+    height: 850px;
+    overflow: hidden;
+    left: 96px;
+    top: 156px;
+    background: rgba(0, 0, 0, .9)
+}
+
+#leftList .wrap {
+    width: 205px;
+    -webkit-transform: translateY(0)
+}
+
+#leftList .iList {
+    width: 205px;
+    height: 95px
+}
+
+#leftList .iList .contentTitle {
+    width: 190px;
+    text-align: center;
+    margin-left: 8px
+}
+
+#rightList {
+    position: absolute;
+    width: 578px;
+    height: 850px;
+    overflow: hidden;
+    left: 301px;
+    top: 156px;
+    background: rgba(0, 0, 0, .7)
+}
+
+#rightList .wrap {
+    width: 578px;
+    -webkit-transform: translateY(0)
+}
+
+#rightList .iList {
+    width: 578px;
+    height: 95px;
+    position: relative
+}
+
+#rightList .iList .contentTitle {
+    width: 540px;
+    margin-left: 35px
+}
+
+.iList.focusBorder {
+    background: -webkit-linear-gradient(left, #eca600 0, #e7880e 100%);
+}
+.iList.focusBorder .contentTitle {
+    color: #000;
+}
+
+.contentTitle {
+    height: 95px;
+    line-height: 95px;
+    font-size: 33px;
+    color: #fff;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap
+}
+
+.iList.current {
+    background: rgba(255, 255, 255, .2)
+}
+
+.iList.current .contentTitle {
+    color: #eca600
+}
+
+#rightList .iList.current.playing::after {
+    content: '';
+    display: block;
+    width: 35px;
+    height: 95px;
+    position: absolute;
+    background: url(../images/current.png) center center no-repeat;
+    background-size: 12px 17px;
+    top: 0;
+    left: 0
+}
+
+#rightList .iList.focusBorder.playing::after {
+    content: '';
+    display: block;
+    width: 35px;
+    height: 95px;
+    position: absolute;
+    background: url(../images/currentF.png) center center no-repeat;
+    top: 0;
+    left: 0
+}
+
+#pageInfo {
+    position: absolute;
+    width: 941px;
+    height: 161px;
+    left: 879px;
+    top: 156px;
+    background: rgba(0, 0, 0, .3)
+}
+
+#pageInfo .content {
+    color: #fff;
+    font-size: 36px;
+    position: absolute;
+    top: 23px;
+    left: 17px
+}
+
+#description {
+    position: absolute;
+    width: 941px;
+    height: 161px;
+    left: 879px;
+    top: 846px;
+    background: rgba(0, 0, 0, .3)
+}
+
+#description .content {
+    color: #fff;
+    font-size: 29px;
+    position: absolute;
+    width: 875px;
+    height: 120px;
+    top: 18px;
+    left: 33px;
+    line-height: 41px
+}
+
+#videoWindow {
+    position: absolute;
+    width: 941px;
+    height: 530px;
+    top: 317px;
+    left: 879px;
+    z-index: 99999;
+}
+
+#adTime,
+#tryTime {
+    padding: 0 36px;
+    height: 50px;
+    line-height: 50px;
+    background: rgba(0, 0, 0, .4);
+    position: absolute;
+    top: 5px;
+    right: 18px;
+    font-size: 32px;
+    color: #fff;
+    text-align: center;
+    border-radius: 24px
+}
+
+#videoWindow .cue {
+    position: absolute;
+    left: 3px;
+    bottom: 3px;
+    width: 368px;
+    height: 57px
+}
+
+#videoWindow .cue.buy {
+    background: url(../images/buyCue.png) 0 0 no-repeat;
+    background-size: 369px 59px
+}
+
+#videoWindow .cue.full {
+    background: url(../images/fullCue.png) 0 0 no-repeat;
+    background-size: 369px 59px
+}
+
+#videoWindow.over {
+    background: #242424
+}
+
+#videoWindow .text {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 941px;
+    line-height: 66px;
+    text-align: center;
+    -webkit-transform: translateY(-50%);
+    font-size: 32px;
+    color: #fff
+}
+
+#videoWindow .nodubi {
+    position: absolute;
+    width: 417px;
+    height: 44px;
+    left: 300px;
+    bottom: 110px;
+    background: url(../images/nodubi.png) 0 0 no-repeat
+}
+
+#videoWindow.focusBorder::after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 941px;
+    height: 530px;
+    -webkit-box-shadow: 0 0 0 3px #fff;
+    box-shadow: 0 0 0 3px #fff
+}

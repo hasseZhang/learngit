@@ -1,0 +1,589 @@
+body {
+    width: 1920px;
+    height: 1080px;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background: url(../images/bg.jpg) no-repeat transparent
+}
+
+.autoText {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap
+}
+
+#container {
+    width: 1920px;
+    height: 1080px;
+    position: relative
+}
+
+#container #listContainer {
+    position: absolute;
+    left: 302px;
+    top: 0;
+    height: 1080px;
+    width: 1618px;
+}
+
+#container #progressBar {
+    height: 994px;
+    width: 15px;
+    background-color: rgba(254, 254, 254, .05);
+    position: absolute;
+    right: 26px;
+    top: 43px;
+    border-radius: 10px;
+}
+
+#container #progressBar #strip {
+    position: absolute;
+    height: 110px;
+    width: 11px;
+    top: 0;
+    left: 2px;
+    background: -webkit-linear-gradient(left, #5a5a5a, #919191);
+    border-radius: 6px;
+    transition: top .6s .1s
+}
+
+#container #noMc {
+    position: absolute;
+    width: 702px;
+    height: 446px;
+    line-height: 446px;
+    left: 753px;
+    top: 304px;
+    color: #fff;
+    font-size: 48px;
+    font-size: 'FZZXHJW--GB1-0';
+}
+
+#container #noMc {
+    background: url(../images/nocoupon.png) no-repeat
+}
+
+
+.nouse #container #listContainer .moContent {
+    position: absolute;
+    width: 1618px;
+    height: 1025px;
+    top: 144px;
+    left: 0;
+    overflow: hidden;
+}
+
+.nouse #container #listContainer .moContent .mo_item {
+    float: left;
+    height: 234px;
+    width: 1618px;
+    position: relative
+}
+
+.nouse #container #listContainer .moContent .mo_item .poster {
+    position: absolute;
+    width: 277px;
+    height: 197px;
+    left: 120px;
+    top: 0px;
+    background: url(../images/mycoupon.png) no-repeat;
+}
+
+.nouse #container #listContainer .moContent .poster .couponPrice {
+    position: absolute;
+    width: 277px;
+    height: 120px;
+    line-height: 130px;
+    text-align: center;
+    font-size: 80px;
+    vertical-align: bottom;
+    color: rgba(254, 254, 254, 1);
+    background: linear-gradient(0deg, rgba(89, 49, 22, 1) 0%, rgba(186, 116, 64, 1) 98.73046875%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* 样式共用的，没必要声明3个 */
+#container #listContainer .moContent .poster .cardTypeName {
+    position: absolute;
+    width: 277px;
+    height: 120px;
+    line-height: 130px;
+    text-align: center;
+    font-size: 60px;
+    vertical-align: bottom;
+    color: rgba(254, 254, 254, 1);
+    background: linear-gradient(0deg, rgba(89, 49, 22, 1) 0%, rgba(186, 116, 64, 1) 98.73046875%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nouse #container #listContainer .moContent .poster .couponPrice .signal {
+    font-size: 52px;
+    color: rgba(254, 254, 254, 1);
+    background: linear-gradient(0deg, rgba(89, 49, 22, 1) 0%, rgba(186, 116, 64, 1) 98.73046875%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.nouse #container #listContainer .moContent .poster .useCondition {
+    position: absolute;
+    bottom: 21px;
+    width: 237px;
+    padding: 0 20px;
+    height: 29px;
+    line-height: 29px;
+    font-size: 29px;
+    text-align: center;
+    font-family: 'Adobe Heiti Std R';
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: rgba(186, 116, 64, 1);
+    background: -webkit-linear-gradient(0deg, rgba(89, 49, 22, 1) 0%, rgba(186, 116, 64, 1) 98.73046875%);
+    -webkit-background-clip: text;
+    /* -webkit-text-fill-color:transparent; */
+}
+
+.nouse #container #listContainer .moContent .mo_item .useBtn {
+    width: 216px;
+    height: 66px;
+    background-color: #49474b;
+    font-size: 38px;
+    font-family: 'MicrosoftYaHei';
+    line-height: 66px;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    left: 1295px;
+    top: 70px;
+}
+
+.nouse #useRules {
+    position: absolute;
+    width: 216px;
+    height: 66px;
+    top: 21px;
+    left: 422px;
+    background: #49474b;
+    border-radius: 4px 4px 4px 4px;
+    font-size: 38px;
+    font-family: 'FZZhengHeiS-EL-GB';
+    font-weight: 400;
+    color: #fff;
+    line-height: 66px;
+    text-align: center;
+}
+
+.nouse #useRules.focusBorder {
+    background: linear-gradient(90deg, rgba(236, 167, 0, 1), rgba(235, 138, 13, 1));
+}
+
+.nouse #container #listContainer .moContent .mo_item .useBtn.focusBorder {
+    background: linear-gradient(90deg, rgba(236, 167, 0, 1), rgba(235, 138, 13, 1));
+}
+
+.used #container #listContainer .moContent {
+    position: absolute;
+    width: 1618px;
+    height: 1025px;
+    top: 144px;
+    left: 0;
+    overflow: hidden;
+}
+
+.used #container #listContainer .moContent .mo_item {
+    float: left;
+    height: 234px;
+    width: 1618px;
+    position: relative
+}
+
+.used #container #listContainer .moContent .mo_item .poster {
+    position: absolute;
+    width: 277px;
+    height: 197px;
+    left: 120px;
+    top: 0px;
+    background: url(../images/mycoupon.png) no-repeat;
+}
+
+.used #container #listContainer .moContent .poster .couponPrice {
+    position: absolute;
+    width: 277px;
+    height: 120px;
+    line-height: 130px;
+    text-align: center;
+    font-size: 80px;
+    vertical-align: bottom;
+    color: rgba(254, 254, 254, 1);
+    background: linear-gradient(0deg, rgba(89, 49, 22, 1) 0%, rgba(186, 116, 64, 1) 98.73046875%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.used #container #listContainer .moContent .poster .couponPrice .signal {
+    font-size: 52px;
+    color: rgba(254, 254, 254, 1);
+    background: linear-gradient(0deg, rgba(89, 49, 22, 1) 0%, rgba(186, 116, 64, 1) 98.73046875%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.used #container #listContainer .moContent .poster .useCondition {
+    position: absolute;
+    width: 237px;
+    padding: 0 19px;
+    height: 29px;
+    line-height: 29px;
+    bottom: 21px;
+    font-size: 29px;
+    text-align: center;
+    font-family: 'Adobe Heiti Std R';
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: rgba(186, 116, 64, 1);
+    background: linear-gradient(0deg, rgba(89, 49, 22, 1) 0%, rgba(186, 116, 64, 1) 98.73046875%);
+    -webkit-background-clip: text;
+    /* -webkit-text-fill-color:transparent; */
+}
+
+.used #container #listContainer .moContent .mo_item .useBtn {
+    width: 216px;
+    height: 66px;
+    background-color: #49474b;
+    font-size: 38px;
+    font-family: 'MicrosoftYaHei';
+    line-height: 66px;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    left: 1295px;
+    top: 70px;
+}
+
+.used #useRules {
+    position: absolute;
+    width: 216px;
+    height: 66px;
+    top: 21px;
+    left: 422px;
+    background: #49474b;
+    opacity: 0.45;
+    border-radius: 4px 4px 4px 4px;
+    font-size: 38px;
+    font-family: 'FZZhengHeiS-EL-GB';
+    font-weight: 400;
+    color: #fff;
+    line-height: 66px;
+    text-align: center;
+}
+
+.used #useRules.focusBorder {
+    background: linear-gradient(90deg, rgba(236, 167, 0, 1), rgba(235, 138, 13, 1));
+}
+
+.used #container #listContainer .moContent .mo_item .useBtn.focusBorder {
+    background: linear-gradient(90deg, rgba(236, 167, 0, 1), rgba(235, 138, 13, 1));
+}
+
+.expire #container #listContainer .moContent {
+    position: absolute;
+    width: 1618px;
+    height: 1025px;
+    top: 144px;
+    left: 0;
+    overflow: hidden;
+}
+
+.expire #container #listContainer .moContent .mo_item {
+    float: left;
+    height: 234px;
+    width: 1618px;
+    position: relative
+}
+
+.expire #container #listContainer .moContent .mo_item .poster {
+    position: absolute;
+    width: 277px;
+    height: 197px;
+    left: 120px;
+    top: 0px;
+    background: url(../images/mycoupon.png) no-repeat;
+}
+
+.expire #container #listContainer .moContent .poster .couponPrice {
+    position: absolute;
+    width: 277px;
+    height: 120px;
+    line-height: 130px;
+    text-align: center;
+    font-size: 80px;
+    vertical-align: bottom;
+    color: rgba(254, 254, 254, 1);
+    background: linear-gradient(0deg, rgba(89, 49, 22, 1) 0%, rgba(186, 116, 64, 1) 98.73046875%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.expire #container #listContainer .moContent .poster .couponPrice .signal {
+    font-size: 52px;
+    color: rgba(254, 254, 254, 1);
+    background: linear-gradient(0deg, rgba(89, 49, 22, 1) 0%, rgba(186, 116, 64, 1) 98.73046875%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.expire #container #listContainer .moContent .poster .useCondition {
+    position: absolute;
+    width: 237px;
+    height: 29px;
+    padding: 0 19px;
+    line-height: 29px;
+    bottom: 21px;
+    font-size: 29px;
+    text-align: center;
+    font-family: 'Adobe Heiti Std R';
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: rgba(186, 116, 64, 1);
+    background: linear-gradient(0deg, rgba(89, 49, 22, 1) 0%, rgba(186, 116, 64, 1) 98.73046875%);
+    -webkit-background-clip: text;
+    /* -webkit-text-fill-color:transparent; */
+}
+
+.expire #container #listContainer .moContent .mo_item .useBtn {
+    width: 216px;
+    height: 66px;
+    background-color: #49474b;
+    font-size: 38px;
+    font-family: 'MicrosoftYaHei';
+    line-height: 66px;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    left: 1295px;
+    top: 70px;
+}
+
+.expire #useRules {
+    position: absolute;
+    width: 216px;
+    height: 66px;
+    top: 21px;
+    left: 422px;
+    background: #49474b;
+    opacity: 0.45;
+    border-radius: 4px 4px 4px 4px;
+    font-size: 38px;
+    font-family: 'FZZhengHeiS-EL-GB';
+    font-weight: 400;
+    color: #fff;
+    line-height: 66px;
+    text-align: center;
+}
+
+.expire #useRules.focusBorder {
+    background: linear-gradient(90deg, rgba(236, 167, 0, 1), rgba(235, 138, 13, 1));
+}
+
+.expire #container #listContainer .moContent .mo_item .useBtn.focusBorder {
+    background: linear-gradient(90deg, rgba(236, 167, 0, 1), rgba(235, 138, 13, 1));
+}
+
+#container #listContainer .moContent .mo_item .text {
+    position: absolute;
+    left: 497px;
+    width: 994px;
+    color: #fff;
+    font-size: 30px
+}
+
+#container #listContainer .moContent .mo_item .name {
+    top: 33px;
+    width: auto
+}
+
+#container #listContainer .moContent .mo_item .price {
+    top: 84px;
+    color: #CFCFCF
+}
+
+#container #listContainer .moContent .mo_item .endTime {
+    position: relative;
+    top: 135px;
+    color: #CFCFCF;
+}
+
+#container #listContainer .moContent .mo_item .useTime,
+#container #listContainer .moContent .mo_item .expiredTime {
+    position: absolute;
+    top: 2px;
+    width: 600px;
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap
+}
+
+#container #listContainer .moContent .mo_item .useTime {
+    left: 141px;
+}
+
+#container #listContainer .moContent .mo_item .expiredTime {
+    left: 204px;
+}
+
+#container #listContainer .moContent .mo_item .productNameGroup {
+    position: absolute;
+    top: 0;
+    left: 141px;
+    width: 600px;
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap
+}
+
+#container #listContainer .moContent .mo_item .poster .almostExpired {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 93px;
+    height: 67px;
+    background: url(../images/k-expired.png) no-repeat;
+}
+
+#container #loading {
+    position: absolute;
+    left: 60%;
+    top: 50%;
+    background: url(../images/loading.gif) no-repeat;
+    width: 200px;
+    height: 200px;
+    margin-top: -100px;
+    margin-left: -100px
+}
+
+/* 删除弹框的样式 */
+.deleteCoupon {
+    width: 804px;
+    height: 454px;
+    position: absolute;
+    top: 313px;
+    right: 558px;
+    background: url(../images/couponPopup.png) no-repeat;
+    z-index: 99;
+}
+
+.deleteCoupon .title {
+    position: absolute;
+    top: 90px;
+    left: 202px;
+    width: 400px;
+    height: 45px;
+    text-align: center;
+    line-height: 45px;
+    font-size: 40px;
+    color: #fff;
+    font-family: 'MicrosoftYaHei';
+}
+
+.deleteCoupon .delBtn {
+    width: 217px;
+    height: 69px;
+    text-align: center;
+    line-height: 69px;
+    font-size: 36px;
+    color: #fff;
+    font-family: 'MicrosoftYaHei';
+    background: url(../images/couponCancle.png) no-repeat;
+}
+
+.deleteCoupon .delBtnEns {
+    position: absolute;
+    bottom: 88px;
+    left: 140px;
+
+}
+
+.deleteCoupon .delBtnCan {
+    position: absolute;
+    bottom: 88px;
+    right: 140px;
+}
+
+
+.deleteCoupon .delBtn.focusBorder {
+    background: url(../images/couponEnsure.png) no-repeat;
+}
+
+.rulesPupon {
+    position: absolute;
+    width: 964px;
+    height: 608px;
+    top: 262px;
+    left: 478px;
+    background: url(../images/rulesPopup.png) no-repeat;
+    z-index: 99;
+}
+
+.rulesPupon .ruleTitle {
+    width: 299px;
+    height: 40px;
+    position: absolute;
+    top: 55px;
+    left: 331px;
+    font-size: 40px;
+    color: #fff;
+    font-family: 'MicrosoftYaHei';
+    text-align: center;
+    line-height: 40px;
+}
+
+.rulesPupon .ruleLine {
+    position: absolute;
+    top: 125px;
+    left: 120px;
+    width: 731px;
+    height: 1px;
+    background: rgba(180, 180, 180, 1);
+}
+
+.ruleContent {
+    position: absolute;
+    top: 180px;
+    left: 236px;
+    width: 610px;
+    height: 240px;
+    font-size: 30px;
+    color: rgba(255, 255, 255, 1);
+    font-family: Microsoft YaHei;
+    line-height: 48px;
+    letter-spacing: 1px;
+}
+
+.rulesPupon .ruleEnsure {
+    position: absolute;
+    left: 374px;
+    bottom: 71px;
+    width: 217px;
+    height: 69px;
+    text-align: center;
+    line-height: 69px;
+    font-size: 36px;
+    color: #fff;
+    font-family: 'MicrosoftYaHei';
+    background: url(../images/couponEnsure.png) no-repeat;
+}
+
+.nouseTime {
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+    background: url(../images/nouseBg.png) no-repeat;
+    z-index: 6;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="page-view-size" content="1920*1080">
+    <title>listPage</title>
+    <link rel="stylesheet" href="../../css/public.css">
+    <link rel="stylesheet" href="../../plugin/header/css/header.css">
+    <link rel="stylesheet" href="../../plugin/listMenu/css/menu.css">
+    <link rel="stylesheet" href="../../plugin/listMenu/css/menuxxty.css">
+    <link rel="stylesheet" href="css/Page.css">
+    <link rel="stylesheet" href="css/Pagexxty.css">
+    <script src="../../puppy/common.js">
+    </script>
+    <script>var preloadBg = $.getHelper("provider:menu").cache()[$.search.get("type")]; preloadBg && preloadBg.bg && ((new Image).src = preloadBg.bg)
+    </script>
+    <script>function preloadImg(g) { if (g instanceof Array) for (var e = 0; e < g.length; e++) { (new Image).src = g[e] } } preloadImg(["images/bg.jpg", "images/bg_se.png", "images/bg_style3.png", "images/ttxbBg.jpg"])
+    </script>
+    <script src="../../plugin/header/js/header.js">
+    </script>
+     <script src="../../plugin/listTj/js/listTj.js"></script>
+     <script src="../../plugin/listTj/listType/listTjModule.js"></script>
+    <script>var docName = '';
+        if ($.search.get('type') === 'XXTY') {
+            docName = 'xxty';
+        }
+        document.write(`
+        <script src="../../plugin/listMenu/js/menu${docName}.js"><\/script>
+        <script src="../../plugin/list/listType/listModule${docName}.js"><\/script>
+        <script src="../../plugin/list/js/list${docName}.js"><\/script>
+        <script src="js/Page${docName}.js"><\/script>
+    `);
+    </script>
+</head>
+
+<body onload="load()" onunload="unload()">
+</body>
+
+</html>

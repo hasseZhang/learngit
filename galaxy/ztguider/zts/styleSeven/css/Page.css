@@ -1,0 +1,157 @@
+body {
+	position: relative;
+	width: 1920px;
+	height: 1080px;
+	margin: 0;
+	padding: 0;
+}
+body img{
+	width: 100%;
+	height:100%;
+}
+#pageTitle{
+	position: absolute;
+	left: 90px;
+	top: 119px;
+	width: 903px;
+	height: 55px;
+	font-size: 60px;
+	line-height: 22px;
+	color: #fefefe;
+	text-align:center;
+}
+
+#video {
+	position: absolute;
+    width: 981px;
+    height: 552px;
+    left: 90px;
+    top: 385px;
+}
+.rowNumber {
+	width: 200px;
+	height: 33px;
+	line-height: 33px;
+    right: 90px;
+    position: absolute;
+    top: 75px;
+    font-size: 33px;
+}
+.rowNumber .currentRow{
+	width: 100px;
+    border-right: 1px solid #ccc;
+    position: absolute;
+    float: left;
+    color: #C4D1E4;
+    text-align: right;
+    padding-right: 12px;
+}
+.rowNumber .totalRow {
+	float: right;
+	color: #FFD140;
+}
+.right {
+    position: absolute;
+    width: 756px;
+    height: 957px;
+    right: 66px;
+    top: 123px;
+    overflow: hidden;
+}
+.right .list{
+	position: absolute;
+	left: 25px;
+	top: 22px;
+    width: 448px;
+    height: 99999px;
+}
+.right .list .item {
+	position: relative;
+	float: left;
+	width: 705px;
+	height: 120px;
+	margin: 1px 0;
+	background: rgba(0,0,0, 0.6);
+}
+.right .list .item.play.player::after{
+	content:'';
+	position: absolute;
+	width: 35px;
+	height: 27px;
+	left: 24px;
+	top: 22px;
+	background:url("../images/play.gif") no-repeat;
+}
+.right .list .item.focusBorder{
+	-webkit-transform: scale(1.06);
+	-webkit-box-shadow: 0 0 0 3px #fff, 0 0 8px 3px #fff;
+	z-index: 1;
+}
+.right .list .item.focusBorder .name{
+	color: #fff;
+}
+.item .name{
+	position: relative;
+	left: 81px;
+	top: 22px;
+	width: 552px;
+	height: 80px;
+	line-height: 40px;
+	font-size: 30px;
+	color: #fff;
+}
+.pic:after {
+	content: '';
+	position: absolute;
+	width: 35px;
+	height: 27px;
+	left: 0px;
+	bottom: 0px;
+}
+
+#video.focusBorder {
+	-webkit-box-shadow: 0 0 0 1px #959595, 0 0 0 4px #fff, 0 0 0 5px #959595;
+}
+#video::after{
+	content:'';
+	position: absolute;
+	left: 18px;
+	bottom: 18px;
+	width: 322px;
+	height: 51px;
+}
+#video.fullPlay::after{
+	background:url('../images/fullScreen.png') no-repeat;
+}
+#video.order::after{
+	background:url('../images/toOrder.png') no-repeat;
+}
+
+#video.orderBg{
+	background:url('../images/orderBg.png') no-repeat;
+	background-size: cover;
+}
+#video.trySeeEnd{
+	background:url('../images/trySeeEnd.png') no-repeat;
+	background-size: cover;
+}
+#video.no4K{
+	background:url('../images/no4K.png') no-repeat;
+	background-size: cover;
+}
+
+#video.trySee{
+	background:transparent;
+}
+#video.trySee::before {
+	content:'';
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	width: 175px;
+	height: 51px;
+	background:url('../images/trySee.png') no-repeat;
+}
+#video.no4K::before{
+	visibility: hidden;
+}

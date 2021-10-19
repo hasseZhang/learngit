@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="page-view-size" content="1920*1080">
+    <title>天天学霸首页</title>
+    <link rel="stylesheet" href="../../../../css/public.css">
+    <link rel="stylesheet" href="css/Page.css">
+    <script src="../../../../puppy/common.js"></script>
+    <script>var orderPic = [], DATA_TOOL = { suggestList: [], scrollPlay: [] }, guidance = { sug: 1100002138, lb: 1100002137, order: 1100002136 }, urlArr = [], randomNum = Math.random(); for (key in guidance) { var url = '<script src="' + $.getVariable("EPG:pathPub") + "/dataSource/GuidanceContents/" + guidance[key] + "/index.js?" + randomNum + '"><\/script>'; urlArr.push(url) } var scriptStr = urlArr.join(""); function GuidanceContentListCallback(r, i) { i == guidance.sug && r && r.length && (DATA_TOOL.suggestList = r), i == guidance.lb && r && r.length && (DATA_TOOL.scrollPlay = r), i == guidance.order && orderPic.push({ orderPic: $.getPic(r[0].pics, [3]) ? $.getVariable("EPG:origin") + $.getPic(r[0].pics, [3]) : "", pic: $.getPic(r[0].pics, [6]) ? $.getVariable("EPG:origin") + $.getPic(r[0].pics, [6]) : "" }) } document.write(scriptStr)</script>
+    <script src="js/Page.js"></script>
+</head>
+
+<body onload="initPage()">
+    <div id="isOrder"></div>
+    <div id="scrollPlay"></div>
+    <div id="suggestList"></div>
+    <div id="seconedList">
+        <div id="seconedList0"><img src="images/primary.png"></div>
+        <div id="seconedList1"><img src="images/junior.png"></div>
+        <div id="seconedList2"><img src="images/senior.png"></div>
+        <div id="seconedList3"><img src="images/sprint2.png"></div>
+    </div>
+    <div id="orderFocus"></div>
+    <div id="scrollImgFocus"></div>
+    <div id="suggestFocus0" class="sugF"></div>
+    <div id="suggestFocus1" class="sugF"></div>
+    <div id="seconedFocus0" class="seconedPage"></div>
+    <div id="seconedFocus1" class="seconedPage"></div>
+    <div id="seconedFocus2" class="seconedPage"></div>
+    <div id="seconedFocus3" class="seconedPage"></div>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="page-view-size" content="1280*720">
+  <title>大转盘</title>
+  <link rel="stylesheet" href="/pub/galaxy/css/public.css">
+  <link rel="stylesheet" href="css/Page.css">
+  <script src="/pub/galaxy/puppy/common.js"></script>
+  <script src="../common/tv.js"></script>
+  <script src="../request/request.js"></script>
+  <script src="js/Page.js"></script>
+  <script>
+    // var PRIZE, SUGGEST, MARQUEE, PACKAGE, PUS_COUNT, LINK, GUIDENCE = {
+    //   prizeId: '1100007724',
+    //   suggestId: '1100007730',
+    //   marqueeId: '1100007725',
+    //   intervalId: '1100007726',
+    //   packageId: '1100007727',
+    //   actvId: '5f92388919aa291c63be7f7e',
+    //   linkId: '1100007728',
+    //   bgId: '1100007729'
+    // }
+    var PRIZE, SUGGEST, MARQUEE, PACKAGE, PUS_COUNT, LINK, GUIDENCE = {
+      prizeId: $$.search.get("prizeId"),
+      suggestId: $$.search.get("suggestId"),
+      marqueeId: $$.search.get("marqueeId"),
+      intervalId: $$.search.get("intervalId"),
+      packageId: $$.search.get("packageId"),
+      actvId: $$.search.get("actvId"),
+      linkId: $$.search.get("linkId"),
+      bgId: $$.search.get("bgId")
+    }
+  </script>
+</head>
+
+<body onload="load()"></body>
+
+</html>

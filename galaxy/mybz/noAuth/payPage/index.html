@@ -1,0 +1,48 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="page-view-size" content="1920*1080">
+  <title>支付页面</title>
+  <link rel="stylesheet" href="css/Page.css">
+  <link rel="stylesheet" href="../../../css/public.css">
+  <link rel="stylesheet" href="css/Page.css">
+  <script src="../../../puppy/common.js"></script>
+  <script src="/pub/galaxy/mybz/userSystem/service/service.js"></script>
+  <script src="js/Page.js"></script>
+</head>
+
+<body onload="initPage()" unonload="unload()">
+  <div id="payList"></div>
+  <div id="payEntrance"></div>
+  <div id="billPayCue"></div>
+  <div id="pointPayCue"></div>
+  <div id="paySuccess">
+    <div id="playVideo" class="tipsBtn">观看节目</div>
+    <div id="gotoPurchase" class="tipsBtn">我的订购</div>
+  </div>
+  <div id="paySuccess2">
+    <div id="gotoPurchase2" class="tipsBtn">我的订购</div>
+    <div id="paySuccess2Return" class="tipsBtn">返回</div>
+  </div>
+  <div id="payFail">
+    <div id="rePay" class="tipsBtn">重新支付</div>
+    <div id="payFailReturn" class="tipsBtn">返回</div>
+  </div>
+  <div id="netError">
+    <div id="tryAgain" class="tipsBtn">重试</div>
+    <div id="netErrorReturn" class="tipsBtn">返回</div>
+  </div>
+  <div id="noBillPay">
+    <div id="noBillPayTitle">您的账号不允许订购产品!</div>
+    <div id="noBillPayReturn" class="tipsBtn">返回</div>
+  </div>
+  <div id="pointPayFail">
+    <div id="pointFailInfo"></div>
+    <div id="rePointPay" class="tipsBtn">重新支付</div>
+    <div id="pointPayFailReturn" class="tipsBtn">返回</div>
+  </div>
+  <div id="tokenError"></div>
+</body>
+
+</html>

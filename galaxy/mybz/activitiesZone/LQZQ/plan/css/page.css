@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 1280px;
+    height: 720px;
+    background: url('../images/bg.jpg') no-repeat;
+}
+.none {
+    display: none;
+}
+.allModel{
+    position: absolute;
+    top: 100px;
+    left: 61px;
+    width: 1159px;
+    height: 530px;
+}
+.allModel div {
+    position: absolute;
+    width: 378px;
+    height: 259px;
+    color: white;
+}
+.allModel .r-text {
+    bottom: 0px;
+    width: 100%;
+    height: 38px;
+    line-height: 38px;
+    font-size: 20px;
+    padding: 0 5px;
+    text-align: center;
+    background: url('../images/mask.png') no-repeat;
+}
+.ol1, .ol2 {
+    box-shadow: 2px 2px 6px 0px black;
+}
+.ol1 {
+    top: 0;
+}
+.ol2 {
+    top: 271px;
+}
+.col1 {
+    left: 0;
+}
+.col2 {
+    left: 391px;
+}
+.col3 {
+    left: 781px;
+}
+.allModel div.focusBorder {
+    border: 2px solid white;
+    box-shadow: 0 0 5px 1px white;
+    -webkit-transform: scale(1.1);
+    z-index: 999;
+}
+#pageUpBtn, #pageDownBtn {
+    position: absolute;
+    top: 542px;
+    width: 98px;
+    height: 40px;
+    line-height: 40px;
+    color: white;
+    text-align: center;
+    border-radius: 9px;
+    font-size: 21px;
+    background: #19283c;
+}
+#pageUpBtn.focusBorder, #pageDownBtn.focusBorder {
+    background: url('../images/focusBtn.png') no-repeat;
+    background-size: 100% 100%;
+    border: none;
+    box-shadow: none;
+}
+#pageUpBtn {
+    left: 435px;
+}
+img {
+    width: 100%;
+    height: 100%;
+}
+#pageDownBtn {
+    left: 628px;
+}
+#pageNumBox{
+    width: 91px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+    position: absolute;
+    top: 542px;
+    left: 536px;
+    color: white;
+}
+#pageNumBox span {
+    font-size: 18px;
+}
+#noData {
+    position: absolute;
+    top: 100px;
+    left: 60px;
+    width: 1159px;
+    height: 531px;
+    line-height: 531px;
+    text-align: center;
+    color: white;
+    font-size: 32px;
+}

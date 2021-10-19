@@ -1,0 +1,791 @@
+body {
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+  font-family: '微软雅黑';
+  background: transparent url(../images/bg.jpg) 0 0 no-repeat
+}
+
+#payList {
+  position: absolute;
+  left: 215px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  width: 487px
+}
+
+#payList .payList {
+  margin-bottom: 52px;
+  width: 487px;
+  height: 130px;
+  line-height: 130px;
+  text-indent: 204px;
+  color: #fff;
+  background: url(../images/listBg.png) 0 0 no-repeat;
+  font-size: 39px;
+  position: relative
+}
+
+#payList .last {
+  margin-bottom: 0
+}
+
+#payList .payList::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 85px;
+  top: 50%;
+  -webkit-transform: translateY(-50%)
+}
+
+#payList .wechat::after {
+  background: url(../images/wechat.png) 0 0 no-repeat;
+  width: 68px;
+  height: 59px
+}
+
+#payList .alipay::after {
+  background: url(../images/ipay.png) 0 0 no-repeat;
+  width: 65px;
+  height: 57px
+}
+
+#payList .bestpay::after {
+  background: url(../images/flypay.png) 0 center no-repeat;
+  width: 67px;
+  height: 67px
+}
+
+#payList .pointpay::after {
+  background: url(../images/point.png) 0 0 no-repeat;
+  width: 64px;
+  height: 64px
+}
+
+#payList .billpay::after {
+  background: url(../images/bill.png) 0 0 no-repeat;
+  width: 66px;
+  height: 57px
+}
+
+/* 微信支付 */
+#payList .wechatpay::after {
+  background: url(../images/wechatPay.png) 0 0 no-repeat;
+  width: 67px;
+  height: 65px
+}
+
+
+#payList .phonepay::after {
+  background: url(../images/phonepay.png) 0 0 no-repeat;
+  width: 67px;
+  height: 59px
+}
+
+#payList .payList.current.focusBorder {
+  background: url(../images/listFBg.png) 0 0 no-repeat;
+  color: #441e16;
+  -webkit-transform: scale(1.05)
+}
+
+#payList .wechat.current.focusBorder::after {
+  background: url(../images/wechatF.png) 0 0 no-repeat;
+  width: 81px;
+  height: 70px
+}
+
+#payList .alipay.current.focusBorder::after {
+  background: url(../images/ipayF.png) 0 0 no-repeat;
+  width: 81px;
+  height: 70px
+}
+
+#payList .bestpay.current.focusBorder::after {
+  background: url(../images/flypayF.png) 0 center no-repeat;
+  width: 81px;
+  height: 81px
+}
+
+#payList .pointpay.current.focusBorder::after {
+  background: url(../images/pointF.png) 0 0 no-repeat;
+  width: 81px;
+  height: 81px
+}
+
+#payList .billpay.current.focusBorder::after {
+  background: url(../images/billF.png) 0 0 no-repeat;
+  width: 81px;
+  height: 70px
+}
+
+/* 微信支付聚焦 */
+#payList .wechatpay.current.focusBorder::after {
+  background: url(../images/wechatPayF.png) 0 0 no-repeat;
+  width: 83px;
+  height: 82px
+}
+
+#payList .phonepay.current.focusBorder::after {
+  background: url(../images/phonepayF.png) 0 0 no-repeat;
+  width: 83px;
+  height: 73px
+}
+
+#payList .payList.current {
+  color: #c7a371
+}
+
+#payList .wechat.current::after {
+  background: url(../images/wechatC.png) 0 0 no-repeat;
+  width: 68px;
+  height: 59px
+}
+
+#payList .alipay.current::after {
+  background: url(../images/ipayC.png) 0 0 no-repeat;
+  width: 65px;
+  height: 57px
+}
+
+#payList .bestpay.current::after {
+  background: url(../images/flypayC.png) 0 center no-repeat;
+  width: 67px;
+  height: 67px
+}
+
+#payList .pointpay.current::after {
+  background: url(../images/pointC.png) 0 0 no-repeat;
+  width: 64px;
+  height: 64px
+}
+
+#payList .billpay.current::after {
+  background: url(../images/billC.png) 0 0 no-repeat;
+  width: 66px;
+  height: 57px
+}
+
+#payList .phonepay.current::after {
+  background: url(../images/phonepayC.png) 0 0 no-repeat;
+  width: 67px;
+  height: 59px
+}
+
+#payList .current::before {
+  content: '';
+  display: block;
+  width: 89px;
+  height: 40px;
+  position: absolute;
+  left: 516px;
+  top: 45px;
+  background: url(../images/arrow.png) 0 0 no-repeat
+}
+
+#payList .current.focusBorder::before {
+  content: '';
+  display: block;
+  width: 89px;
+  height: 40px;
+  position: absolute;
+  left: 516px;
+  top: 45px;
+  background: url(../images/arrow.png) 0 0 no-repeat
+}
+
+/* 支付提醒外框 */
+#payEntrance {
+  position: absolute;
+  width: 811px;
+  height: 811px;
+  left: 892px;
+  top: 132px
+}
+
+/* !支付提醒黄色大字 */
+#payEntrance .cue {
+  position: absolute;
+  width: 213px;
+  height: 41px;
+  left: 134px;
+  background: url(../images/cue.png) 0 0 no-repeat
+}
+
+/* 手机支付的!支付提醒*/
+#payEntrance.point .cue{
+  top: 90px
+}
+/* 微信支付宝翼支付付款的!支付提醒*/
+#payEntrance.qrCode .cue {
+  top: 46px
+}
+/* 账单支付的!支付提醒*/
+#payEntrance.bill .cue {
+  top: 120px
+}
+/* 微信支付的!支付提醒*/
+#payEntrance.wechatPay .cue {
+  top: 80px
+}
+/* 账单支付（套装）的!支付提醒*/
+#payEntrance.bill .cue.pro {
+  top: 150px
+}
+
+/* 微信支付界面 */
+#wechatPayImg {
+  position: absolute;
+  width: 389px;
+  height: 384px;
+  left: 211px;
+  top: 355px;
+}
+
+#wechatPayImg img {
+  width: 100%;
+  height: 100%
+}
+
+/* 支付提醒的文案 */
+#payEntrance .cueContent {
+  position: absolute;
+  width: 543px;
+  left: 134px;
+  font-size: 34px;
+  color: #fff;
+  line-height: 47px
+}
+/* 套装支付提醒文案 */
+#payEntrance .cueContentPro {
+  position: absolute;
+  width: 543px;
+  left: 134px;
+  font-size: 34px;
+  color: #fff;
+  line-height: 47px;
+  letter-spacing: 5px;
+}
+/* 微信支付宝翼支付付款文案 */
+#payEntrance.qrCode .cueContent {
+  top: 104px
+}
+/* 套装：微信支付宝翼支付付款文案 */
+#payEntrance.qrCode .cueContentPro {
+  top: 104px;
+  letter-spacing: 2px;
+}
+/* 手机支付文案 */
+#payEntrance.point .cueContent {
+  line-height: 55px;
+  top: 145px
+}
+/* 账单支付文案 */
+#payEntrance.bill .cueContent {
+  line-height: 55px;
+  top: 176px
+}
+/* 账单支付(套装)文案 */
+#payEntrance.bill .cueContentPro {
+  line-height: 55px;
+  top: 206px;
+  letter-spacing: 2px;
+}
+/* 微信支付文案 */
+#payEntrance.wechatPay .cueContent {
+  line-height: 55px;
+  top: 130px
+}
+#payEntrance.wechatPay .price {
+  color:#f4d9a2;
+}
+
+/* 微信支付宝翼支付界面 */
+#qrCodeImg {
+  position: absolute;
+  width: 543px;
+  height: 543px;
+  left: 134px;
+  top: 224px
+}
+
+#qrCodeImg img {
+  width: 100%;
+  height: 100%
+}
+/* 连续包月微信支付 */
+#qrCodeImg.renew {
+  position: absolute;
+  width: 443px;
+  height: 443px;
+  left: 184px;
+  top: 304px;
+}
+
+#qrCodeImg.renew img {
+  width: 100%;
+  height: 100%
+}
+
+.packageName,
+.payType,
+.price,
+.payUser {
+  color: #fff
+}
+
+.price {
+  font-size: 54px;
+  line-height: 46.5px;
+  position: relative;
+  top: 9px;
+  left: 0
+}
+
+.autoPay{
+  color: #f4d9a2
+}
+
+#billOk,
+#billReturn {
+  position: absolute;
+  top: 622px
+}
+
+#billOk {
+  left: 132px
+}
+
+#billReturn {
+  left: 430px
+}
+
+/* 手机号输入框 */
+#phone {
+  position: absolute;
+  width: 535px;
+  height: 80px;
+  left: 133px;
+  top: 370px;
+  line-height: 80px;
+  text-indent: 48px;
+  color: #fff;
+  background: url(../images/phoneBg.png) 0 0 no-repeat;
+  font-size: 36px
+}
+
+#phone.focusBorder::after {
+  content: '';
+  display: block;
+  width: 557px;
+  height: 102px;
+  top: -11px;
+  left: -9px;
+  background: url(../images/phoneF.png) 0 0 no-repeat;
+  position: absolute
+}
+
+/* 手机号码错误提示 */
+#phoneError {
+  position: absolute;
+  width: 328px;
+  height: 41px;
+  left: 133px;
+  top: 456px;
+  visibility: hidden;
+  background: url(../images/phoneError.png) 0 0 no-repeat
+}
+
+/* 验证码输入框 */
+#identCode {
+  position: absolute;
+  width: 314px;
+  height: 80px;
+  left: 133px;
+  top: 504px;
+  line-height: 80px;
+  text-indent: 48px;
+  color: #fff;
+  background: url(../images/identCodeBg.png) 0 0 no-repeat;
+  font-size: 36px
+}
+
+#identCode.focusBorder::after {
+  content: '';
+  display: block;
+  width: 336px;
+  height: 102px;
+  top: -11px;
+  left: -9px;
+  background: url(../images/identCodeF.png) 0 0 no-repeat;
+  position: absolute
+}
+/* 验证码错误提示 */
+#identCodeError {
+  position: absolute;
+  width: 246px;
+  height: 41px;
+  left: 133px;
+  top: 590px;
+  visibility: hidden;
+  background: url(../images/identCodeError.png) 0 0 no-repeat
+}
+
+/* 获取验证码按钮 */
+#getIdentCode {
+  position: absolute;
+  left: 465px;
+  top: 504px;
+  font-size: 33px
+}
+
+#pointOk,
+#pointReturn {
+  position: absolute;
+  top: 639px
+}
+
+#pointOk {
+  left: 133px
+}
+
+#pointReturn {
+  left: 424px
+}
+
+.btn {
+  width: 253px;
+  height: 87px;
+  background: url(../images/btnBg.png) 0 0 no-repeat;
+  line-height: 87px;
+  color: #898989;
+  font-size: 39px;
+  text-align: center
+}
+
+#getIdentCode.btn {
+  width: 206px;
+  height: 80px;
+  line-height: 80px;
+  background: url(../images/getIdentCodeBg.png) 0 0 no-repeat
+}
+
+#getIdentCode.btn.focusBorder {
+  background: url(../images/getIdentCodeF.png) 0 0 no-repeat
+}
+
+.btn.focusBorder {
+  background: url(../images/btnFBg.png) 0 0 no-repeat;
+  color: #441e16
+}
+
+.tipsBtn {
+  width: 215px;
+  height: 67px;
+  background: url(../images/tipsBtn.png) 0 0 no-repeat;
+  line-height: 67px;
+  color: #898989;
+  font-size: 39px;
+  text-align: center
+}
+
+.tipsBtn.focusBorder {
+  background: url(../images/tipsBtnF.png) 0 0 no-repeat;
+  color: #441e16
+}
+
+#billPayCue {
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+  background: url(../images/billPayCueBg.png) 0 0 no-repeat;
+  visibility: hidden
+}
+
+#billPayCue .cueContent {
+  position: absolute;
+  width: 688px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  top: 476px;
+  font-size: 33px;
+  color: #fff;
+  line-height: 47px
+}
+
+#billPayOk,
+#billPayReturn {
+  position: absolute;
+  top: 610px
+}
+
+#billPayOk {
+  left: 698px
+}
+
+#billPayReturn {
+  left: 1007px
+}
+
+#pointPayCue {
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+  background: url(../images/billPayCueBg.png) 0 0 no-repeat;
+  visibility: hidden
+}
+
+#pointPayCue .cueContent {
+  position: absolute;
+  width: 688px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  top: 476px;
+  font-size: 33px;
+  color: #fff;
+  line-height: 47px
+}
+
+#pointPayOk,
+#pointPayReturn {
+  position: absolute;
+  top: 610px
+}
+
+#pointPayOk {
+  left: 698px
+}
+
+#pointPayReturn {
+  left: 1007px
+}
+
+#paySuccess {
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+  background: url(../images/paySuccessBg.png) 0 0 no-repeat;
+  visibility: hidden
+}
+
+#gotoPurchase,
+#playVideo {
+  position: absolute;
+  top: 610px
+}
+
+#playVideo {
+  left: 698px
+}
+
+#gotoPurchase {
+  left: 1007px
+}
+
+#paySuccess2 {
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+  background: url(../images/paySuccessBg.png) 0 0 no-repeat;
+  visibility: hidden
+}
+
+#gotoPurchase2,
+#paySuccess2Return {
+  position: absolute;
+  top: 610px
+}
+
+#gotoPurchase2 {
+  left: 698px
+}
+
+#paySuccess2Return {
+  left: 1007px
+}
+
+#payFail {
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+  background: url(../images/payFailBg.png) 0 0 no-repeat;
+  visibility: hidden
+}
+
+#payFailReturn,
+#rePay {
+  position: absolute;
+  top: 610px
+}
+
+#rePay {
+  left: 698px
+}
+
+#payFailReturn {
+  left: 1007px
+}
+
+#netError {
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+  background: url(../images/netErrorBg.png) 0 0 no-repeat;
+  visibility: hidden
+}
+
+#netErrorReturn,
+#tryAgain {
+  position: absolute;
+  top: 610px
+}
+
+#tryAgain {
+  left: 698px
+}
+
+#netErrorReturn {
+  left: 1007px
+}
+
+#noBillPay {
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+  background: url(../images/cueBg.png) 0 0 no-repeat;
+  visibility: hidden
+}
+
+#noBillPayTitle {
+  color: #fff;
+  position: absolute;
+  width: 688px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  top: 476px;
+  font-size: 33px;
+  text-align: center
+}
+
+#noBillPayReturn {
+  position: absolute;
+  top: 610px;
+  left: 50%;
+  -webkit-transform: translateX(-50%)
+}
+
+#tokenError {
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+  background: url(../images/tokenError.png) 0 0 no-repeat;
+  visibility: hidden
+}
+
+#pointPayFail {
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+  background: url(../images/cueBg.png) 0 0 no-repeat;
+  visibility: hidden
+}
+
+#pointFailInfo {
+  position: absolute;
+  width: 688px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  top: 476px;
+  font-size: 33px;
+  color: #fff;
+  line-height: 47px;
+  text-align: center
+}
+
+#pointPayFailReturn,
+#rePointPay {
+  position: absolute;
+  top: 610px
+}
+
+#rePointPay {
+  left: 698px
+}
+
+#pointPayFailReturn {
+  left: 1007px
+}
+
+.hide {
+  visibility: hidden
+}
+
+/* 账单支付账户验证码模块 */
+#randomCodeBox {
+  position: absolute;
+  width: 532.5px;
+  height: 165px;
+  top: 460px;
+  left: 134px;
+  color: #fff;
+  font-size: 33px
+}
+
+#accountCode {
+  position: absolute;
+  width: 100%;
+  height: 52.5px;
+  text-align: left;
+  line-height: 52.5px;
+  top: 0;
+  left: 0
+}
+
+#randomNum {
+  color: #f4d9a2;
+  font-size: 36px
+}
+
+#inputCode {
+  position: absolute;
+  width: 100%;
+  height: 52.5px;
+  text-align: left;
+  line-height: 52.5px;
+  top: 52.5px;
+  left: 0
+}
+
+#randomCode {
+  position: absolute;
+  width: 194px;
+  height: 81px;
+  top: 37.5px;
+  left: 352.5px;
+  line-height: 81px;
+  text-indent: 48px;
+  color: #f4d9a2;
+  font-size: 36px;
+  background: url(../images/randomCodeBg.png) no-repeat
+}
+
+#randomCode.focusBorder:after {
+  content: "";
+  position: absolute;
+  left: -9px;
+  top: -9px;
+  width: 206px;
+  height: 93px;
+  background: url(../images/randomCodeF.png) no-repeat
+}
+
+#errorMsg {
+  position: absolute;
+  width: 246px;
+  height: 41px;
+  bottom: 15px;
+  left: 0;
+  background: url(../images/identCodeError.png) no-repeat
+}

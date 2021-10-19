@@ -1,0 +1,268 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="page-view-size" content="1280*720">
+    <title>locals</title>
+    <script src="../../../../puppy/common.js"></script>
+    <script src="../../../../../resources/Refactoring/common_v6.js"></script>
+    <script src="../../../../../resources/js/iptv_reserve/iptv_reserve_lib_v6.js"></script>
+    <script src="../nav/js/nav.js"></script>
+    <script src="../components/table/js/table.js"></script>
+    <script src="../components/ajax/js/getData.js"></script>
+    <script src="../components/auth/js/page.js"></script>
+    <script src="../components/msgBox/js/msgBox.js"></script>
+    <link rel="stylesheet" href="./css/Page.css">
+    <script src="./js/Page.js"></script>
+</head>
+
+<body onload="initPage();">
+    <div id="container">
+        <div id="no" class="no nones">暂无数据</div>
+        <!-- 侧边栏 -->
+        <ul class="sidebar"></ul>
+        <div class="content">
+            <div id="noData" class="noData nones">暂无数据</div>
+            <div id="main1" class="main1"></div>
+            <div id="main2" class="main2">
+                <ul>
+                    <li class="li1 rows row1 col col1 nones">
+                        <span class="free"><img src="./images/free.png" alt=""></span>
+                        <div class="line1">
+                            <span></span>
+
+                        </div>
+                        <div class="line2">
+                            <div class="vs">
+                                <span class="team team1"><img src="" alt=""><span class="teamName hteam"></span></span>
+                                <span class="state"></span>
+                                <span class="team team2"><span class="teamName vteam"></span><img src="" alt=""></span>
+                            </div>
+                            <div class="type">
+                                <span id="d_1_1" class="d whole"></span>
+                                <span id="d_1_2" class="d info"></span>
+                                <span id="d_1_3" class="d tvod"></span>
+                                <span id="d_1_4" class="d order"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="li2 rows row1 col col2 nones">
+                        <span class="free"><img src="./images/free.png" alt=""></span>
+                        <div class="line1">
+                            <span></span>
+
+                        </div>
+                        <div class="line2">
+                            <div class="vs">
+                                <span class="team team1"><img src="" alt=""><span class="teamName hteam"></span></span>
+                                <span class="state"></span>
+                                <span class="team team2"><span class="teamName vteam"></span><img src="" alt=""></span>
+                            </div>
+                            <div class="type">
+                                <span id="d_2_1" class="d whole"></span>
+                                <span id="d_2_2" class="d info"></span>
+                                <span id="d_2_3" class="d tvod"></span>
+                                <span id="d_2_4" class="d order"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="li3 rows row2 col col1 nones">
+                        <span class="free"><img src="./images/free.png" alt=""></span>
+                        <div class="line1">
+                            <span></span>
+                        </div>
+                        <div class="line2">
+                            <div class="vs">
+                                <span class="team team1"><img src="" alt=""><span class="teamName hteam"></span></span>
+                                <span class="state"></span>
+                                <span class="team team2"><span class="teamName vteam"></span><img src="" alt=""></span>
+                            </div>
+                            <div class="type">
+                                <span id="d_3_1" class="d whole"></span>
+                                <span id="d_3_2" class="d info"></span>
+                                <span id="d_3_3" class="d tvod"></span>
+                                <span id="d_3_4" class="d order"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="li4 rows row2 col col2 nones">
+                        <span class="free"><img src="./images/free.png" alt=""></span>
+                        <div class="line1">
+                            <span></span>
+
+                        </div>
+                        <div class="line2">
+                            <div class="vs">
+                                <span class="team team1"><img src="" alt=""><span class="teamName hteam"></span></span>
+                                <span class="state"></span>
+                                <span class="team team2"><span class="teamName vteam"></span><img src="" alt=""></span>
+                            </div>
+                            <div class="type">
+                                <span id="d_4_1" class="d whole"></span>
+                                <span id="d_4_2" class="d info"></span>
+                                <span id="d_4_3" class="d tvod"></span>
+                                <span id="d_4_4" class="d order"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="li5 rows row3 col col1 nones">
+                        <span class="free"><img src="./images/free.png" alt=""></span>
+                        <div class="line1">
+                            <span></span>
+
+                        </div>
+                        <div class="line2">
+                            <div class="vs">
+                                <span class="team team1"><img src="" alt=""><span class="teamName hteam"></span></span>
+                                <span class="state"></span>
+                                <span class="team team2"><span class="teamName vteam"></span><img src="" alt=""></span>
+                            </div>
+                            <div class="type">
+                                <span id="d_5_1" class="d whole"></span>
+                                <span id="d_5_2" class="d info"></span>
+                                <span id="d_5_3" class="d tvod"></span>
+                                <span id="d_5_4" class="d order"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="li6 rows row3 col col2 nones">
+                        <span class="free"><img src="./images/free.png" alt=""></span>
+                        <div class="line1">
+                            <span></span>
+
+                        </div>
+                        <div class="line2">
+                            <div class="vs">
+                                <span class="team team1"><img src="" alt=""><span class="teamName hteam"></span></span>
+                                <span class="state"></span>
+                                <span class="team team2"><span class="teamName vteam"></span><img src="" alt=""></span>
+                            </div>
+                            <div class="type">
+                                <span id="d_6_1" class="d whole"></span>
+                                <span id="d_6_2" class="d info"></span>
+                                <span id="d_6_3" class="d tvod"></span>
+                                <span id="d_6_4" class="d order"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="li7 rows row4 col col1 nones">
+                        <span class="free"><img src="./images/free.png" alt=""></span>
+                        <div class="line1">
+                            <span></span>
+
+                        </div>
+                        <div class="line2">
+                            <div class="vs">
+                                <span class="team team1"><img src="" alt=""><span class="teamName hteam"></span></span>
+                                <span class="state"></span>
+                                <span class="team team2"><span class="teamName vteam"></span><img src="" alt=""></span>
+                            </div>
+                            <div class="type">
+                                <span id="d_7_1" class="d whole"></span>
+                                <span id="d_7_2" class="d info"></span>
+                                <span id="d_7_3" class="d tvod"></span>
+                                <span id="d_7_4" class="d order"></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="li8 rows row4 col col2 nones">
+                        <span class="free"><img src="./images/free.png" alt=""></span>
+                        <div class="line1">
+                            <span></span>
+                        </div>
+                        <div class="line2">
+                            <div class="vs">
+                                <span class="team team1"><img src="" alt=""><span class="teamName hteam"></span></span>
+                                <span class="state"></span>
+                                <span class="team team2"><span class="teamName vteam"></span><img src="" alt=""></span>
+                            </div>
+                            <div class="type">
+                                <span id="d_8_1" class="d whole"></span>
+                                <span id="d_8_2" class="d info"></span>
+                                <span id="d_8_3" class="d tvod"></span>
+                                <span id="d_8_4" class="d order"></span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div id="page" class="page">
+                    <span id="prev" class="prev"></span>
+                    <span class="cAt"><span class="curr"></span>/<span class="total"></span></span>
+                    <span id="next" class="next"></span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- 弹出框 -->
+    <div id="tips">
+        <div class="top">
+            <span class="team team1"><img src="" alt=""><span class="teamName hteam"></span></span>
+            <span class="date"></span>
+            <span class="team team2"><span class="teamName vteam"></span><img src="" alt=""></span>
+        </div>
+        <ul class="record">
+            <li>
+                <span class="left"></span>
+                <span class="score">总得分</span>
+                <span class="right"></span>
+            </li>
+            <li>
+                <span class="left"></span>
+                <span class="score">篮板</span>
+                <span class="right"></span>
+            </li>
+            <li>
+                <span class="left"></span>
+                <span class="score">前场篮板</span>
+                <span class="right"></span>
+            </li>
+            <li>
+                <span class="left"></span>
+                <span class="score">助攻</span>
+                <span class="right"></span>
+            </li>
+            <li>
+                <span class="left"></span>
+                <span class="score">抢断</span>
+                <span class="right"></span>
+            </li>
+            <li>
+                <span class="left"></span>
+                <span class="score">失误</span>
+                <span class="right"></span>
+            </li>
+            <li>
+                <span class="left"></span>
+                <span class="score">罚球</span>
+                <span class="right"></span>
+            </li>
+            <li>
+                <span class="left"></span>
+                <span class="score">三分球</span>
+                <span class="right"></span>
+            </li>
+            <li>
+                <span class="left"></span>
+                <span class="score">犯规</span>
+                <span class="right"></span>
+            </li>
+            <li>
+                <span class="left"></span>
+                <span class="score">最大领先</span>
+                <span class="right"></span>
+            </li>
+            <li>
+                <span class="left"></span>
+                <span class="score">投篮命中率</span>
+                <span class="right"></span>
+            </li>
+        </ul>
+        <div id="close" class="close"></div>
+    </div>
+</body>
+
+</html>

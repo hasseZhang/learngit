@@ -1,0 +1,119 @@
+body {
+  background: url(../images/bg.jpg) no-repeat transparent
+}
+#page .focusBorder {
+  background: -webkit-linear-gradient(left, rgba(237, 165, 2, 1) 0%, rgba(234, 139, 13, 1) 100%);
+  z-index: 1;
+  border-radius: 30px;
+  border: none
+}
+#list {
+  font-size: 18px;
+  color: #fff;
+  width: 1161px;
+  height: 481px;
+  position: absolute;
+  top: 130px;
+  left: 61px
+}
+#list .access {
+  width: 354px;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  position: absolute;
+  left: 1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical
+}
+#list .number {
+  width: 431px;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  position: absolute;
+  left: 356px
+}
+#list .times {
+  width: 365px;
+  height: 80px;
+  text-align: center;
+  line-height: 80px;
+  position: absolute;
+  left: 788px
+}
+#list0 {
+  position: absolute;
+  top: 81px;
+  left: 0
+}
+#list1 {
+  position: absolute;
+  top: 161px;
+  left: 0
+}
+#list2 {
+  position: absolute;
+  top: 241px;
+  left: 0
+}
+#list3 {
+  position: absolute;
+  top: 321px;
+  left: 0
+}
+#list4 {
+  position: absolute;
+  top: 401px;
+  left: 0
+}
+#page {
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  bottom: 37px;
+  left: 446px;
+  width: 386px;
+  height: 45px;
+  line-height: 45px
+}
+#pageNum {
+  width: 98px;
+  position: absolute;
+  left: 143px
+}
+#pageUp {
+  width: 143px;
+  height: 45px;
+  position: absolute;
+  left: 0;
+  border: 2px solid #3a294d;
+  border-radius: 30px
+}
+#pageDown {
+  width: 143px;
+  height: 45px;
+  position: absolute;
+  right: 0;
+  border: 2px solid #3a294d;
+  border-radius: 30px
+}
+#flag {
+  line-height: 30px;
+  color: #fff;
+  height: 30px;
+  text-align: right;
+  font-size: 18px;
+  position: absolute;
+  top: 90px;
+  right: 60px;
+  background: url(../images/flag.png) no-repeat transparent 0 center;
+  padding-left: 102px
+}
+.dark {
+  color: #515057
+}

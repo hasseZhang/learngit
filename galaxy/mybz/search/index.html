@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="page-view-size" content="1920*1080">
+        <title>search</title>
+        <link rel="stylesheet" href="../../css/public.css">
+        <link rel="stylesheet" href="css/Page.css">
+        <script src="../../puppy/common.js"></script>
+        <script src="js/Page.js"></script>
+    </head>
+    <body onload="load()" onunload="unload()">
+        <div id="wrap">
+            <div id="leftContent">
+                <div id="search"><span id="inputPanel"></span><span id="markwords">输入片名的首字母</span>
+                </div>
+                <div id="empty" class="topBtn">清空</div>
+                <div id="delete" class="topBtn">删除</div>
+                <div id="keybroad">
+                <div id="T9Key" class="hide">
+                    <div id="T9_0" class="T9">
+                        <div id="T9_0_0">0</div>
+                        <div id="T9_0_1">1</div>
+                        <div class="T9_heartBox hide">
+                            <div class="T9_heart left">0</div>
+                            <div class="T9_heart right">1</div>
+                        </div>
+                    </div>
+                    <div id="T9_1" class="T9">
+                        <div class="T9_num">2</div>
+                        <div class="T9_english">ABC</div>
+                        <div class="T9_heartBox hide">
+                            <div class="T9_heart top">2</div>
+                            <div class="T9_heart left">A</div>
+                            <div class="T9_heart mid">B</div>
+                            <div class="T9_heart right">C</div>
+                        </div>
+                    </div>
+                    <div id="T9_2" class="T9">
+                        <div class="T9_num">3</div>
+                        <div class="T9_english">DEF</div>
+                        <div class="T9_heartBox hide">
+                            <div class="T9_heart top">3</div>
+                            <div class="T9_heart left">D</div>
+                            <div class="T9_heart mid">E</div>
+                            <div class="T9_heart right">F</div>
+                        </div>
+                    </div>
+                    <div id="T9_3" class="T9">
+                        <div class="T9_num">4</div>
+                        <div class="T9_english">GHI</div>
+                        <div class="T9_heartBox hide">
+                            <div class="T9_heart top">4</div>
+                            <div class="T9_heart left">G</div>
+                            <div class="T9_heart mid">H</div>
+                            <div class="T9_heart right">I</div>
+                        </div>
+                    </div>
+                    <div id="T9_4" class="T9">
+                        <div class="T9_num">5</div>
+                        <div class="T9_english">JKL</div>
+                        <div class="T9_heartBox hide">
+                            <div class="T9_heart top">5</div>
+                            <div class="T9_heart left">J</div>
+                            <div class="T9_heart mid">K</div>
+                            <div class="T9_heart right">L</div>
+                        </div>
+                    </div>
+                    <div id="T9_5" class="T9">
+                        <div class="T9_num">6</div>
+                        <div class="T9_english">MNO</div>
+                        <div class="T9_heartBox hide">
+                            <div class="T9_heart top">6</div>
+                            <div class="T9_heart left">M</div>
+                            <div class="T9_heart mid">N</div>
+                            <div class="T9_heart right">O</div>
+                        </div>
+                    </div>
+                    <div id="T9_6" class="T9">
+                        <div class="T9_num">7</div>
+                        <div class="T9_english">PQRS</div>
+                        <div class="T9_heartBox hide">
+                            <div class="T9_heart top">7</div>
+                            <div class="T9_heart left">P</div>
+                            <div class="T9_heart mid">Q</div>
+                            <div class="T9_heart right">R</div>
+                            <div class="T9_heart bottom">S</div>
+                        </div>
+                    </div>
+                    <div id="T9_7" class="T9">
+                        <div class="T9_num">8</div>
+                        <div class="T9_english">TUV</div>
+                        <div class="T9_heartBox hide">
+                            <div class="T9_heart top">8</div>
+                            <div class="T9_heart left">T</div>
+                            <div class="T9_heart mid">U</div>
+                            <div class="T9_heart right">V</div>
+                        </div>
+                    </div>
+                    <div id="T9_8" class="T9">
+                        <div class="T9_num">9</div>
+                        <div class="T9_english">WXYZ</div>
+                        <div class="T9_heartBox hide">
+                            <div class="T9_heart top">9</div>
+                            <div class="T9_heart left">W</div>
+                            <div class="T9_heart mid">X</div>
+                            <div class="T9_heart right">Y</div>
+                            <div class="T9_heart bottom">Z</div>
+                        </div>
+                    </div>
+                </div>
+                <ul id="allKey" class="hide">
+                    <li class="allKey" id="allKey0"><span>A</span>
+                    </li>
+                    <li class="allKey" id="allKey1"><span>B</span>
+                    </li>
+                    <li class="allKey" id="allKey2"><span>C</span>
+                    </li>
+                    <li class="allKey" id="allKey3"><span>D</span>
+                    </li>
+                    <li class="allKey" id="allKey4"><span>E</span>
+                    </li>
+                    <li class="allKey" id="allKey5"><span>F</span>
+                    </li>
+                    <li class="allKey" id="allKey6"><span>G</span>
+                    </li>
+                    <li class="allKey" id="allKey7"><span>H</span>
+                    </li>
+                    <li class="allKey" id="allKey8"><span>I</span>
+                    </li>
+                    <li class="allKey" id="allKey9"><span>J</span>
+                    </li>
+                    <li class="allKey" id="allKey10"><span>K</span>
+                    </li>
+                    <li class="allKey" id="allKey11"><span>L</span>
+                    </li>
+                    <li class="allKey" id="allKey12"><span>M</span>
+                    </li>
+                    <li class="allKey" id="allKey13"><span>N</span>
+                    </li>
+                    <li class="allKey" id="allKey14"><span>O</span>
+                    </li>
+                    <li class="allKey" id="allKey15"><span>P</span>
+                    </li>
+                    <li class="allKey" id="allKey16"><span>Q</span>
+                    </li>
+                    <li class="allKey" id="allKey17"><span>R</span>
+                    </li>
+                    <li class="allKey" id="allKey18"><span>S</span>
+                    </li>
+                    <li class="allKey" id="allKey19"><span>T</span>
+                    </li>
+                    <li class="allKey" id="allKey20"><span>U</span>
+                    </li>
+                    <li class="allKey" id="allKey21"><span>V</span>
+                    </li>
+                    <li class="allKey" id="allKey22"><span>W</span>
+                    </li>
+                    <li class="allKey" id="allKey23"><span>X</span>
+                    </li>
+                    <li class="allKey" id="allKey24"><span>Y</span>
+                    </li>
+                    <li class="allKey" id="allKey25"><span>Z</span>
+                    </li>
+                    <li class="allKey" id="allKey26"><span>1</span>
+                    </li>
+                    <li class="allKey" id="allKey27"><span>2</span>
+                    </li>
+                    <li class="allKey" id="allKey28"><span>3</span>
+                    </li>
+                    <li class="allKey" id="allKey29"><span>4</span>
+                    </li>
+                    <li class="allKey" id="allKey30"><span>5</span>
+                    </li>
+                    <li class="allKey" id="allKey31"><span>6</span>
+                    </li>
+                    <li class="allKey" id="allKey32"><span>7</span>
+                    </li>
+                    <li class="allKey" id="allKey33"><span>8</span>
+                    </li>
+                    <li class="allKey" id="allKey34"><span>9</span>
+                    </li>
+                    <li class="allKey" id="allKey35"><span>0</span>
+                    </li>
+                </ul>
+                </div>
+                <div id="t9keyBtn" class="bottomBtn">T9键盘</div>
+                <div id="allkeyBtn" class="bottomBtn">全键盘</div>
+            </div>
+            <div id="middleContent">
+                <div id="hot">
+                    <div class="title hide"></div>
+                </div>
+                <div class="arrow"></div>
+                <div id="searchList" class="hide">
+                    <div class="title hide"></div>
+                    <ul class="classList"></ul>
+                    <div class="qbTotal hide"></div>
+                    <!-- 条数 -->
+                </div>
+                <div id="error" class="hide"></div>
+                <div id="noSearch" class="hide"></div>
+            </div>
+            <div class="rightContent">
+                <div id="detailCon" class="hide">
+                    <div class="vipCon">
+                    </div>
+                    <div class="pic noPic">
+                        <img src="" alt="">
+                    </div>
+                    <div class="detailInfo">
+                        <div class="title">
+                            <div class="channelName"></div>
+                            <div class="channelScore"></div>
+                        </div>
+                        <div id="yearInfo" class="hide"></div>
+                        <div id="programName" class="hide"></div>
+                        <div id="crewInfo" class="hide">
+                            <div><span>导演：</span><span class="Director"></span></div>
+                            <div><span>主演：</span><span class="Actor"></span></div>
+                            <div class="desc"><span>简介：</span><div class="Introduce"></div></div>
+                        </div>
+                    </div>
+                </div>
+                <div id="detailError" class="hide"></div>
+            </div>
+            <div id="shadow" class="hide"></div>
+        </div>
+    </body>
+</html>

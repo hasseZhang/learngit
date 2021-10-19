@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="page-view-size" content="1920*1080">
+    <title>我的IPTV</title>
+    <link rel="stylesheet" href="../../css/public.css">
+    <link rel="stylesheet" href="css/Page.css">
+    <link rel="stylesheet" href="../../plugin/version/css/Page.css">
+    <script src="../../puppy/common.js"></script>
+    <script src="js/Page.js"></script>
+    <script src="../../plugin//version/version.js"></script>
+    <script>
+          document.write('<script src="' + $.getVariable("EPG:pathPub") + "/dataSource/GuidanceContents/"+($.getVariable('EPG:isTest') ? '1100006021':'1100006180')+"/index.js?" + new Date().getTime() + '"><\/script>');
+          document.write('<script src="' + $.getVariable("EPG:pathPub") + "/dataSource/GuidanceContents/"+($.getVariable('EPG:isTest') ? '1100006022':'1100006188')+"/index.js?" + new Date().getTime() + '"><\/script>');
+    </script>
+</head>
+
+<body onload="load()" unload="unload()">
+    <div class="iptvTitle">
+        我的IPTV
+    </div>
+    <div class="iptvContent">
+        <ul id="iptvList">
+        </ul>
+    </div>
+</body>
+
+</html>

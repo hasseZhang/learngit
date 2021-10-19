@@ -1,0 +1,406 @@
+body {
+    background: url(../images/bg.jpg) no-repeat transparent
+}
+
+#addName {
+    font-size: 26px;
+    position: absolute;
+    top: 54px;
+    left: 60px;
+    color: #fff
+}
+
+#address.focusBorder {
+    z-index: 1;
+    -webkit-box-shadow: 0 0 0 3px #fff;
+    border-radius: 10px
+}
+
+#tab0.focusBorder,
+#tab1.focusBorder {
+    background: -webkit-linear-gradient(left, rgba(237, 165, 2, 1) 0%, rgba(234, 139, 13, 1) 100%);
+    z-index: 1;
+    border-radius: 5px
+}
+
+#page .focusBorder {
+    background: -webkit-linear-gradient(left, rgba(237, 165, 2, 1) 0%, rgba(234, 139, 13, 1) 100%);
+    border-radius: 30px;
+    border: none
+}
+
+.dark {
+    color: #515057
+}
+
+#address {
+    width: 1160px;
+    height: 102px;
+    line-height: 33px;
+    color: #fff;
+    font-size: 18px;
+    box-sizing: border-box;
+    background: url(../images/address.png) no-repeat transparent;
+    position: absolute;
+    padding-left: 20px;
+    top: 97px;
+    left: 60px
+}
+
+#address #linkAddress {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    width: 835px;
+    white-space: normal
+}
+
+#tab0 {
+    color: #fff;
+    font-size: 26px;
+    font-family: "微软雅黑";
+    text-align: center;
+    width: 153px;
+    height: 42px;
+    line-height: 42px;
+    position: absolute;
+    top: 227px;
+    left: 60px;
+    background: url(../images/huiyuan.png) no-repeat transparent
+}
+
+#tab1 {
+    color: #fff;
+    font-size: 26px;
+    font-family: "微软雅黑";
+    text-align: center;
+    width: 153px;
+    height: 42px;
+    line-height: 42px;
+    position: absolute;
+    top: 227px;
+    left: 221px;
+    background: url(../images/jifen.png) no-repeat transparent
+}
+
+#list {
+    width: 1160px;
+    height: 397px;
+    position: relative;
+    top: 278px;
+    left: 60px;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    background: url(../images/listBg.png) no-repeat transparent
+}
+
+#list .listTitle {
+    width: 1280px;
+    height: 57px;
+    text-align: center;
+    color: #fff;
+    font-size: 25px;
+    line-height: 57px;
+    position: absolute;
+    left: -60px;
+}
+
+#list .listWarp {
+    width: 1280px;
+    height: 345px;
+    padding-top: 5px;
+    position: absolute;
+    top: 52px;
+    left: -60px;
+    overflow: hidden
+}
+
+.listWarp .list_item {
+    width: 1160px;
+    height: 68px;
+    margin-left: 60px;
+}
+
+.list_item>div {
+    height: 68px;
+    line-height: 68px;
+}
+
+.listTitle>div {
+    height: 57px;
+    line-height: 57px;
+}
+
+.listTitle .t0,
+.list_item .t0 {
+    width: 208px;
+    text-align: center;
+    position: absolute;
+    left: 61px
+}
+
+.list_item .t0 img {
+    width: 98px;
+    height: 56px;
+    margin-top: 6px;
+}
+
+.listTitle .t1,
+.list_item .t1 {
+    width: 528px;
+    text-align: center;
+    position: absolute;
+    left: 268px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical
+}
+
+.listTitle .t2,
+.list_item .t2 {
+    width: 147px;
+    text-align: center;
+    position: absolute;
+    left: 807px
+}
+
+.listTitle .t3,
+.list_item .t3 {
+    width: 272px;
+    text-align: center;
+    position: absolute;
+    left: 946px
+}
+
+.list_item.focusBorder {
+    background: -webkit-linear-gradient(left, rgba(237, 165, 2, 1) 0%, rgba(234, 139, 13, 1) 100%);
+    z-index: 1;
+    box-shadow: 0 0 3px 3px #fff;
+    -webkit-transform: scale(1.02);
+    transform: scale(1.02);
+    border-radius: 5px;
+}
+
+.list_item.focusBorder .t0 {
+    left: 14px;
+}
+
+.list_item.focusBorder .t1 {
+    left: 212px;
+}
+
+.list_item.focusBorder .t2 {
+    left: 740px;
+}
+
+.list_item.focusBorder .t3 {
+    left: 874px;
+}
+
+#list #progressBar {
+    height: 395px;
+    width: 10px;
+    background-color: rgba(254, 254, 254, .05);
+    position: absolute;
+    right: -32px;
+    top: 0;
+    border-radius: 3px
+}
+
+#list #progressBar #strip {
+    position: absolute;
+    height: 73px;
+    width: 7px;
+    top: 0;
+    left: 1px;
+    background: -webkit-linear-gradient(left, #5a5a5a, #919191);
+    border-radius: 4px;
+    transition: top .6s .1s
+}
+
+#tab1.current,
+#tab0.current {
+    color: rgba(237, 165, 2, 1);
+}
+
+#prizeWarp {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1280px;
+    height: 720px;
+    z-index: 2;
+    background: url(../images/prize.png) 0 0 no-repeat
+}
+
+#prize {
+    position: absolute;
+    top: 153px;
+    left: 336px;
+    width: 604px;
+    height: 442px;
+    color: #fff;
+}
+
+#prize>div {
+    float: left;
+}
+
+#prize .prizeName {
+    width: 70%;
+    height: 78px;
+    line-height: 78px;
+    margin-left: 15%;
+    text-align: center;
+    font-size: 30px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#prize .prizeImg {
+    width: 122px;
+    height: 122px;
+    margin: 11px 0 0 81px;
+}
+
+#prize .prizeImg img {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+#prize .prizeList {
+    width: 311px;
+    height: 218px;
+    margin-left: 30px;
+}
+
+.prizeList>div:not([class='des']) {
+    height: 30px;
+    line-height: 30px;
+    font-size: 19px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.prizeList .des {
+    font-size: 19px;
+}
+
+.prizeList .des p {
+    word-break: break-all;
+    float: left;
+    margin: 3px 0 0 0;
+    padding: 0;
+}
+
+.prizeList .des p:last-child {
+    width: 185px;
+    height: 78px
+}
+
+#button {
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    margin-top: 63px;
+}
+
+#button>div {
+    width: 158px;
+    height: 45px;
+    float: left;
+    background: rgba(0, 0, 0, .2);
+    border-radius: 30px;
+    border: 1px solid rgb(255, 255, 255, .2)
+}
+
+#button>div.focusBorder {
+    background: -webkit-linear-gradient(left, rgba(237, 165, 2, 1) 0%, rgba(234, 139, 13, 1) 100%);
+    z-index: 1;
+    color: #000;
+    border: none
+}
+
+#button.hasUse .goUse {
+    margin-left: 128px;
+}
+
+#button.hasUse .back {
+    margin-left: 62px
+}
+
+#button.noUse .goUse {
+    display: none;
+}
+
+#button.noUse .back {
+    margin-left: 224px;
+}
+
+/* 对不同类型的处理 */
+.actual>div:not([class='des']) {
+    height: 35px;
+    line-height: 35px;
+}
+
+.singleCard>div:not([class='des']) {
+    height: 32px;
+    line-height: 32px;
+}
+
+.card>div:not([class='des']),
+.qr>div:not([class='des']) {
+    height: 44px;
+    line-height: 44px;
+}
+
+.doubleCard .des p:last-child {
+    height: 60px;
+}
+
+/* #page {
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+    position: absolute;
+    bottom: 37px;
+    left: 440px;
+    width: 389px;
+    height: 45px;
+    line-height: 45px
+}
+
+#pageNum {
+    width: 98px;
+    position: absolute;
+    left: 143px
+}
+
+#pageUp {
+    width: 143px;
+    height: 45px;
+    position: absolute;
+    left: 0;
+    border: 2px solid #3a294d;
+    border-radius: 30px
+}
+
+#pageDown {
+    width: 143px;
+    height: 45px;
+    position: absolute;
+    right: 0;
+    border: 2px solid #3a294d;
+    border-radius: 30px
+} */

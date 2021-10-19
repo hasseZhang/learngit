@@ -1,0 +1,344 @@
+body {
+    width: 1920px;
+    height: 1080px;
+    margin: 0;
+    overflow: hidden;
+    background-color: transparent;
+    position: relative;
+    top: 0;
+    left: 0;
+    font-family: '微软雅黑'
+}
+
+img:not([src]),
+img[src=""] {
+    opacity: 0
+}
+
+.hide {
+    display: none
+}
+
+.hidden{
+    visibility: hidden;
+}
+
+.MoviesVip,
+.childrenVip,
+.Qiyivip,
+.SinglepointVip {
+    width: 108px;
+    height: 37px;
+    position: absolute;
+    right: 4px;
+    top: 4px
+}
+.MoviesVip {
+    background: url(images/public/MoviesVip.png) no-repeat;
+    background-size: 100% 100%
+}
+.childrenVip {
+    background: url(images/public/childrenVip.png) no-repeat;
+    background-size: 100% 100%
+}
+.Qiyivip {
+    background: url(images/public/Qiyivip.png) no-repeat;
+    background-size: 100% 100%
+}
+.SinglepointVip {
+    background: url(images/public/SinglepointVip.png) no-repeat;
+    background-size: 100% 100%
+}
+
+.vipCorner {
+    width: 79px;
+    height: 34px;
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    background: url(images/public/vipCorner.png) 0 0 no-repeat
+}
+.vipCorner2 {
+    width: 79px;
+    height: 34px;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    background: url(images/public/vipCorner2.png) 0 0 no-repeat;
+    background-size: 79px 34px;
+}
+
+.focusBorder.dft {
+    background: -webkit-linear-gradient(right, #eba600 0, #ec8a0d 100%);
+    color: #1b0f01
+}
+
+.marquee {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-indent: 10px;
+    text-align: center
+}
+
+@-webkit-keyframes marquee {
+    0% {
+        -webkit-transform: translateX(0)
+    }
+
+    100% {
+        -webkit-transform: translateX(-100%)
+    }
+}
+
+.public_shake {
+    -webkit-animation: public_shake .4s;
+    animation: public_shake .4s
+}
+
+@-webkit-keyframes public_shake {
+    0% {
+        -webkit-transform: translateX(10px)
+    }
+
+    20% {
+        -webkit-transform: translateX(-10px)
+    }
+
+    40% {
+        -webkit-transform: translateX(6px)
+    }
+
+    60% {
+        -webkit-transform: translateX(-6px)
+    }
+
+    80% {
+        -webkit-transform: translateX(2px)
+    }
+
+    100% {
+        -webkit-transform: translateX(0)
+    }
+}
+
+.sys_num {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 5%;
+    z-index: 10000;
+    text-align: right;
+    background: 0 0
+}
+
+.sys_num .sys_num_msg {
+    display: inline-block;
+    font-family: 微软雅黑;
+    font-size: 108px;
+    color: #e89908;
+    padding: .1em 2em;
+    height: 1.2em;
+    line-height: 1.2em
+}
+
+@media screen and (width:1280px) {
+    body {
+        width: 1280px !important;
+        height: 720px !important
+    }
+
+    .sys_num .sys_num_msg {
+        font-size: 72px
+    }
+}
+
+.sys_volume {
+    position: absolute;
+    left: 128px;
+    top: 924px;
+    width: 912px;
+    height: 84px;
+    background: url(images/sys_volume/bg.png) no-repeat;
+    z-index: 100
+}
+
+.sys_volume::before {
+    content: "";
+    position: absolute;
+    left: 25px;
+    top: 25px;
+    width: 43px;
+    height: 34px;
+    background: url(images/sys_volume/icon.png) no-repeat;
+}
+
+.sys_volume.mute::before {
+    background: url(images/sys_volume/mute.png) no-repeat;
+    width: 42px
+}
+
+.sys_volume .proWrap {
+    position: absolute;
+    left: 78px;
+    top: 38px;
+    height: 8px;
+    width: 742px
+}
+
+.sys_volume .progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 8px;
+    background: #ebaf08;
+    border-radius: 8px
+}
+
+.sys_volume .progress::after {
+    content: "";
+    position: absolute;
+    right: -18px;
+    top: -6px;
+    width: 20px;
+    height: 20px;
+    background: url(images/sys_volume/point.png) #ebaf08;
+    border-radius: 50%
+}
+
+.sys_volume.mute .progress::after {
+    background-color: transparent
+}
+
+.sys_volume .num {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 78px;
+    height: 84px;
+    line-height: 84px;
+    text-align: center;
+    color: #fff;
+    font-size: 34px
+}
+
+.sys_volume_mute {
+    position: absolute;
+    left: 138px;
+    top: 620px;
+    z-index: 999;
+    width: 80px;
+    height: 65px;
+    background: url(images/sys_volume/silence.png) no-repeat
+}
+
+.sys_reserve {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -227px;
+    margin-left: -402px;
+    width: 804px;
+    height: 454px;
+    z-index: 1;
+    background: url(images/sys_reserve/bg.png) no-repeat;
+    font-size: 40px;
+    text-align: center;
+    color: #fff;
+    min-width: 500px
+}
+
+.sys_reserve div {
+    width: 100%
+}
+
+.sys_reserve .programWrap {
+    position: absolute;
+    top: 145px;
+    left: 0;
+    text-align: center
+}
+
+.sys_reserve .program {
+    width: auto;
+    display: inline-block;
+    color: #ebaf08;
+    position: relative
+}
+
+.sys_reserve.vip .program::after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 79px;
+    height: 34px;
+    right: -98px;
+    top: 11px;
+    background: url(images/public/vipCorner2.png) 0 0 no-repeat
+}
+
+.hint {
+    position: absolute;
+    top: 230px
+}
+
+.sys_reserve.replace .programWrap {
+    top: 170px
+}
+
+.sys_reserve.replace .hint {
+    display: none
+}
+
+.sys_reserve .title {
+    position: absolute;
+    top: 70px
+}
+
+.sys_reserve.replace .dft {
+    top: 280px
+}
+
+.sys_reserve .dft {
+    width: 215px;
+    height: 67px;
+    line-height: 67px;
+    border-radius: 40px;
+    position: absolute;
+    border: 3px solid #777;
+    top: 330px
+}
+
+.sys_reserve .left {
+    left: 120px
+}
+
+.sys_reserve .right {
+    left: 420px
+}
+
+.sys_reserve .focusBorder {
+    border: 3px solid transparent
+}
+
+.noPic {
+    background: url(images/background/taibiao.png) 50% 50% no-repeat;
+    background-size: auto 70%
+}
+.noContent {
+    background: url(images/background/taibiao.png) 50% 50% no-repeat !important;
+    background-size: auto 70% !important
+}
+
+.noPlayer,
+.playError {
+    background: url(images/background/tb_player.png) 50% 50% no-repeat;
+    background-size: 100% 100%
+}
+
+.autoText {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: center
+}

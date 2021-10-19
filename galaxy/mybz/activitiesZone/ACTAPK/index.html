@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="page-view-size" content="1920*1080">
+	<title>活动平台中间页</title>
+	<link rel="stylesheet" href="../../../plugin/apk/Page.css">
+	<script src="../../../puppy/common.js"></script>
+	<script src="../../../plugin/apk/page.js"></script>
+	<script>
+		var appName = 'com.shida.jliptv.jliptvepgplus';
+
+		var sign = $.getVariable("EPG:isTest") ? 'activity_test' : 'activity';
+
+		var server = $.getVariable("EPG:isTest") ? 'http://10.128.4.10:3000/skip/' : 'http://10.128.46.10:3000/skip/';
+
+		var apkUrl = "";
+
+		var userId = $.getVariable("EPG:userId");
+
+		var urlMap = {
+			vod: {
+				contentType: '0'
+			},
+			serial: {
+				contentType: '2'
+			},
+			scenes: {
+				contentType: '3'
+			},
+			search: {
+				contentUri: 'search/'
+			},
+			history: {
+				contentUri: 'playHistory/'
+			},
+			coupon: {
+				contentUri: 'myCoupon/?type=MC&currentMenu=nouse'
+			},
+			collect: {
+				contentUri: 'favorite/?type=FAV&currentMenu=dbjm'
+			},
+			liveCollect: {
+				contentUri: 'favorite/?type=FAV&currentMenu=zbpd'
+			},
+			liveBook: {
+				contentUri: 'liveNote/'
+			},
+			buy: {
+				contentUri: 'myOrder/?type=MO&currentMenu=sfb'
+			},
+			subject: {
+				contentType: '4'
+			},
+			live: {},
+			liveback: {
+				contentUri: 'channelList/'
+			},
+			category: {},
+			vip: {}
+		}
+
+		function GetQueryString(name) {
+			var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+			var r = ("?" + window.location.href.split('?')[1]).substr(1).match(reg);
+			if (r != null) return unescape(r[2]);
+			return null;
+		}
+
+		function load() {
+
+			apkUrl = GetQueryString("url");
+
+			if (apkUrl) {
+				var params = "{ \"intentType\":0, \"appName\":\"" +
+					appName + "\",\"extra\":[{\"name\":\"username\",\"value\":\"" + userId +
+					"\"},{\"name\":\"url\",\"value\":\"" + apkUrl +
+					"\"},{\"name\":\"platform\",\"value\":\"" + 2 + "\"}]}"
+				APK.pullApk(sign, appName, params);
+				top.APKTopic.once('EVENT_IPTV_RESUME', function () {
+					getUrlInfo()
+				});
+			} else {
+				$.back();
+			}
+
+		}
+
+		function getUrlInfo() {
+			var url = server + userId;
+			$.get(url, {
+				success: function (res) {
+					goToPage(JSON.parse(res).skipUrl);
+					res = null;
+				},
+				error: function () {
+					$.back();
+				}
+			});
+		}
+
+		function goToPage(url) {
+
+			var goUrl = url || '';
+
+			if (/(type=.*)/.test(goUrl)) {
+
+				var searchInfo = $.search.get('', RegExp.$1);
+
+				var type = searchInfo.type;
+
+				var contentId = searchInfo.contentID;
+
+				switch (type) {
+					case 'vip':
+						var productId = searchInfo.productId;
+						urlMap[type].contentUri = "noAuth/homeTransfer/index.html?successUrl=menu://VIPDY.0&id=" + productId +
+							"&refer=indexVipEntrance";
+						break;
+					case 'live':
+						var channelId = searchInfo.channelId;
+						urlMap[type].contentUri = "channel://" + channelId;
+						break;
+					case 'category':
+						var menuType = searchInfo.categoryId || 'DY.0';
+						urlMap[type].contentUri = "menu://" + menuType;
+						break;
+					case 'subject':
+						var subjectId = searchInfo.subjectID || '20002110000000000000000000006152';
+						urlMap[type].contentUri = subjectId ? "detailPage/" + top.getFTPFilePath(subjectId, "").slice(0, -1) +
+							"/index.html" : '';
+						break;
+					default:
+						break;
+				}
+
+				var params = {
+					contentType: urlMap[type].contentType || '7',
+					contentUri: urlMap[type].contentUri,
+					contentId: contentId,
+					categoryId: 'actApk',
+				};
+				$.gotoDetail(params, true)
+			} else {
+				$.back();
+			}
+		}
+
+		function unload() {
+			APK.clearTime();
+		}
+	
+	</script>
+</head>
+
+<body onload="load()" onunload="unload()">
+
+</body>
+
+</html>

@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="page-view-size" content="1920*1080">
+	<title>tvod</title>
+	<link rel="stylesheet" href="../../css/public.css">
+	<link rel="stylesheet" href="css/channel.css">
+	<style>
+		.channelInfo {
+			position: absolute;
+			width: 1920px;
+			height: 240px;
+			left: 0;
+			bottom: 0;
+			background: url(images/zhibo/channelInfo/bg.png) 0 0 repeat-x
+		}
+
+		.channelInfo .cName,
+		.channelInfo .cNum {
+			position: absolute;
+			left: 5px;
+			width: 220px;
+			height: 30px;
+			line-height: 30px;
+			font-size: 30px;
+			text-align: center;
+			color: #fff;
+			overflow: hidden;
+			white-space: nowrap;
+			text-overflow: ellipsis
+		}
+
+		.channelInfo .cNum {
+			bottom: 67px
+		}
+
+		.channelInfo .cName {
+			bottom: 24px
+		}
+
+		.channelInfo .title {
+			position: absolute;
+			bottom: 23px;
+			left: 229px;
+			font-size: 30px
+		}
+
+		.channelInfo .nextChanenl,
+		.channelInfo .playing {
+			line-height: 38px;
+			height: 38px
+		}
+
+		.channelInfo .ti {
+			color: #ebaf08
+		}
+
+		.channelInfo .playTime {
+			color: #e8e8e8;
+			margin-right: 29px
+		}
+
+		.channelInfo .channelName {
+			color: #e8e8e8
+		}
+
+		.channelCue {
+			position: absolute;
+			width: 401px;
+			height: 60px;
+			right: 30px;
+			top: 26px;
+			background: url(images/zhibo/cue/cue.png) 0 0 no-repeat
+		}
+
+		.backPannelAd {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width: 1033px;
+			height: 541px;
+			-webkit-transform: translate(-50%, -50%);
+			background-color: rgba(0, 0, 0, .9); 
+		}
+
+		.backPannelAd .title {
+			width: 1033px;
+			height: 470px;			
+		}
+		.backPannelAd .title .pic{
+			width: 100%;
+			height: 100%;
+		}
+		.backPannelAd .btn {
+			position: absolute;
+			width: 127px;
+			height: 42px;
+			top: 482px;
+			border: 3px solid #393638;
+			border-radius: 21px;
+			text-align: center;
+			color: #fff;
+			font-size: 24px;
+			line-height: 42px
+		}
+
+		.backPannelAd #leftBtnAd {
+			left: 315px
+		}
+
+		.backPannelAd #rightBtnAd {
+			left: 591px
+		}
+
+		.backPannelAd .btn.focusBorder {
+			background: -webkit-linear-gradient(left, #FFCC46 0, #FE8A0D 100%);
+			background-origin: border-box;
+			border: 3px solid rgba(52, 56, 65, 0);
+			color: #1b0f01
+		}
+
+
+		/* 原返回提示样式 */
+		.backPannel {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width: 804px;
+			height: 454px;
+			-webkit-transform: translate(-50%, -50%);
+			background: url(images/zhibo/tvod/panel.png) no-repeat
+		}
+
+		.backPannel .title {
+			position: absolute;
+			top: 92px;
+			width: 100%;
+			text-align: center;
+			font-size: 40px;
+			height: 60px;
+			line-height: 60px;
+			color: #fff
+		}
+
+		.backPannel .btn {
+			position: absolute;
+			width: 210px;
+			height: 60px;
+			top: 298px;
+			border: 3px solid #393638;
+			border-radius: 40px;
+			text-align: center;
+			color: #fff;
+			font-size: 36px;
+			line-height: 60px
+		}
+
+		.backPannel #leftBtn {
+			left: 140px
+		}
+
+		.backPannel #rightBtn {
+			left: 450px
+		}
+
+		.backPannel .btn.focusBorder {
+			background: -webkit-linear-gradient(left, #eba600 0, #ec8a0d 100%);
+			background-origin: border-box;
+			border: 3px solid rgba(52, 56, 65, 0);
+			color: #1b0f01
+		}
+		/* 原返回提示样式 */
+
+		.tVodCue {
+			position: absolute;
+			top: 26px;
+			right: 30px;
+			width: 455px;
+			height: 60px;
+			color: #e8e8e8;
+			font-size: 30px;
+			line-height: 60px;
+			text-indent: 70px;
+			text-align: left;
+			background: url(images/zhibo/tvod/cue.png) no-repeat
+		}
+
+		.control-panel .title .nextChanenl {
+			display: none
+		}
+
+		.control-panel .channelName {
+			overflow: visible;
+			left: 240px
+		}
+
+		.control-panel .playing {
+			height: 77px;
+			line-height: 77px
+		}
+
+		.control-panel .progress {
+			width: 1652px;
+			background: url(images/dianbo/progress/play_bar.png) 0 0 repeat-x
+		}
+
+		.control-panel .infos {
+			left: 1756px
+		}
+	</style>
+	<script src="../../puppy/common.js"></script>
+	<script src="/pub/galaxy/mybz/userSystem/service/service.js"></script>
+	<script src="js/channel.js"></script>
+	<script>$.addBackUrlRedefine(function () { });
+		$.playVideoRedefine(true);
+		$.playLiveOrRecRedefine(true);
+		var addPointsTime = 30 * 60 * 1e3;
+		setTimeout(function () {
+			USER_SERVCICE.addPoints({
+				pointtype: "102"
+			}, {});
+		}, addPointsTime);
+		var vl = null;
+		var channelId = $.page.channelId;
+		var channelIdOriginal = channelId;
+		var curPre = "即将播放: ";
+		var isGotoError = false;
+		var playingStartTime = '';
+		var playingEndTime = '';
+		var tVod = (function () {
+			function addprogress() {
+				$.pTool.add("progress", (function () {
+					var key = "progress",
+						autoHide,
+						moveStatus,
+						mp,
+						paramPercent = 100,
+						$panel,
+						$playingTime,
+						$playingName,
+						$nextTime,
+						$nextName,
+						$progressBar,
+						$infos,
+						$pointer,
+						$pauseTip;
+					function initDom() {
+						if (!$panel) {
+							$panel = $(`<div class="control-panel hide">
+		                    <div class="title">
+		                        <div class="playing">
+		                            <span class="ti">正在播放：</span><span class="playTime"></span><span class="channelName"></span>
+		                        </div>
+		                        <div class="nextChanenl">
+		                            <span class="ti">下一节目：</span><span class="playTime"></span><span class="channelName"></span>
+		                        </div>
+		                    </div>
+		                    <div class="progress">
+		                        <div class="progressBar"></div>
+		                    </div>
+		                    <div class="infos"></div>
+		                    <div class="pointer"></div>
+		                </div>`);
+							$playingTime = $('.playing .playTime', $panel);
+							$playingName = $('.playing .channelName', $panel);
+							$nextTime = $('.title .nextChanenl .playTime', $panel);
+							$nextName = $('.title .nextChanenl .channelName', $panel);
+							$progressBar = $('.progressBar', $panel);
+							$infos = $('.infos', $panel);
+							$pointer = $('.pointer', $panel);
+							$pauseTip = $('<div class="pauseTip hide"></div>').appendTo('body');
+							$panel.appendTo('body');
+							autoHide = $.AutoHide({
+								dom: $panel,
+								delay: 3000,
+								beforeShow: function () {
+									$.pTool.active(key);
+									$pauseTip.hide();
+								},
+								afterHide: function () {
+									$.pTool.deactive(key);
+									if ($.MP.state.seeking) {
+										$pointer.removeClass('forward rewind pause');
+									}
+									if (mp && mp.isState($.MP.state.paused)) {
+										$pointer.removeClass('pause');
+										$pauseTip.show();
+									}
+								}
+							});
+						}
+					}
+					function transferTime(t) {
+						return toTwo(Math.floor(t % 86400 / 3600)) + ':' + toTwo(Math.floor(t % 86400 % 3600 / 60)) + ':' + toTwo(t % 60);
+					}
+					function toTwo(n) {
+						return n < 10 ? '0' + n : '' + n;
+					}
+					function updateProgress(param) {
+						paramPercent = param.percent;
+						$progressBar.attr({
+							// 'nowTime':transferTime(param.curr)
+							'nowTime': new $.Date((new $.Date(playingStartTime) / 1e3 + param.curr) * 1e3).format("hh:mm:ss")
+						}).css({
+							width: paramPercent + "%"
+						});
+						// $infos.html(transferTime(param.total));
+						$infos.html(new $.Date(playingEndTime).format("hh:mm:ss"));
+						if (mp.isState($.MP.state.progress)) {
+							$pointer.removeClass('forward rewind');
+						}
+					}
+
+					function updateSeeking(param) {
+						updateProgress(param);
+						if (moveStatus === 'rewind') {
+							$pointer.removeClass('forward pause').addClass('rewind');
+						} else if (moveStatus === 'forward') {
+							$pointer.removeClass('rewind pause').addClass('forward');
+						}
+					}
+					function pannelVisible(show) {
+						if (show) {
+							autoHide.show();
+						} else {
+							autoHide.hide();
+						}
+					}
+					function rewind() {
+						pannelVisible(true);
+						$progressBar.removeClass("pauseBar");
+						if (paramPercent !== 0) {
+							moveStatus = 'rewind';
+							mp.rewind();
+						}
+						var volTag=$.pTool.get("advertVolume").getShowTag()
+						var pauseTag=$.pTool.get("advertPause").getShowTag()
+						if(volTag){$.pTool.get("advertVolume").deactive()}
+						if(pauseTag){$.pTool.get("advertPause").deactive()}
+						return true;
+					}
+					function forward() {
+						pannelVisible(true);
+						$progressBar.removeClass("pauseBar");
+						if (paramPercent !== 100) {
+							moveStatus = 'forward';
+							mp.forward();
+						}
+						var volTag=$.pTool.get("advertVolume").getShowTag()
+						var pauseTag=$.pTool.get("advertPause").getShowTag()
+						if(volTag){$.pTool.get("advertVolume").deactive()}
+						if(pauseTag){$.pTool.get("advertPause").deactive()}
+						return true;
+					}
+					return {
+						key: key,
+						dft: true,
+						keysDftMap: [
+							"KEY_LEFT",
+							"KEY_FAST_REWIND",
+							"KEY_RIGHT",
+							"KEY_FAST_FORWARD",
+							"KEY_PAUSE_PLAY",
+							"KEY_PAGEDOWN",
+							"KEY_PAGEUP",
+							"KEY_VOLUME_UP",
+							"KEY_VOLUME_DOWN",
+							"KEY_MUTE"
+						],
+						keysMap: {
+							"KEY_LEFT": rewind,
+							"KEY_FAST_REWIND": rewind,
+							"KEY_RIGHT": forward,
+							"KEY_FAST_FORWARD": forward,
+							"KEY_PAUSE_PLAY": function () {
+								var volTag=$.pTool.get("advertVolume").getShowTag();
+								mp.pauseOrResume();
+								pannelVisible(true);
+								if (mp.isState($.MP.state.paused)) {
+									initPauseAd();
+									if(volTag){$.pTool.get("advertVolume").deactive();}              
+									$pointer.removeClass("forward rewind");                    
+									$progressBar.addClass("pauseBar");
+									//$pointer.removeClass('forward rewind').addClass('pause');
+								} else {
+									$.pTool.get("advertPause").deactive();
+									$progressBar.removeClass("pauseBar");
+									$pointer.removeClass('pause');
+								}
+								return true;
+							},
+							"KEY_VOLUME_UP": function(){
+								var vol=mp.getVolume()+5;					
+								if(vol<=0){
+									$.pTool.get("advertVolume").deactive();
+								}else{
+									initVolumeAd();
+								}
+							},
+							"KEY_VOLUME_DOWN": function(){
+								var vol=mp.getVolume()-5;						
+								if(vol<=0){
+									$.pTool.get("advertVolume").deactive();
+								}else{
+									initVolumeAd();
+								}					
+							},
+							"KEY_MUTE": function () {
+								$.pTool.get("advertVolume").deactive();
+								// if(!mp.getMuteFlag()){
+								// 	$.pTool.get("advertVolume").deactive();
+								// }else{
+								// 	//initVolumeAd()
+								// 	$.pTool.get("advertPause").deactive();
+								// }
+							},
+							"KEY_OK": function () {
+								if (mp.isState($.MP.state.paused)) {
+									$.pTool.get("advertPause").deactive();
+                    				$progressBar.removeClass("pauseBar");
+									mp.resume();
+								}
+								pannelVisible(false);
+								return true;
+							},
+							"KEY_RETURN": function () {
+								var pauseTag=$.pTool.get("advertPause").getShowTag();
+								if(pauseTag){									
+									$.pTool.get("advertPause").deactive();
+									return true;
+								}
+								if (mp.isState($.MP.state.paused)) {
+									mp.resume();
+								}
+								pannelVisible(false);
+								return true;
+							},
+							"KEY_PAGEUP": function () {
+								if (paramPercent !== 0) {
+									mp.playFromStart();
+									pannelVisible(true);
+								}
+								moveStatus = 'rewind';
+								pannelVisible(true);
+								return true;
+							},
+							"KEY_PAGEDOWN": function () {
+								if (paramPercent !== 100) {
+									mp.playFromEnd();
+									pannelVisible(true);
+								}
+								moveStatus = 'forward';
+								pannelVisible(true);
+								return true;
+							}
+						},
+						init: function (player, opt) {
+							initDom();
+							mp = player;
+							mp.sub($.MP.state.progress, updateProgress);
+							mp.sub($.MP.state.seeking, updateSeeking);
+							mp.once($.MP.state.loaded, function (param) {
+								$.initVolume(mp);
+								//屏蔽音量组件按键逻辑
+								$.pTool.get("g_sys_volume").keysMap={
+									KEY_VOLUME_UP: function () {},
+									KEY_VOLUME_DOWN: function () {},
+									KEY_MUTE: function(){}
+								}
+								updateProgress(param);
+							});
+							return this;
+						},
+						setInfo: function (opt) {
+							$playingTime.html(opt.playing.time);
+							$playingName.html(opt.playing.name);
+						},
+						hidePauseTip: function () {
+							$pauseTip.hide();
+						},
+						changePlayer: function (player) {
+							mp = player;
+						},
+						active: function () {
+							pannelVisible(true);
+						},
+						deactive: function () {
+							pannelVisible(false);
+						},
+						cover: function () {
+
+						},
+						uncover: function () {
+
+						},
+						destroy: function () {
+
+						},
+						c_forward: function (time) {
+							if (typeof time !== 'undefined') {
+								if (time > 0) {
+									pannelVisible(true);
+									moveStatus = 'forward';
+									mp.seek(+time);
+								}
+							} else {
+								forward();
+							}
+							return true;
+						},
+						c_rewind: function (time) {
+							if (typeof time !== 'undefined') {
+								if (time > 0) {
+									pannelVisible(true);
+									moveStatus = 'rewind';
+									mp.seek(-time);
+								}
+							} else {
+								rewind();
+							}
+							return true;
+						},
+						c_seek: function (time) {
+							var nowTime = mp.getCurrentTime();
+							time = +time;
+							if (time > nowTime) {
+								moveStatus = 'forward';
+							} else if (time < nowTime) {
+								moveStatus = 'rewind';
+							} else {
+								return true;
+							}
+							pannelVisible(true);
+							mp.seek(+time + 'a');
+							return true;
+						},
+						c_pause: function () {
+							if (!mp.isState($.MP.state.paused)) {
+								pannelVisible(true);
+								mp.pause();
+								$pointer.removeClass('pause');
+							}
+							return true;
+						},
+						c_play: function () {
+							if (mp.isState($.MP.state.paused)) {
+								pannelVisible(true);
+								mp.resume();
+								$pointer.removeClass('forward rewind').addClass('pause');
+							}
+							return true;
+						}
+					};
+				})());
+			}
+			var pKey = "tVodBack";
+			var isActive = false;
+			var startTime = $.page.startTime;
+			var startDate = new $.Date().parse(startTime, "yyyyMMddhhmmss").format("yyyy-MM-dd");
+			var current = 0;
+			var data = [];
+			var nextData = [];
+			var vlData = [];
+			var nextVlData = [];
+			var backPannel = function () {
+				var $backPannel = null;
+				var $backPannelAd = null;
+				var $backPic = null;
+				var backPicPath = null;
+				var idArr = ["#leftBtn", "#rightBtn"]
+				var idArrAd = ["#leftBtnAd", "#rightBtnAd"]
+				var keysMap = {
+					"KEY_LEFT": function () {
+						if(backPicPath){
+							$.focusTo({ el: idArrAd[0] });
+						}else{
+							$.focusTo({ el: idArr[0] });
+						}
+						
+						return true;
+					},
+					"KEY_RIGHT": function () {
+						if(backPicPath){
+							$.focusTo({ el: idArrAd[1] });
+						}else{
+							$.focusTo({ el: idArr[1] });
+						}
+						return true;
+					},
+					"KEY_OK": function () {
+						var el = $.activeObj.el;
+						if (el === idArr[0]||el === idArrAd[0]) {//退出
+							$.back();
+						} else {// 返回
+							$.pTool.deactive(pKey);
+						}
+						return true;
+					},
+					"KEY_RETURN": function () {
+						var pauseTag=$.pTool.get("advertPause").getShowTag();
+						var volTag=$.pTool.get("advertVolume").getShowTag();
+						if(volTag){
+							$.pTool.get("advertVolume").deactive();
+							$.pTool.get("g_sys_volume").deactive();
+							return true;
+						}
+						if(vl.mp.isState($.MP.state.paused)){
+							if(pauseTag){
+								$.pTool.get("advertPause").deactive();
+								return true;		
+							}else{
+								if (isActive) {
+									$.pTool.deactive(pKey);
+								}
+								vl.mp.resume();
+								$.pTool.get('progress').hidePauseTip();							
+								return true;
+							}
+						}else{
+							if (isActive) {
+								$.pTool.deactive(pKey);
+							} else {
+								$.pTool.active(pKey);
+							}
+							return true;
+						}						
+					},
+					GA1: function () {
+						return true;
+					}
+				};
+				function hide() {
+					if ($backPannel) {
+						$backPannel.hide();
+					}
+					if ($backPannelAd) {
+						$backPannelAd.hide();
+					}
+				}
+				function showAd() {
+					if (!$backPannel) {
+						$backPannel = $(`<div class="backPannel hide"><div class="title">确定要退出吗?</div><div id="leftBtn" class="btn">退出</div><div id="rightBtn" class="btn">取消</div></div>`);
+						$backPannel.appendTo('body');
+					}
+					if (!$backPannelAd) {
+						$backPannelAd = $(`<div class="backPannelAd hide"><div class="title"><img class="pic" src=""></div><div id="leftBtnAd" class="btn">退出</div><div id="rightBtnAd" class="btn">取消</div></div>`);
+						$backPic = $(".pic", $backPannelAd);
+                		$backPic.attr({src: backPicPath}); 
+						$backPannelAd.appendTo('body');
+					}
+					if(backPicPath){
+						$backPannelAd.show();						
+						$.focusTo({
+							el: idArrAd[0]
+						})
+					}else{
+						$backPannel.show();
+						$.focusTo({
+							el: idArr[0]
+						})
+					}
+									
+				}
+				return {
+					key: pKey,
+					dft: true,
+					keysMap: keysMap,
+					keysDftMap: [
+						"KEY_RETURN"
+					],
+					active: function () {
+						isActive = true;
+						getAd(5,function(data) {
+							if (data && data.type=="1" && data.resourceid) {
+								backPicPath= $.getVariable("EPG:pathPic") + '/' + top.getFTPFilePath(data.resourceid,data.extension)				
+							}else{
+								backPicPath=""
+							}
+							showAd();
+						});						
+					},
+					deactive: function () {
+						isActive = false;
+						hide();
+						vl.mp.resume();
+					},
+					showAd: showAd,
+					hide: hide,
+					getShowTag: function(){return isActive}
+				};
+			};
+			var tVodCue = (function () {
+				var $tVodCue = null;
+				var autoHide = null;
+				var html = function (str) {
+					$(".tVodCue span").html(subCue(str));
+				};
+				return {
+					isShow: false,
+					show: function () {
+						if (!$tVodCue) {
+							$tVodCue = $('<div class="tVodCue hide">' + curPre + '<span></span></div>');
+							$tVodCue.appendTo('body');
+							autoHide = $.AutoHide({
+								dom: $tVodCue,
+								delay: 1000,
+								beforeShow: function () {
+									this.isShow = true;
+									html(data[current + 1] && data[current + 1].text || nextData[0].text || "暂未获取信息");
+								},
+								afterHide: function () {
+									this.isShow = false;
+								}
+							});
+						}
+						autoHide.show();
+					},
+					hide: function () {
+						if ($tVodCue) {
+							autoHide.hide();
+						}
+					}
+				};
+			})();
+			function formatTime(d) {
+				return new $.Date().parse(d, "yyyyMMddhhmmss").format("yyyy-MM-dd hh:mm:ss");
+			}
+			function subCue(str) {
+				return $.substringElLength(str, "30px", "225px").last;
+			}
+			function loadPlayBill(success, error) {
+				$.s.playbill.get({ date: startDate, id: channelId }, {
+					success: function (res) {
+						success && success(res)
+					},
+					error: function () { // 进入error
+						error && error();
+					}
+				});
+			}
+			function success(res) { // 初次获取节目单的回调函数
+				addprogress();
+				var playingTime = '';
+				var playingName = '';
+				var nextName = '';
+				vlData = [];
+				data = res.programs || [];
+				if (!data.length) { //执行error
+					goToError();
+					return;
+				}
+				$.UTIL.each(data, function (v, i) {
+					var vStartTime = v.starttime;
+					vlData[i] = {
+						startTime: vStartTime,
+						channelId: channelId
+					};
+					var pStartTime = formatTime(startTime);
+					if (pStartTime === vStartTime) {
+						playingTime = vStartTime.split(' ')[1];
+						playingName = v.text;
+						current = i;
+						nextTime = data[i + 1] && data[i + 1].starttime.split(' ')[1];
+						nextName = data[i + 1] && data[i + 1].text;
+						playingStartTime = v.starttime;
+						playingEndTime = v.endtime;
+					}
+				});
+				initVl(vlData);
+				$.pTool.get('progress').init(vl.mp);
+				$.pTool.get('channelList').setInfo({
+					channelId: channelId,
+					tvodStartTime: startTime
+				});
+				$.pTool.get('channelList').changeMp(vl.mp);
+				$.pTool.get('channelList').init(function () { });
+				$.pTool.get('progress').setInfo({
+					playing: {
+						time: '',
+						name: ''
+					}
+				});
+				var progressPlayTime;
+				if (playingTime) {
+					progressPlayTime = playingTime.slice(0, -3);
+				}
+				$.pTool.get('progress').setInfo({
+					playing: {
+						time: progressPlayTime || '',
+						name: playingName || '暂无信息'
+					}
+				});
+			}
+			function queryCHis() {
+				$.s.chanhis.query(null, {
+					success: function (ds) {
+						if (ds && ds.data.length) {
+							channelIdOriginal = ds.data[0].channelId;
+						}
+					}
+				});
+			}
+			function saveCHis() {
+				if (channelIdOriginal && channelId && channelIdOriginal !== channelId && $.getChanNum(channelId)) {
+					$.s.chanhis.add({
+						channelId: channelId
+					});
+				}
+			}
+			function goToChannel(st) {
+				$.playLiveOrRec({
+					channelId: channelId,
+					startTime: st
+				});
+			}
+			function initVl(ls) {
+				vl = new $.VideoList({
+					list: ls,
+					current: current,
+					loop: false,
+					auto: false,
+					loading: function (type) {
+						if (type === 'stream') {
+							$.pTool.get('progress').init(vl.mp);
+							vl.mp.once($.MP.state.loaded, function (param) {
+								sendVs($.getChanNum(channelId), param.total, data[current].text || '暂无信息', data[current].starttime.replace(/[ :-]/g, ''));
+							});
+							vl.mp.sub($.MP.state.progress, function (param) {
+								var state = vl.mp.isState($.MP.state.progress);
+								if (isActive && state) {
+									vl.mp.pause();
+								}
+								if (param.total && param.total - param.curr <= 5 && !tVodCue.isShow) {
+									if (channelCue.getIsShow()) {
+										channelCue.hide();
+									}
+									tVodCue.show();
+								}
+							});
+						}
+					},
+					onPlay: onPlay,
+					onEnd: onEnd,
+					onError: function () {
+						goToError();
+						return true;
+					}
+				});
+				vl.play();
+			}
+			function sendVs(channelNum, totalTime, tvodName, beginTime) {
+				$.vs.tvodPlay(channelNum, totalTime, tvodName, beginTime);
+			}
+			function onPlay() {
+				tVodCue.hide();
+				if (current === data.length - 1) {
+					startDate = new $.Date().parse(startDate, "yyyy-MM-dd");
+					startDate.setDate(startDate.getDate() + 1);
+					startDate = startDate.format("yyyy-MM-dd");
+					loadPlayBill(vl_pb_success);
+				}
+			}
+			function onEnd() {
+				var nowDate = new $.Date().format("yyyy-MM-dd hh:mm:ss");
+				++current;
+				if (current === data.length) { //最后一条,继续请求下一天的数据
+					function playTomorrow() {
+						data = [];
+						vlData.length = 0;
+						$.UTIL.each(nextData, function (item, index) {
+							data[index] = item;
+							vlData.push({
+								startTime: item.starttime,
+								channelId: channelId
+							});
+						});
+						current = 0;
+						playingStartTime = data[current].starttime;
+						playingEndTime = data[current].endtime;
+						$.pTool.get('progress').setInfo({
+							playing: {
+								time: data[current].starttime.split(' ')[1].slice(0, -3) || '',
+								name: data[current].text || '暂无信息'
+							}
+						});
+						$.pTool.get('channelList').setInfo({
+							channelId: channelId,
+							tvodStartTime: data[current].starttime.replace(/[:-\s]/g, '').substring(0, 12)
+						});
+						vl.playBy({ val: current });
+					}
+					if (nextData.length) {
+						playTomorrow();
+					} else {//error
+						goToError()
+					}
+					return;
+				}
+				if (nowDate < data[current].endtime) { //去直播
+					data[current].starttime = data[current].starttime.split('-').join('').split(' ').join('').split(':').join('').slice(0, 14);
+					goToChannel(data[current].starttime);
+					return;
+				}
+				playingStartTime = data[current].starttime;
+				playingEndTime = data[current].endtime;
+				$.pTool.get('progress').setInfo({
+					playing: {
+						time: data[current].starttime.split(' ')[1].slice(0, -3) || '',
+						name: data[current].text || '暂无信息'
+					}
+				});
+				$.pTool.get('channelList').setInfo({
+					channelId: channelId,
+					tvodStartTime: data[current].starttime.replace(/[:-\s]/g, '').substring(0, 12)
+				});
+				vl.playBy({ val: current });
+			}
+			function goToError() {
+				isGotoError = true;
+				$.gotoDetail($.urls.noTvod, true);
+			}
+			function vl_pb_success(res) {
+				nextVlData = [];
+				nextData = [];
+				nextData = res.programs || [];
+				$.UTIL.each(data, function (v, i) {
+					nextVlData[i] = {
+						startTime: v.starttime,
+						channelId: channelId
+					};
+				});
+			}
+			function initPage() {
+				channelCue.oldCue();
+				queryCHis();
+				$.pTool.add(pKey, backPannel());
+				loadPlayBill(success, goToError);
+			}
+			return {
+				saveCHis: saveCHis,
+				init: initPage,
+				key: pKey
+			};
+		})();
+		var load = tVod.init;
+
+		function unload() {
+			if (vl) {
+				$.vs.playQuit(isGotoError && 'end');
+				vl.release();
+			}
+			tVod.saveCHis();
+		}
+function getPlayInfo() {
+    return {
+        type: "pull",
+        code: "1",
+        playVideoType: "1",
+        mediaID: "" + ($.getChanNum(channelId) || ""),
+        mediaName: data[vl.currentIndex()].text || "暂无信息",
+        currentPlayTime: "" + (vl && vl.mp && vl.mp.getCurrentTime() || "0"),
+        totalTime: "" + (totalTime || "0"),
+        startTime: "" + (startTime || "")
+    };
+}
+
+//暂停广告
+$.pTool.add("advertPause", function() {
+    var $pauseInfo = null;
+    var $pausePic = null;
+    var isShow = false;
+    var picTag = false;
+    var toolKey = "advertPause";
+    return {
+        key: toolKey,
+        dft: true,
+        keysDftMap: [],
+        keysMap: {
+            KEY_RETURN: function() {
+                $("#advertPause").hide();
+				isShow = false;
+                return true;
+            }
+        },
+        init: function(opt) {
+			if(opt.picPath){picTag=true}
+            if (!$pauseInfo) {
+                $pauseInfo = $(`<div class="advertPause hide" id="advertPause">
+                                    <img src="" class="pic">
+                                    <div class="rightTip">
+                                        返回键关闭广告
+                                    </div>
+                                </div>`);
+                $pauseInfo.appendTo("body");
+                $pausePic = $(".pic", $pauseInfo);
+                $pausePic.attr({src: opt.picPath});  
+            }else{
+                $("#advertPause img").attr({src: opt.picPath})
+            }
+            // if(!opt.picPath){
+            //     $.pTool.deactive(toolKey);
+            // }else{
+            //     $.pTool.active(toolKey);
+            // }
+            //$.pTool.active(toolKey);
+        },
+		hidden: function(){
+            $("#advertPause").hide();
+            isShow = true;            
+        },
+        active: function() {        
+            $("#advertPause").show();
+            isShow = true;
+        },
+        deactive: function() {            
+            $("#advertPause").hide();
+            isShow = false;
+        },
+        getShowTag: function(){
+            return isShow;
+        },
+        getPicTag: function(){
+            return picTag;
+        }
+    };
+}());
+
+//音量广告
+$.pTool.add("advertVolume", function() {
+    var $volumeInfo = null;
+    var $volumePic = null;
+    var isShow = false;
+    var autoHide;
+    var toolKey = "advertVolume";
+    return {
+        key: toolKey,
+        dft: true,
+        keysDftMap: [],
+        keysMap: {
+            KEY_RETURN: function() {
+                $("#advertVolume").hide();
+                return true;
+            }
+        },
+        init: function(opt) {
+            if (!$volumeInfo) {
+                $volumeInfo = $(`<div class="advertVolume hide" id="advertVolume">
+                                    <img src="" class="pic">
+                                </div>`);
+                $volumeInfo.appendTo("body");
+                $volumePic = $(".pic", $volumeInfo);
+                //$volumePic.attr({src: opt.picPath}); 
+                autoHide = $.AutoHide({
+                    dom: $volumeInfo,
+                    delay: 6e3,
+                    beforeShow: function() {},
+                    afterHide: function() {
+						var tag = $.pTool.get("advertPause").getShowTag()
+                        var picTag = $.pTool.get("advertPause").getPicTag()
+                        var backTag = $.pTool.get("tVodBack").getShowTag()
+                        if (tag&&picTag&&opt.mp.isState($.MP.state.paused)&&!backTag) {
+                            $.pTool.get("advertPause").active();
+                        }
+                    }
+                });
+            }
+            //$.pTool.active(toolKey);
+		},
+		setPic: function(opt){
+			if(picSrc!==opt.picPath){
+				picSrc = opt.picPath;
+				$volumePic.attr({src: opt.picPath});
+			}	 
+		},
+        active: function() {
+            autoHide.show();
+            isShow = true;
+        },
+        deactive: function() {      
+            autoHide.hide();
+            isShow = false;
+        },
+        getShowTag: function(){
+            return isShow;
+        }
+    };
+}());
+
+		function initPauseAd(){
+			//暂停				
+			getAd(4,function(data) {
+				var obj = {}
+                if (data && data.type=="1" && data.resourceid) {
+                    obj = {
+						type: 'pic',
+						mp: vl.mp,
+                        picPath: $.getVariable("EPG:pathPic") + '/' + top.getFTPFilePath(data.resourceid,data.extension),
+					}
+					$.pTool.get('advertPause').init(obj);
+					$.pTool.get('advertPause').active();			
+				}else{
+					obj.picPath=""
+					$.pTool.get('advertPause').init(obj);	
+				}
+            });						
+		}
+		function initVolumeAd(){
+			//音量	
+			var obj={};
+			var tag = $.pTool.get("advertPause").getShowTag();
+			obj = {
+				type: 'pic',
+				mp: vl.mp,
+                picPath: ""
+			}			
+			$.pTool.get('advertVolume').init(obj);		
+			getAd(3,function(data) {
+				if (data && data.type=="1" && data.resourceid) {
+                    obj = {
+						type: 'pic',
+						mp: vl.mp,
+                        picPath: $.getVariable("EPG:pathPic") + '/' + top.getFTPFilePath(data.resourceid,data.extension),
+					}					
+					$.pTool.get('advertVolume').setPic(obj);
+					$.pTool.get('advertVolume').active();
+					if(tag){
+						$.pTool.get("advertPause").hidden();
+					}else{
+						$.pTool.get("advertPause").deactive();
+					}				
+				}else{
+					obj.picPath=""
+					$.pTool.get('advertVolume').setPic(obj);	
+				}
+            });	
+		}
+		// 广告
+		function getAd(typ,cb) {
+			// 1：视频前贴片广告
+			// 2：换台标版广告
+			// 3：音量标版广告
+			// 4：暂停标版广告
+			// 5：退出标版广告
+			// 9：回看贴片广告
+			$.getHelper("provider:ad").ad.getOtherAd({
+				action: typ,
+				playType: 2,
+				channel: $.getChanNum(channelId),
+				callback: cb
+			});
+		}
+		</script>
+</head>
+
+<body onload="load()" onunload="unload()"></body>
+
+</html>

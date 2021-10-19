@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="page-view-size" content="1280*720">
+<title>fourScreen</title>
+<link rel="stylesheet" href="../../../../css/public.css">
+<link rel="stylesheet" href="./css/page.css">
+<script src="../../../../puppy/common.js"></script>
+<script src="../../../../../resources/Refactoring/common_v6.js"></script>
+<script type="text/javascript" src="../../../../../resources/Refactoring/MP.js"></script>
+<script src="./js/channel.js"></script>
+<script src="../components/auth/js/page.js"></script>
+<script src="../components/ajax/js/getData.js"></script>
+<script>
+    document.write('<script src="' + $.getVariable("EPG:pathPub") + "/dataSource/GuidanceContents/" + window.G_GUIDEID['fourScreen']['content'] +
+        "/index.js?" + new Date().getTime() + '"><\/script>');
+    document.write('<script src="' + $.getVariable("EPG:pathPub") + "/dataSource/GuidanceContents/" + window.G_GUIDEID['fourScreen']['backgroundImg'] +
+        "/index.js?" + new Date().getTime() + '"><\/script>');
+</script>
+<script src="./js/page.js"></script>
+<style>
+ img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    #timg {
+        width: 80px;
+        height: 80px;
+        z-index: 999999;
+        position: absolute;
+        left: 75px;
+        top: 500px;
+    }
+    
+    #timg>img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    #vol {
+        width: 677px;
+        height: 52px;
+        position: relative;
+        left: 35%;
+        top: 750px;
+        margin-left: -338px;
+        background: url('images/bg.png') no-repeat;
+        z-index: 999999;
+        transition: all .3s linear;
+        -webkit-transition: all .3s linear;
+    }
+    
+    #horn,
+    #volNum {
+        width: 48px;
+        height: 41px;
+        position: absolute;
+        left: 10px;
+        top: 5px;
+        font-size: 24px;
+    }
+    
+    .icon {
+        background: url('images/volume.png') center no-repeat;
+    }
+    
+    #horn img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    #pBar {
+        position: absolute;
+        top: 22px;
+        left: 70px;
+        height: 5px;
+        width: 20px;
+        background: #0EEAFF;
+        /* border: 1px solid red; */
+    }
+    
+    #pBg {
+        display: inline-block;
+        width: 560px;
+        height: 5px;
+        background: #272822;
+        margin: 22px 70px;
+    }
+    
+    #volNum {
+        color: white;
+        line-height: 45px;
+        left: 630px;
+    }
+    
+    #warning {
+        left: 368px;
+        top: 220px;
+        width: 545px;
+        height: 213px;
+        background: url('images/exit_dlg.png') no-repeat;
+        z-index: 11111
+    }
+    
+    #leave_btn {
+        display: none;
+        left: 110px;
+        top: 129px;
+        width: 141px;
+        height: 44px;
+        background: url('images/leave_btn.png') no-repeat;
+        background-size: 100% 100%
+    }
+    
+    #leave_btn.aFocused {
+        display: block;
+    }
+    
+    #continue_btn {
+        display: none;
+        left: 295px;
+        top: 129px;
+        width: 141px;
+        height: 44px;
+        background: url('images/continue_btn.png') no-repeat;
+        background-size: 100% 100%
+    }
+    
+    #continue_btn.aFocused {
+        display: block;
+    }
+    
+    .block {
+        display: block;
+        transform: translateY(-115px);
+        -webkit-transform: translateY(-115px);
+    }
+    
+    .none {
+        display: none;
+    }
+    
+    .silence {
+        background: url('images/slience.png') center no-repeat;
+    }
+</style>
+</head>
+<body onload="load()" onunload="unload()">
+    <img id="bgImg" src="images/newbg.jpg">
+    <canvas id="caBg" width="1280" height="720"></canvas>
+    <div id="bigVideoName"></div>
+    <div id="bigVideo"></div>
+    <div id="video">
+        <div id="video0Name" class="videoName"></div>
+        <div id="video0" class="video"></div>
+        <div id="video1Name" class="videoName"></div>
+        <div id="video1" class="video"></div>
+        <div id="video2Name" class="videoName"></div>
+        <div id="video2" class="video"></div>
+    </div>
+    <div id="fullScreenEnter" class="popUp hide">
+        <div class="cue">进入全屏观看</div>
+        <div class="confirm"></div>
+        <div class="return"></div>
+    </div>
+    <div id="backCue" class="popUp hide">
+        <div class="cue">确定要退出收看?</div>
+        <div class="confirm"></div>
+        <div class="return"></div>
+    </div>
+     <!-- 音量条 -->
+     <div id="vol" class="vol">
+        <div id="horn" class="icon"></div>
+        <div id="pBar"></div>
+        <span id="pBg"></span>
+        <div id="volNum">0</div>
+    </div>
+    <!-- 静音 -->
+    <div id="timg" class="none">
+        <img src="images/g_silence.png" alt="" />
+    </div>
+</body>
+</html>

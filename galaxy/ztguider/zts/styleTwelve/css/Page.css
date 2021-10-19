@@ -1,0 +1,71 @@
+#content{
+width:1920px;
+height:1080px;
+position: relative;
+}
+#list{
+width:1920px;
+height:1080px;
+position: relative;
+}
+.item{
+position:absolute;
+width:1920px;
+height:1080px;
+}
+.title{
+font-size:42px;
+color:#FFFFFF;
+position:absolute;
+height:42px;
+top:848px;
+left:144px;
+}
+.intro{
+font-size:36px;
+color:#FFFFFF;
+position:absolute;
+top:920px;
+left:144px;
+width:1584px;
+display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 3;
+overflow: hidden;
+}
+#content.tips::after{
+position:absolute;
+left:1224px;
+top:74px;
+display:block;
+width:590px;
+height:65px;
+content:"";
+background:url(../images/tips.png) no-repeat;
+}
+.pic{
+width:1920px;
+height:1080px;
+}
+.arrowLeft{
+display:flex;
+position:absolute;
+left:59px;
+top:510px;
+font-size: 100px;
+justify-content: center;
+align-items: center;
+text-decoration: none;
+color:#fff;
+}
+.arrowRight{
+display:flex;
+position:absolute;
+font-size: 100px;
+justify-content: center;
+align-items: center;
+text-decoration: none;
+color:#fff;
+right:59px;
+top:510px;
+}

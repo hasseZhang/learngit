@@ -1,0 +1,521 @@
+#header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1920px;
+    height: 106px
+}
+
+#header .logo {
+    position: absolute;
+    width: 228px;
+    height: 28px;
+    background: url(../images/logo.png) 0 0 no-repeat;
+    left: 88px;
+    top: 43px
+}
+
+#header .search {
+    position: absolute;
+    width: 123px;
+    height: 43px;
+    left: 325px;
+    top: 34px;
+    border-radius: 21px;
+    background: rgba(234, 237, 246, .1) url(../images/search.png) center center no-repeat
+}
+
+#header .recent {
+    position: absolute;
+    width: 124px;
+    height: 43px;
+    left: 458px;
+    top: 34px;
+    border-radius: 21px;
+    background: rgba(234, 237, 246, .1) url(../images/recent.png) center center no-repeat
+}
+
+#header .email {
+    position: absolute;
+    width: 82px;
+    height: 50px;
+    left: 954px;
+    top: 28px;
+    border-radius: 25px;
+    background: rgba(234, 237, 246, .1) url(../images/email.png) center center no-repeat
+}
+
+#header .email .num {
+    position: absolute;
+    width: 30px;
+    height: 22px;
+    left: 44px;
+    top: 0;
+    font-size: 12px;
+    line-height: 22px;
+    color: #fff;
+    text-align: center;
+    border-radius: 11px;
+    background: #ff0018
+}
+
+#header .order {
+    overflow: hidden
+}
+
+#header .notice {
+    position: absolute;
+    width: 632px;
+    height: 50px;
+    left: 1068px;
+    top: 28px
+}
+
+#header .icon {
+    float: left;
+    width: 42px;
+    height: 50px;
+    background: url(../images/icon.png) center center no-repeat
+}
+
+#header .mar {
+    float: left;
+    position: relative;
+    width: 570px;
+    height: 50px;
+    overflow: hidden
+}
+
+#header .text {
+    font-size: 24px;
+    line-height: 50px;
+    color: #a5b2c6;
+    white-space: normal;
+    word-break: break-all
+}
+
+#header .headermarquee {
+    -webkit-animation: marquee0 10s linear infinite
+}
+
+@-webkit-keyframes marquee0 {
+    0% {
+        -webkit-transform: translateX(0)
+    }
+
+    10% {
+        -webkit-transform: translateX(0)
+    }
+
+    100% {
+        -webkit-transform: translateX(-100%)
+    }
+}
+
+#header .search.focusBorder {
+    background: url(../images/searchF.png) center center no-repeat, -webkit-linear-gradient(left, #eca600 0, #e7880e 100%)
+}
+
+#header .recent.focusBorder {
+    background: url(../images/recentF.png) center center no-repeat, -webkit-linear-gradient(left, #eca600 0, #e7880e 100%)
+}
+
+#header .email.focusBorder {
+    background: url(../images/emailF.png) center center no-repeat, -webkit-linear-gradient(left, #eca600 0, #e7880e 100%)
+}
+
+#header.hidden {
+    -webkit-transform: translateY(-106px);
+    display: block
+}
+
+#header .time {
+    position: absolute;
+    height: 42px;
+    line-height: 42px;
+    color: #fff;
+    font-size: 42px;
+    top: 32px;
+    right: 87px
+}
+
+#header .preload {
+    position: absolute;
+    width: 0;
+    height: 0
+}
+
+#header .preSearch {
+    background: url(../images/searchF.png)
+}
+
+#header .preRecent {
+    background: url(../images/recentF.png)
+}
+
+#header .preEmail {
+    background: url(../images/emailF.png)
+}
+
+#header.isHome .logo {
+    position: absolute;
+    width: 224px;
+    height: 28px;
+    background: url(../images/logo.png) 0 0 no-repeat;
+    background-size: 222px 28px;
+    left: 88px;
+    top: 42px
+}
+
+#header.isHome .companyLogo {
+    position: absolute;
+    width: 130px;
+    height: 38px;
+    background: url(../images/compLogo.png) 0 0 no-repeat;
+    background-size: 128px 38px;
+    left: 319px;
+    top: 35px;
+}
+
+#header.isHome .search {
+    position: absolute;
+    width: 58px;
+    height: 42px;
+    left: 703px;
+    top: 35px;
+    border-radius: 21px;
+    background: rgba(234, 237, 246, .1) url(../images/searchH.png) center center no-repeat
+}
+
+#header.isHome .recent {
+    position: absolute;
+    width: 58px;
+    height: 42px;
+    left: 771px;
+    top: 35px;
+    border-radius: 21px;
+    background: rgba(234, 237, 246, .1) url(../images/recentH.png) center center no-repeat
+}
+
+#header.isHome .email {
+    position: absolute;
+    width: 78px;
+    height: 42px;
+    left: 839px;
+    top: 35px;
+    border-radius: 25px;
+    background: rgba(234, 237, 246, .1) url(../images/email.png) center center no-repeat
+}
+
+#header.isHome .email .num {
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    left: 48px;
+    top: -8px;
+    font-size: 12px;
+    line-height: 26px;
+    color: #fff;
+    text-align: center;
+    border-radius: 50%;
+    background: #ff0018
+}
+
+#header.isHome .notice {
+    position: absolute;
+    width: 460px;
+    height: 50px;
+    left: 1125px;
+    top: 30px;
+    visibility: hidden
+}
+
+#header.isHome .icon {
+    float: left;
+    position: relative;
+    width: 24px;
+    top: -1px;
+    height: 50px;
+    background: url(../images/icon.png) center center no-repeat
+}
+
+#header.isHome .mar {
+    float: left;
+    position: relative;
+    left: 9px;
+    width: 408px;
+    height: 50px;
+    overflow: hidden
+}
+
+#header.isHome .text {
+    font-size: 24px;
+    line-height: 50px;
+    color: #a5b2c6;
+    white-space: normal;
+    word-break: break-all
+}
+
+#header.isHome .order {
+    position: absolute;
+    width: 234px;
+    height: 42px;
+    left: 459px;
+    top: 35px;
+    border-radius: 21px;
+    background: rgba(234, 237, 246, .1)
+}
+
+#header.isHome .order img {
+    width: 100%;
+    height: 100%;
+    border-radius: 21px
+}
+
+#header.isHome .yun {
+    position: absolute;
+    width: 58px;
+    height: 42px;
+    left: 927px;
+    top: 35px;
+    border-radius: 21px;
+    background: rgba(234, 237, 246, .1) url(../images/yun.png) center center no-repeat
+}
+
+#header.isHome .user {
+    position: absolute;
+    width: 58px;
+    height: 42px;
+    left: 995px;
+    top: 35px;
+    border-radius: 21px;
+    background: rgba(234, 237, 246, .1) url(../images/user.png) center center no-repeat;
+    background-size: 29px 29px
+}
+
+#header.isHome .user .floating {
+    position: absolute;
+    visibility: hidden;
+    z-index: 2;
+    left: -131px;
+    top: 44px;
+    width: 208px;
+    height: 78px
+}
+
+#header.isHome .version {
+    position: absolute;
+    width: 58px;
+    height: 42px;
+    left: 995px;
+    top: 35px;
+    border-radius: 21px;
+    background: rgba(234, 237, 246, .1) url(../images/version.png) center center no-repeat
+}
+
+#header.isHome .time {
+    position: absolute;
+    height: 42px;
+    line-height: 42px;
+    color: #fff;
+    font-size: 42px;
+    top: 32px;
+    right: 234px
+}
+
+#header.isHome .hotLine {
+    position: absolute;
+    width: 132px;
+    height: 37px;
+    left: 1697px;
+    top: 36px;
+    background: url(../images/hotLine.png) center center no-repeat
+}
+
+#header.isHome .search.focusBorder {
+    background: url(../images/searchHF.png) center center no-repeat, -webkit-linear-gradient(left, #eca600 0, #e7880e 100%)
+}
+
+#header.isHome .recent.focusBorder {
+    background: url(../images/recentHF.png) center center no-repeat, -webkit-linear-gradient(left, #eca600 0, #e7880e 100%)
+}
+
+#header.isHome .email.focusBorder {
+    background: url(../images/emailF.png) center center no-repeat, -webkit-linear-gradient(left, #eca600 0, #e7880e 100%)
+}
+
+#header.isHome .order.focusBorder {
+    background: -webkit-linear-gradient(left, #eca600 0, #e7880e 100%)
+}
+
+#header.isHome .yun.focusBorder {
+    background: url(../images/yunF.png) center center no-repeat, -webkit-linear-gradient(left, #eca600 0, #e7880e 100%)
+}
+
+#header.isHome .user.focusBorder {
+    background: url(../images/userF.png) center center no-repeat, -webkit-linear-gradient(left, #eca600 0, #e7880e 100%);
+    background-size: 29px 29px
+}
+
+#header.isHome .user.focusBorder .floating {
+    visibility: visible;
+}
+
+#header.isHome .version.focusBorder {
+    background: url(../images/versionF.png) center center no-repeat, -webkit-linear-gradient(left, #eca600 0, #e7880e 100%)
+}
+
+#header.isList .logo {
+    position: absolute;
+    width: 228px;
+    height: 28px;
+    background: url(../images/logo.png) 0 0 no-repeat;
+    left: 38px;
+    top: 42px
+}
+
+#header.isList .search {
+    position: absolute;
+    width: 123px;
+    height: 43px;
+    left: 275px;
+    top: 34px;
+    border-radius: 21px;
+    background: rgba(234, 237, 246, .1) url(../images/search.png) center center no-repeat
+}
+
+#header.isList .recent {
+    position: absolute;
+    width: 124px;
+    height: 43px;
+    left: 408px;
+    top: 34px;
+    border-radius: 21px;
+    background: rgba(234, 237, 246, .1) url(../images/recent.png) center center no-repeat
+}
+
+#header.isList .search.focusBorder {
+    background: url(../images/searchF.png) center center no-repeat, -webkit-linear-gradient(left, #eca600 0, #e7880e 100%)
+}
+
+#header.isList .recent.focusBorder {
+    background: url(../images/recentF.png) center center no-repeat, -webkit-linear-gradient(left, #eca600 0, #e7880e 100%)
+}
+
+/* 酷喵 */
+#header.isKm .logo,
+#header.showKmLogo .logo {
+    position: absolute;
+    width: 185px;
+    height: 65px;
+    background: url(../images/logoKm.png) 0 0 no-repeat;
+    left: 88px;
+    top: 22px;
+    background-size: 185px 65px;
+}
+
+#header.isKm .search {
+    position: absolute;
+    width: 123px;
+    height: 43px;
+    left: 325px;
+    top: 34px;
+    border-radius: 21px;
+    background: rgba(234, 237, 246, .1) url(../images/search.png) center center no-repeat
+}
+
+#header.isKm .order {
+    position: absolute;
+    width: 234px;
+    height: 42px;
+    left: 459px;
+    top: 35px;
+    border-radius: 21px;
+    background: rgba(234, 237, 246, .1)
+}
+
+#header.isKm .search.focusBorder {
+    background: url(../images/searchF.png) center center no-repeat, -webkit-linear-gradient(left, #0092FE 0, #00BBFB 100%);
+}
+
+#header.isKm .order.focusBorder {
+    background: -webkit-linear-gradient(left, #0092FE 0, #00BBFB 100%);
+}
+
+/* 爱奇艺, 详情页面是 CS 架构 */
+#header.aqy .logo {
+    width: 225px;
+    height: 42px;
+    background: url(../images/logoAqy.png) 0 0 no-repeat;
+    left: 1630px;
+    top: 32px
+}
+
+#header.aqy .search {
+    left: 84px;
+}
+
+#header.aqy .order {
+    position: absolute;
+    width: 220px;
+    height: 42px;
+    left: 240px;
+    top: 34px;
+    border-radius: 21px;
+    background: rgba(234, 237, 246, .1);
+}
+
+#header.aqy .time {
+    right: 312px;
+}
+
+#header.aqy .search.focusBorder {
+    background: url(../images/searchF.png) center center no-repeat, -webkit-linear-gradient(left, #00CC4C 0, #07D098 100%);
+}
+
+#header.aqy .order.focusBorder {
+    background: -webkit-linear-gradient(left, #00CC4C 0, #07D098 100%);
+}
+
+/* 720p成长体系 */
+#header.isUser {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1280px;
+    height: 71px
+}
+
+#header.isUser .logo {
+    width: 152px;
+    height: 20px;
+    left: 59px;
+    top: 29px;
+    background-size: 152px 20px;
+}
+
+#header.isUser .search {
+    width: 82px;
+    height: 29px;
+    left: 217px;
+    top: 23px;
+    background-size: 62px 18px;
+}
+
+#header.isUser .recent {
+    width: 83px;
+    height: 29px;
+    left: 305px;
+    top: 23px;
+    background-size: 62px 18px;
+}
+
+#header.isUser .search.focusBorder {
+    background: url(../images/searchF.png) center center no-repeat, rgba(237, 165, 2, 1);
+    background-size: 62px 18px;
+}
+
+#header.isUser .recent.focusBorder {
+    background: url(../images/recentF.png) center center no-repeat, rgba(237, 165, 2, 1);
+    background-size: 62px 18px;
+}

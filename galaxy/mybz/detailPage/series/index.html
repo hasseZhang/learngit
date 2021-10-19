@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="page-view-size" content="1920*1080">
+    <title>剧集详情页</title>
+    <link rel="stylesheet" href="../../../css/public.css">
+    <link rel="stylesheet" href="../../../plugin/header/css/header.css">
+    <link rel="stylesheet" href="css/Page.css">
+    <script src="../../../puppy/common.js"></script>
+    <script src="../../../plugin/header/js/header.js"></script>
+    <script src="js/Page.js"></script>
+</head>
+
+<body id="body" onload="load()" onunload="unload()">
+    <img id="bgImg" src="images/bg.jpg">
+    <img id="bgImgOtt" src="images/bg.png">
+    <canvas id="caBg" width="1920" height="1080"></canvas>
+    <div id="alert" class="hide">
+        <div id="alertL">重试</div>
+        <div id="alertR">返回</div>
+    </div>
+    <div id="loading" class="hide"></div>
+    <div id="wrap">
+        <div id="videoWindow" class="noPlayer">
+            <div id="tryTime" class="hide"></div>
+            <div class="text hide"></div>
+            <div class="cue hide"></div>
+        </div>
+        <div id="videoBkg" class="noPlayer hide"></div>
+        <div id="detailInfo"></div>
+        <!-- 订购入口 -->
+        <div id="orderEntry"></div>
+        <div id="btns">
+            <div id="btnWrap"></div>
+        </div>
+        <div id="select">
+            <div class="title">剧集列表</div>
+            <div id="episodeWrap">
+                <div id="episode"></div>
+            </div>
+            <div class="arrow hide"></div>
+            <div id="epNavi"></div>
+        </div>
+        <div id="pushVideo">
+            <div id="twelve">
+                <div class="title"></div>
+                <div class="section"></div>
+            </div>
+            <div id="four">
+                <div class="title"></div>
+                <div class="section"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

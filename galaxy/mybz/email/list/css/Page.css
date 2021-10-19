@@ -1,0 +1,265 @@
+body{
+    width:1920px;
+    height:1080px;
+    padding:0;
+    margin:0;
+    overflow:hidden;
+    background:url(../images/bg.jpg) no-repeat transparent
+}
+#container{
+    position:absolute;
+    right:0;
+    top:0;
+    width:1616px;
+    height:1080px
+}
+#listContent{
+    position:absolute;
+    width:1580px;
+    height:1030px;
+    top:86px;
+    right:12px;
+    overflow:hidden
+}
+#listContent .emailList{
+    position:absolute;
+    top:0;
+    width:100%
+}
+#listContent .emailList.trans{
+    -webkit-transition:all .5s ease 0s
+}
+#listContent .email_item{
+    margin:0 22px 22px 22px;
+    width:1450px;
+    height:110px;
+    background:url(../images/item.png) no-repeat
+}
+#listContent .email_item .email_content{
+    position:relative;
+    width:1450px;
+    height:110px;
+    font-size:32px;
+    color:#d8d8d9
+}
+#listContent .email_item .email_content .noread{
+    position:absolute;
+    left:34px;
+    top:23px;
+    width:80px;
+    height:54px;
+    background:url(../images/noread.png) no-repeat
+}
+#listContent .email_item .email_content .read{
+    position:absolute;
+    left:34px;
+    top:23px;
+    width:80px;
+    height:64px;
+    background:url(../images/read.png) no-repeat
+}
+#listContent .email_item .email_content .email_title{
+    position:absolute;
+    left:146px;
+    top:23px;
+    width:1086px;
+    height:64px;
+    line-height:64px;
+    text-align:left
+}
+#listContent .email_item .email_content .email_date{
+    position:absolute;
+    left:1254px;
+    top:23px;
+    width:154px;
+    height:64px;
+    line-height:64px
+}
+#listContent .email_item.focusBorder .email_content .email_date{
+    left:1234px
+}
+#listContent .email_item.focusBorder .email_content{
+    -webkit-transform:scale(1.05);
+    z-index:1;
+    background:#ec9906;color:#000
+}
+#listContent .email_item .email_content .email_delposter{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%
+}
+#listContent.del .email_item .email_content .email_delposter{
+    background:url(../images/delPoster.png) no-repeat
+}
+#listContent.del .email_item.focusBorder .email_content .email_delposter{
+    background:url(../images/delPosterF.png) -35px 0 no-repeat
+}
+#container #returnPrompt{
+    width:480px;
+    height:30px;
+    position:absolute;
+    top:43px;
+    left:58px;
+    background:url(../images/returnPrompt.png) no-repeat
+}
+/* #container #menuOption{
+    position:absolute;
+    left:58px;
+    top:42px;
+    width:251px;
+    height:31px;
+    background:url(../images/menuOption.png) no-repeat
+} */
+#container #menuOption {
+    position: absolute;
+    left: 60px;
+    top: 15px;
+    width: 150px;
+    height: 60px;
+}
+#menuOption:after{
+    content: "编辑";
+    display: block;
+    position: absolute;
+    width:150px;
+    height:60px;
+    line-height:60px;
+    text-indent:57px;
+    font-size:36px;
+    color:#fff;
+    top:0;
+    left:0;
+    background: url(../images/icon_bj.png) 0 center no-repeat;
+    background-size: 45px 45px
+}
+#menuOption.focusBorder:after{
+    color:#EDA601;
+    background: url(../images/icon_bj_current.png) 0 center no-repeat;
+    -webkit-transform: scale(1.1)
+}
+#container #loading{
+    position:absolute;
+    left:50%;
+    top:50%;
+    background:url(../images/loading.gif) no-repeat;
+    width:200px;
+    height:200px;
+    margin-top:-100px;
+    margin-left:-100px
+}
+#noContent{
+    position:absolute;
+    width:426px;
+    height:380px;
+    left:600px;
+    top:320px;
+    background:url(../images/noEmail.png) no-repeat
+}
+#listContent>div{
+    padding-left:10px
+}
+.mostShow{
+    position:absolute;
+    width:857px;
+    height:30px;
+    background:url(../images/mostshow.png) no-repeat;
+    left:660px;
+    bottom:25px
+}
+.mostShow div{
+    position:absolute;
+    font-size:30px;
+    color:#828282;
+    left:50%;
+    -webkit-transform:translate(-50%);
+    top:-21px
+}
+#progressBar{
+    height:994px;
+    width:10px;
+    background-color:rgba(254,254,254,.05);
+    position:absolute;
+    right:20px;
+    top:18px;
+    border-radius:10px
+}
+#progressBar #strip{
+    position:absolute;
+    height:109px;
+    width:11px;
+    top:0;
+    left:2px;
+    background:url(../images/strip.png) no-repeat;
+    -webkit-transition:top .6s .1s
+}
+.listContent{
+    position:absolute;
+    width:1560px;
+    height:1000px;
+    top:80px;
+    right:20px;
+    overflow:hidden
+}
+.subStrEl{
+    text-overflow:ellipsis;
+    overflow:hidden;
+    white-space:nowrap
+}
+#showLine{
+    position:absolute;
+    top:42px;
+    right:118px;
+    font-size:34px;
+    color:#d8d8d9
+}
+#showLine .current{
+    color:#ec9906
+}
+.hide{
+    display:none
+}
+#container .panel{
+    position:absolute;
+    top:313px;
+    left:325px;
+    width:804px;
+    height:454px;
+    z-index:1;
+    background:url(../images/panel.png) no-repeat
+}
+#container .panel .title{
+    position:absolute;
+    top:92px;
+    width:100%;
+    text-align:center;
+    font-size:40px;
+    height:60px;
+    line-height:60px;
+    color:#fff
+}
+#container .panel .botton{
+    position:absolute;
+    width:210px;
+    height:60px;
+    top:298px;
+    border:3px solid #393638;
+    border-radius:40px;
+    text-align:center;
+    color:#fff;
+    font-size:36px;
+    line-height:60px
+}
+#container .panel .botton#leftBtn{
+    left:140px
+}
+#container .panel .botton#rightBtn{
+    left:450px
+}
+#container .botton.focusBorder{
+    background:-webkit-linear-gradient(right,#e3802f,#e2ab13);
+    background-origin:border-box;
+    border:3px solid rgba(52,56,65,0);
+    color:#1b0f01
+}

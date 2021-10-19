@@ -1,0 +1,583 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body{
+width:1920px;
+height:1080px;
+}
+#content{
+    width:1920px;
+    height:1080px;
+    position:absolute;
+    top:0px;
+    left:0px;
+}
+#left {
+    width: 548px;
+    height: 1080px;
+    float: left;
+    position: relative;
+}
+
+#right {
+    width: 1372px;
+    height: 1080px;
+    float: left;
+}
+
+#title {
+    height: 127px;
+    width: 1372px;
+    overflow: hidden;
+    position: relative;
+}
+
+.text {
+    top: 45px;
+    font-size: 26px;
+    left: 420px;
+    color: white;
+    position: absolute;
+}
+
+.line {
+    position: absolute;
+    right: 69px;
+    top: 45px;
+    font-size: 36px;
+    color: white;
+}
+
+#itemList {
+    width: 1236px;
+    padding: 30px 20px;
+}
+
+#itemContent {
+    width: 1276px;
+    height: 953px;
+    overflow: hidden;    
+    position: relative;
+}
+
+.item {
+    width: 1276px;
+    height: 364px;
+    border: 5px solid #225eb4;
+    margin-bottom: 39px;
+    border-radius: 10px;
+    background: #101D58 70%;
+    position: relative;
+}
+
+.item_left {
+    float: left;
+    position: absolute;
+    left: 148px;
+    top: 46px;
+    text-align: center;
+}
+
+.item_center {
+    float: left;
+    position: absolute;
+    top: 60px;
+    left: 496px;
+    text-align: center;
+}
+
+.item_right {
+    float: left;
+    position: absolute;
+    right: 148px;
+    top: 46px;
+    text-align: center;
+}
+
+.item_name {
+    font-size: 34px;
+    line-height: 47px;
+    color: #ffffff;
+}
+
+.item_image {
+    width: 116px;
+    height: 165px;
+}
+
+.vs {
+    margin-top: 8px;
+    width: 322px;
+    height: 99px;
+    font-size: 80px;
+    font-weight: 550;
+    letter-spacing: 6px;
+    color: #ffffff;
+    text-align: center;
+    padding-bottom: 0px;
+    line-height: 130px;
+}
+
+.guess {
+    width: 301px;
+    height: 73px;
+    border-radius: 17px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 36px;
+    margin-top: 26px;
+}
+
+.url {
+    width: 417px;
+    height: 242px;
+    position: absolute;
+    left: 63px;
+    border: none;
+}
+
+.url img{
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+#url0 {
+    top: 216px;
+}
+
+#url2 {
+    top: 765px;
+}
+
+#url1 {
+    top: 491px;
+}
+
+#itemList.transition {
+    -webkit-transition: all .5s ease 0s
+}
+.day{
+    margin-right:40px;
+}
+.buttonfalse{
+background:url("../images/竞猜按钮2.png")
+}
+.buttontrue{
+background:url("../images/竞猜按钮.png")
+}
+.focusBorder{
+    border: 4px solid #fff;
+    box-shadow: #fff 0 0 5px 2px;	
+}
+#myPoints{
+    width: 1276px;
+    height: 120px;
+    margin-bottom: 23px;    
+    color: #fff;
+    font-size: 30px;
+    position: relative;
+}
+#myPoints div{
+    display: inline-block;
+}
+#myPoints .point1{
+    width: 211px;
+    height: 84px;
+    overflow: hidden;
+    position: absolute;
+    left: 40px;
+    top: 19px;
+}
+#myPoints .point1.has{
+    top: 39px;
+}
+#myPoints .point2.has{
+    top: 39px;
+}
+#myPoints .point2{
+    height: 61px;
+    overflow: hidden;
+    position: absolute;
+    left: 277px;
+    top: 32px;
+}
+#myPoints .point3{
+    width: 231px;
+    height: 42px;
+    overflow: hidden;
+    position: absolute;
+    left: 652px;
+    top: 39px;
+}
+#myPoints .point4{
+    width: 211px;
+    height: 61px;
+    overflow: hidden;
+    position: absolute;
+    left: 889px;
+    top: 29px;
+}
+#myPoints .point5{
+    width: 144px;
+    height: 61px;
+    overflow: hidden;
+    position: absolute;
+    left: 1115px;
+    top: 29px;
+}
+#myPoints .point2.focusBorder,#myPoints .point4.focusBorder,#myPoints .point5.focusBorder{
+    border-radius: 15px;
+}
+#myPoints .button{
+    font-size: 30px;
+    text-align: center;
+}
+.telBtn{
+    width: 200px;
+    height: 61px;
+    line-height: 61px;
+    color: #fff;
+    background-color: #31BDED;
+    background-image: -webkit-linear-gradient(180deg, #5CE3FC 0%, #31BDED 100%);
+    border-radius: 6px;
+}
+.fourFold{
+    width: 211px;
+    height: 61px;
+    line-height: 61px;
+    color: #fff;
+    background-color: #DC791C;
+    background-image: -webkit-linear-gradient(180deg, #EB6500 0%, #DC791C 100%);
+    border-radius: 6px;
+}
+.fourFold.disabled{
+    width: 211px;
+    height: 61px;
+    line-height: 61px;
+    color: #fff;
+    background: #D8D8D8;
+    border-radius: 6px;
+}
+.pointDetial{
+    width: 144px;
+    height: 61px;
+    line-height: 61px;
+    color: #fff;
+    background-color: #31BDED;
+    background-image: -webkit-linear-gradient(180deg, #5CE3FC 0%, #31BDED 100%);
+    border-radius: 6px;
+}
+.inner{
+    width: 100%;
+    height: 61px;    
+    position: relative;
+    font-size: 40px;
+    color: #fff;
+    padding-bottom: 20px;
+}
+#itemList .focusBorder{
+    border-radius: 15px;
+    background-color: rgba(34, 94, 180, 0.5);
+}
+#itemList .num{    
+    width: 61px;
+    height: 61px;
+    line-height: 61px;
+    overflow: hidden;
+    position: absolute;
+    top: 10px;
+    left: 22px;
+    border: 0;
+    text-align: center;
+}
+#itemList .tel{
+    width: 870px;
+    height: 56px;
+    overflow: hidden;
+    position: absolute;
+    top: 16px;
+    left: 123px;
+    border: 0;
+}
+#itemList .count{
+    width: 187px;
+    height: 56px;
+    overflow: hidden;
+    position: absolute;
+    top: 16px;
+    left: 1042px;
+    border: 0;
+}
+#itemList .champion{
+    background: url(../images/shield.png);
+}
+#itemList .secondWin{
+    background: url(../images/shield2.png);
+}
+#itemList .thirdWin{
+    background: url(../images/shield3.png);
+}
+.noScoreList{
+    width: 519px;
+    height: 427px;
+    background: url(../images/noContent.png);
+    position: absolute;
+    top: 220px;
+    left: 400px;
+}
+.noDetialList{
+    width: 519px;
+    height: 427px;
+    background: url(../images/noContent.png);
+    position: absolute;
+    top: 300px;
+    left: 380px;
+}
+#detialActivity{
+    width: 1920px;
+    height: 1080px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../images/noActivityBg.png);
+}
+#detialActivityContent{
+    position: absolute;
+    top: 107px;
+    left: 329px;
+    width: 1164px;
+    height: 790px;
+    /* background: url(../images/detialBg.png); */
+    background-color: #494949;
+    background-image: -webkit-linear-gradient(315deg, #494949 0%, #232323 100%);    
+    opacity: 0.96;
+    padding: 38px 49px;
+}
+#detialActivityContent ul li{
+    list-style: none;
+    width: 33%;
+    text-align: center;
+    color: #E4CA99;
+    display: inline-block;
+    font-size: 28px;
+}
+.detialTable{
+    width: 1164px;
+    height: 100%;
+    color: #fff;
+    padding-top: 30px;
+}
+.tableHeader{
+    width: 100%;
+    height: 66px;
+    line-height: 66px;
+    background-color: #000000;
+    position: relative;
+    font-size: 30px;
+}
+.tableHeader .header1{
+    width: 230px;
+    position: absolute;
+    left: 118px;
+}
+.tableHeader .header2{
+    width: 230px;
+    position: absolute;
+    left: 399px;
+}
+.tableHeader .header3{
+    width: 230px;
+    position: absolute;
+    left: 583px;
+}
+.tableHeader .header4{
+    width: 230px;
+    position: absolute;
+    left: 875px;
+}
+#detialContent{
+    width: 100%;
+    height: 650px;
+    overflow: hidden;    
+}
+#detialList{
+    -webkit-transition: all .5s ease 0s;
+    padding-top: 15px;
+}
+#progressBar {
+    height: 650px;
+    width: 15px;
+    background-color: rgba(254, 254, 254, 0);
+    /* background-color: rgba(254, 254, 254, .05); */
+    position: absolute;
+    right: 28px;
+    top: 181px;
+    border-radius: 10px
+}
+
+/* #detialList #progressBar {
+    height: 960px;
+    right: 28px;
+    top: 120px;
+    z-index: 1
+} */
+#progressBar .strip {
+    position: absolute;
+    height: 110px;
+    width: 11px;
+    top: 0;
+    left: 2px;
+    background-color: #5a5a5a;
+    /* background: -webkit-linear-gradient(left, #5a5a5a, #919191); */
+    border-radius: 6px;
+    transition: all .6s .1s
+}
+
+/* #detialList #progressBar #strip {
+    background: -webkit-linear-gradient(left, #395c97, #5c6ccd)
+} */
+
+.innerDetial{
+    width: 99%;
+    height: 62px;
+    position: relative;
+    font-size: 30px;
+    color: #fff;
+    margin-bottom: 30px;
+}
+.innerDetial .method{
+    width: 314px;
+    height: 62px;
+    overflow: hidden;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    border: 0;
+    text-align: center
+}
+.innerDetial .score{
+    width: 172px;
+    height: 62px;
+    overflow: hidden;
+    position: absolute;
+    top: 10px;
+    left: 365px;
+    border: 0;
+    text-align: center
+}
+.innerDetial .vip{
+    width: 172px;
+    height: 62px;
+    overflow: hidden;
+    position: absolute;
+    top: 10px;
+    left: 576px;
+    border: 0;
+    text-align: center
+}
+.innerDetial .time{
+    width: 352px;
+    height: 62px;
+    overflow: hidden;
+    position: absolute;
+    top: 10px;
+    left: 759px;
+    border: 0;
+    text-align: center
+}
+#telActivity {
+    width: 1920px;
+    height: 1080px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../images/noActivityBg.png);
+}
+#inputArea{
+    width: 100%;
+    height: 69px;
+    line-height: 69px;
+    background-color: rgba(0,0,0,.3);
+    border-radius: 18px;
+}
+#telActivityContent {
+    position: absolute;
+    top: 217px;
+    left: 660px;
+    width: 600px;
+    height: 600px;
+    background: url(../images/telPop.png);
+    border-radius: 42px;
+    background-size: contain;
+    /* border: 1px solid rgba(31, 31, 37, 1); */
+}
+#telActivityContent .inputWrap{
+    width: 459px;
+    height: 69px;
+    padding: 80px 0 25px 0;
+    margin: 0 auto;
+    font-size: 30px;
+    color: #ffd47b;
+    text-align: center;
+}
+#telActivityContent h3{
+    padding-top: 38px;
+    text-align: center;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-size: 48px;
+    color: #fee8a6;
+    font-weight: 500;
+}
+#telActivityContent p {
+    font-size: 25px;
+    font-family: PingFangSC-Medium, PingFang SC;  
+    color: rgba(255, 255, 255, 1);
+    line-height: 40px;
+    letter-spacing: 5px;
+    text-align: center;
+}
+#telActivityOk{
+    position: absolute;
+    top: 500px;
+    left: 71px;
+    width: 216px;
+    height: 69px;
+    /* background: url(../images/cancel.png); */
+    background-color: rgba(255, 213, 126, 1);
+    background-image: -webkit-linear-gradient(269deg, rgba(255, 213, 126, 1) 0%, rgba(255, 168, 28, 1) 100%);
+    box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.28), 0px 1px 3px 0px #FF7819;
+    border-radius: 10px;
+    font-size: 30px;
+    font-family: PingFang-SC-Medium, PingFang-SC;
+    font-weight: 500;
+    color: rgba(77, 39, 26, 1);
+    line-height: 68px;
+    letter-spacing: 4px;
+    text-align: center;
+}
+#telActivityBack {
+    position: absolute;
+    top: 500px;
+    left: 314px;
+    width: 216px;
+    height: 69px;
+    /* background: url(../images/cancel.png); */
+    background-color: rgba(255, 213, 126, 1);
+    background-image: -webkit-linear-gradient(269deg, rgba(255, 213, 126, 1) 0%, rgba(255, 168, 28, 1) 100%);
+    box-shadow: 0px 5px 8px 0px rgba(0, 0, 0, 0.28), 0px 1px 3px 0px #FF7819;
+    border-radius: 10px;
+    font-size: 30px;
+    font-family: PingFang-SC-Medium, PingFang-SC;
+    font-weight: 500;
+    color: rgba(77, 39, 26, 1);
+    line-height: 68px;
+    letter-spacing: 4px;
+    text-align: center;
+}
+#telActivityContent .active{
+    background-color: #FCA802;
+    background-image: -webkit-linear-gradient(300deg, #FCA802 0%, #F87501 100%);
+    /* background: url(../images/ok.png); */
+}

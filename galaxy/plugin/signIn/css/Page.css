@@ -1,0 +1,160 @@
+
+.signIn {
+    position: relative;
+    top: 273px;
+    left: 411px;
+    width: 1141px;
+    height: 533px;
+    background: url(../images/bg.png) center center no-repeat;
+}
+.signIn .returnTip {
+    color: #E4CA99;
+    font-size: 28px;
+    position: fixed;
+    top: 223px;
+    right: 375px;
+}
+.signIn .returnTip span{
+    color: #fff;
+}
+.signIn .datesContainer {
+    position: absolute;
+    width: 737px;
+    height: 483px;
+    top: 25px;
+    left: 27px;
+    background-color: antiquewhite;
+}
+.datesContainer .date{
+    display: inline-block;
+    width: 105px;
+    height: 96px;
+    line-height: 96px;
+    text-align: center;
+}
+.datesContainer .date span{
+    display: inline-block;
+    width: 59px;
+    height: 59px;
+    vertical-align: middle;
+    line-height: 59px;
+    font-size: 34px;
+    color: #7E4A28;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+}
+.datesContainer .date .last{
+    border: 2px solid #B5B5B5;
+    border-radius: 50%;
+}
+.datesContainer .date .today{
+    border-radius: 50%;
+    color: #fff;
+    background: linear-gradient(131deg, #FD6F6F 0%, #FA5E71 100%);
+}
+.datesContainer .date .nextMonthDay{
+    color: #B5B5B5;
+}
+.datesContainer .date img {
+    width: 59px;
+    height: 59px;
+    vertical-align: middle
+}
+.descContainer {
+    width: 377px;
+    height: 533px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.descContainer .dailySignInInfo {
+    position: absolute;
+    left: 58px;
+    top: 26px;
+    width: 319px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 40px;
+    color: #fff;
+}
+.descContainer .tomorrowSignIn {
+    position: absolute;
+    left: 58px;
+    top: 104px;
+    width: 319px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 34px;
+    color: #FFA81C;
+
+}
+.descContainer .tomorrowSignIn img{
+    width: 37px;
+    height: 33px;
+    margin-right: 12px;
+}
+.descContainer .todaySignIn {
+    position: absolute;
+    right: 110px;
+    top: 190px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #FFFFFF;
+    border: 7px solid #FFCD6D;
+    text-align: center;
+    font-family: PingFangSC-Medium, PingFang SC;
+    font-weight: 500;
+}
+.descContainer .todaySignIn .score{
+    font-size: 40px;
+    color: #EF1C78;
+    line-height: 90px;
+}
+.descContainer .todaySignIn .sussSign{
+    font-size: 30px;
+    color: #EF1C78;
+    line-height: 14px;
+}
+.descContainer .ifDailySignIn{
+    position: absolute;
+    left: 58px;
+    top: 364px;
+    width: 319px;
+    height: 51px;
+}
+.descContainer .ifDailySignIn span {
+    display: inline-block;
+}
+.descContainer .ifDailySignIn .pick{
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    border: 4px solid #FFFFFF;
+}
+.descContainer .ifDailySignIn .pick.picked{
+      /* 需要判断是否开启自动签到 */
+      background-image: url(../images/bingo.png);
+      background-position: center center;
+      background-repeat: no-repeat;
+}
+.descContainer .ifDailySignIn.focusBorder .pick{
+    background-color: #FFA81C;
+}
+.descContainer .ifDailySignIn .dailySignIn{
+    margin-left: 6px;
+    width: 233px;
+    height: 51px;
+    background: url(../images/dailysSignIn.png) center center no-repeat;
+}
+.descContainer #welfareExchange{
+    width: 153px;
+    height: 56px;
+    position: absolute;
+    bottom: 33px;
+    right: 105px;
+    background: url(../images/welfareExchange.png) center center no-repeat; 
+}
+.descContainer #welfareExchange.focusBorder {
+    background: url(../images/welfareExchangeFocus.png) center center no-repeat;
+}

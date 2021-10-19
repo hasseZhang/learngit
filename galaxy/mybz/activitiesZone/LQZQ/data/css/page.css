@@ -1,0 +1,44 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background: url('../images/bg.jpg') no-repeat;
+}
+#main {
+    position: absolute;
+    top: 100px;
+    padding: 0 60px 59px 60px;
+}
+#leftBox, #rightBox {
+    float: left;
+}
+#leftBox {
+    width: 155px;
+    height: 583px;
+    margin-right: 10px;
+    box-shadow: 2px 2px 6px 0px black;
+    background: url('../images/listBg.jpg') no-repeat;
+}
+#leftBox div {
+    width: 100%;
+    height: 63px;
+    line-height: 63px;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    text-shadow: 0px 2px 4px black;
+}
+#leftBox div.focusBorder {
+    background: url('../images/focusBg.png') no-repeat;
+    background-position: center;
+}
+#leftBox div.active {
+    background: url('../images/active.jpg') no-repeat;
+    color: #00b8ee;
+    background-position: right;
+}
+#rightBox {
+    width: 992px;
+}

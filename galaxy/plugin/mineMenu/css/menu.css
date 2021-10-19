@@ -1,0 +1,92 @@
+#menuContainer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 302px;
+    height: 1080px;
+    background: url(../images/menuBg.png) no-repeat
+}
+
+#menuContainer #menuLogo {
+    position: absolute;
+    left: 50px;
+    top: 42px
+}
+
+#menuContainer #menuContent {
+    width: 100%;
+    height: 940px;
+    position: absolute;
+    left: 0;
+    top: 140px;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+#menuContainer #menuContent li {
+    float: left;
+    width: 100%;
+    height: 65px;
+    text-align: center;
+    font-size: 38px;
+    color: #fefefe;
+    line-height: 65px;
+    margin-bottom: 24px
+}
+
+#menuContainer #menuContent li.focusBorder {
+    background: -webkit-linear-gradient(right, #e3802f, #e2ab13);
+    color: #1b0f01;
+    font-size: 44px
+}
+
+#menuContainer #menuContent li.current {
+    color: #eb9906
+}
+
+#menuContainer #menuLogo.fav {
+    width: 198px;
+    height: 46px;
+    background: url(../images/fav.png) center center no-repeat
+}
+
+#menuContainer #menuLogo.ph {
+    width: 194px;
+    height: 44px;
+    background: url(../images/ph.png) center center no-repeat
+}
+
+#menuContainer #menuLogo.ln {
+    width: 195px;
+    height: 46px;
+    background: url(../images/ln.png) center center no-repeat
+}
+
+#menuContainer #menuLogo.mo {
+    width: 197px;
+    height: 46px;
+    background: url(../images/mo.png) center center no-repeat
+}
+
+#menuContainer #menuLogo.mc {
+    width: 197px;
+    height: 46px;
+    background: url(../images/card.png) center center no-repeat
+}
+
+#menuContainer #menuLogo.mc {
+    left: 53px;
+}
+
+#menuContainer #menuLogo.email {
+    width: 194px;
+    height: 44px;
+    background: url(../images/email.png) center center no-repeat
+}
+#menuContainer #menuLogo.phonebind {
+    width: 194px;
+    height: 44px;
+    background: url(../images/phoneBind.png) center center no-repeat
+}

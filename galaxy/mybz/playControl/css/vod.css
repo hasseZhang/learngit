@@ -1,0 +1,52 @@
+.endBox{
+    position:absolute;
+    height:60px;
+    padding:0 33px;
+    line-height:44px;
+    top:25px;
+    right:25px;
+    font-size:30px;
+    color:#fff;
+    background:rgba(0,0,0,.6);
+    border-radius:10px
+}
+.endBox .time{
+    font-size:48px;
+    color:#f5922a;
+    position:relative;
+    top:8px
+}
+.endBox .unit{
+    font-size:26px;
+    color:#f5922a;
+    position:relative;
+    top:8px
+}
+.hisCue{
+    position:absolute;
+    width:583px;
+    height:60px;
+    line-height:60px;
+    top:25px;
+    right:25px;
+    font-size:30px;
+    color:#fff;
+    background:url(../images/dianbo/progress/hisCue.png) 0 0 no-repeat;
+    text-indent:30px
+}
+#AdpicBg {
+    width: 1920px;
+    height: 1080px;
+}
+.adTime {
+    position: absolute;
+    height: 67px;
+    line-height: 29px;
+    top: 52px;
+    right: 43px;
+    font-size: 67px;
+    color: #eba600
+  }
+  .adTime .unit {
+    font-size: 47px
+  }

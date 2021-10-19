@@ -1,0 +1,577 @@
+body {
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  margin: 0;
+  position: relative;
+  left: 0;
+  top: 0;
+  background: 0 0;
+  font-family: "微软雅黑"
+}
+#cpInfo {
+  width: 1000px;
+  height: 30px;
+  line-height: 30px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: left;
+  position: absolute;
+  left: 90px;
+  top: 96px;
+  font-size: 22px;
+  color: #999
+}
+#wrap {
+  background: 0 0;
+  position: relative;
+  left: 0;
+  top: 0;
+  -webkit-transition: .5s;
+  will-change: transform
+}
+#bgImg {
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 0;
+  top: 0
+}
+#caBg {
+  position: absolute;
+  left: 0;
+  top: 0
+}
+#actorName .focusBorder,
+#btns .focusBorder,
+#moreBtn.focusBorder {
+  background: -webkit-linear-gradient(right,#e3802f,#e2ab13)!important
+}
+#moreBtn.focusBorder {
+  color: #1b0f01;
+  text-decoration: none
+}
+#pushVideo #videoList .focusBorder,
+#pushVideo .section .focusBorder {
+  -webkit-box-shadow: 0 0 0 5px #fff,0 0 16px 5px #fff;
+  -webkit-transform: scale(1.05);
+  z-index: 1
+}
+#pushVideo #videoList .focusBorder .videoName,
+#pushVideo .section .focusBorder .videoName {
+  background: -webkit-linear-gradient(left,#fff 40%,#e6e6e6 100%);
+  color: #000;
+  width: 267px;
+  height: 81px;
+  line-height: 81px;
+  left: -1px;
+  top: 366px
+}
+#pushVideo #videoList .focusBorder .images,
+#pushVideo .section .focusBorder .image {
+  width: 265px;
+  left: 0;
+  height: 365px;
+  top: 0
+}
+#videoWindow {
+  position: absolute;
+  left: 90px;
+  top: 136px;
+  width: 1000px;
+  height: 562px
+}
+#videoWindow.focusBorder {
+  -webkit-box-shadow: 0 0 0 5px #fff,0 0 16px 5px #fff
+}
+#tryTime {
+  width: 321px;
+  height: 50px;
+  background: url(../images/tryTimeBg.png) 0 0 no-repeat;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 32px;
+  color: #fff;
+  padding-right: 10px;
+  text-align: right;
+  line-height: 50px
+}
+#videoWindow .cue {
+  position: absolute;
+  left: 4px;
+  bottom: 4px;
+  width: 368px;
+  height: 58px
+}
+#videoWindow .cue.buy {
+  background: url(../images/buyCue.png) 0 0 no-repeat
+}
+#videoWindow .cue.full {
+  background: url(../images/fullCue.png) 0 0 no-repeat
+}
+#videoWindow.over {
+  background: #242424
+}
+#videoWindow .text {
+  text-align: center;
+  font-size: 32px;
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%)
+}
+#detailInfo {
+  position: absolute;
+  width: 712px;
+  height: auto;
+  left: 1121px;
+  top: 136px
+}
+#videoName {
+  width: 710px;
+  height: 85px;
+  text-align: left;
+  font-size: 58px;
+  color: #fff;
+  line-height: 85px;
+  margin-bottom: 19px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: left
+}
+#baseInfo {
+  height: 58px;
+  margin-bottom: 21px;
+  width: 710px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  line-height: 58px;
+  color: #fff;
+  font-size: 36px
+}
+#baseInfo img {
+  position: relative;
+  top: 8px
+}
+#baseInfo > div {
+  height: 48px;
+  font-size: 36px;
+  padding: 0 30px;
+  line-height: 48px;
+  color: #fff;
+  display: inline;
+  border-right: 2px solid rgba(255,255,255,.1);
+  position: relative;
+  top: -8px
+}
+#baseInfo > div:nth-child(1) {
+  padding-left: 0
+}
+#baseInfo > div:nth-last-child(1) {
+  border-right: none;
+  padding-right: 0
+}
+#baseInfo .vip {
+  width: 61px;
+  height: 54px
+}
+#director {
+  height: 38px;
+  line-height: 38px;
+  font-size: 28px;
+  color: #fff;
+  margin-bottom: 18px
+}
+#actor {
+  width: 2000px;
+  height: 38px;
+  line-height: 38px;
+  font-size: 28px;
+  color: #fff;
+  margin-bottom: 18px
+}
+#synopsis {
+  width: 710px;
+  height: auto;
+  line-height: 38px;
+  font-size: 28px;
+  color: #fff
+}
+#synopsis .content {
+  float: none!important
+}
+#moreBtn {
+  position: absolute;
+  font-size: 24px;
+  color: #e3950f;
+  text-decoration: underline;
+  left: 636px;
+  top: 414px;
+  padding: 0 10px;
+  border-radius: 4px
+}
+#allSynopsis {
+  position: absolute;
+  width: 740px;
+  height: 562px;
+  left: 0;
+  top: 0;
+  background: rgba(0,0,0,.85);
+  z-index: 1;
+  visibility: hidden
+}
+#allSynopsis.focusBorder {
+  visibility: visible
+}
+#allSynopsis .tip {
+  width: 100%;
+  height: 58px;
+  border-bottom: rgba(255,255,255,.15) 2px solid;
+  font-size: 24px;
+  color: rgba(255,255,255,.8);
+  line-height: 58px;
+  text-indent: 490px
+}
+#allSynopsis .tip span {
+  color: rgba(235,175,8,.8)
+}
+#allSynopsis .allSynopsisWrap {
+  line-height: 53px;
+  color: rgba(255,255,255,.8);
+  font-size: 28px;
+  padding: 24px 15px 0 15px
+}
+#allSynopsis .content {
+  float: none!important
+}
+#detailInfo .title {
+  text-align-last: justify;
+  width: 96px;
+  float: left
+}
+#detailInfo .colon {
+  float: left;
+  margin: 0 13px
+}
+#detailInfo .content {
+  float: left
+}
+#detailInfo #actor .content,
+#detailInfo #director .content {
+  width: 580px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap
+}
+#btns {
+  position: absolute;
+  width: 710px;
+  height: 90px;
+  left: 1121px;
+  top: 608px
+}
+#btns #btnWrap {
+  float: left;
+  height: 90px
+}
+#btns #btnWrap > div {
+  float: left;
+  width: 216px;
+  height: 90px;
+  color: #fff;
+  font-size: 42px;
+  line-height: 90px;
+  margin-right: 31px;
+  position: relative;
+  border-radius: 4px
+}
+#btns #btnWrap > div:nth-last-child(1) {
+  margin-right: 0
+}
+#btns #btnWrap > div::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 4px
+}
+#btns #btnWrap > div.focusBorder {
+  color: #1b0f01
+}
+#btns #fullScreen {
+  text-indent: 95px
+}
+#btns #fullScreen::after {
+  background: rgba(255,255,255,.15) url(../images/fullScreen.png) 38px 50% no-repeat
+}
+#btns #fullScreen.focusBorder::after {
+  background: url(../images/fullScreenF.png) 38px 50% no-repeat
+}
+#btns #buy {
+  text-indent: 96px
+}
+#btns #buy::after {
+  background: rgba(255,255,255,.15) url(../images/buy.png) 35px 50% no-repeat
+}
+#btns #buy.focusBorder::after {
+  background: url(../images/buyF.png) 35px 50% no-repeat
+}
+#btns #fav {
+  text-indent: 97px
+}
+#btns #fav::after {
+  background: rgba(255,255,255,.15) url(../images/fav.png) 37px 50% no-repeat
+}
+#btns #fav.focusBorder::after {
+  background: url(../images/favF.png) 37px 50% no-repeat
+}
+#btns #fav.faved {
+  text-indent: 77px
+}
+#btns #fav.faved::after {
+  background: rgba(255,255,255,.15) url(../images/faved.png) 23px 50% no-repeat
+}
+#btns #fav.faved.focusBorder::after {
+  background: url(../images/favedF.png) 23px 50% no-repeat
+}
+#select {
+  position: absolute;
+  width: 1740px;
+  left: 90px;
+  top: 713px;
+  overflow: hidden;
+  z-index: 1
+}
+#select .title {
+  height: 94px;
+  line-height: 94px;
+  text-align: left;
+  color: #fff;
+  font-size: 48px
+}
+#episodeWrap {
+  width: 1682px;
+  overflow: hidden
+}
+#episode {
+  height: 90px;
+  width: 500000px;
+  transition: .3s
+}
+#episode .episode {
+  width: 398px;
+  height: 90px;
+  line-height: 90px;
+  color: #fff;
+  font-size: 27px;
+  border-radius: 4px;
+  margin-right: 30px;
+  float: left;
+  background: rgba(0,0,0,.15);
+  position: relative;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 10px;
+  text-align: center
+}
+.vipCorner {
+  top: 0;
+  right: 0
+}
+#episode .episode.vipCorner::after {
+  content: '';
+  width: 57px;
+  height: 24px;
+  display: block;
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  background: url(../images/vipCorner.png) 0 0 no-repeat
+}
+#select .arrow {
+  position: absolute;
+  width: 30px;
+  height: 90px;
+  background: url(../images/arrow.png) 0 50% no-repeat;
+  right: 0;
+  top: 94px
+}
+#epNavi {
+  height: 64px;
+  margin: 25px 0 0 -15px;
+  width: 100000px;
+  transition: .3s
+}
+#epNavi .epNavi {
+  width: 264px;
+  height: 64px;
+  line-height: 64px;
+  text-align: center;
+  color: #fff;
+  font-size: 34px;
+  border-radius: 4px;
+  margin: 0 65px;
+  float: left
+}
+#epNavi .epNavi.focusBorder,
+#episode .episode.focusBorder {
+  background: -webkit-linear-gradient(right,#e3802f,#e2ab13);
+  color: #1b0f01
+}
+#epNavi .epNavi.current,
+#episode .episode.current {
+  color: #e3950f
+}
+#pushVideo {
+  position: absolute;
+  width: 1920px;
+  left: 0;
+  top: 990px
+}
+#pushVideo .title {
+  height: 94px;
+  line-height: 94px;
+  text-align: left;
+  color: #fff;
+  font-size: 48px
+}
+#pushVideo .image {
+  width: 265px;
+  height: 365px;
+  position: absolute;
+  left: 0;
+  top: 0
+}
+#pushVideo #four .image {
+  width: 412px;
+  height: 232px
+}
+#pushVideo #four .focusBorder .image {
+  width: 414px;
+  height: 233px
+}
+#pushVideo .videoName {
+  width: 265px;
+  height: 72px;
+  line-height: 72px;
+  font-size: 32px;
+  color: #fff;
+  position: absolute;
+  left: 0;
+  top: 365px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-indent: 10px;
+  text-align: center
+}
+#pushVideo #four .videoName {
+  width: 412px;
+  top: 232px
+}
+#pushVideo #four .focusBorder .videoName {
+  width: 414px;
+  top: 233px
+}
+#pushVideo img {
+  width: 100%;
+  height: 100%
+}
+#relativeActor {
+  width: 1740px;
+  margin: 0 auto
+}
+#relativeActor #actorName {
+  height: 60px
+}
+#relativeActor #actorName div {
+  float: left;
+  width: 265px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+  color: #fff;
+  margin-right: 30px;
+  font-size: 32px;
+  background: rgba(255,255,255,.15);
+  border-radius: 4px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+  text-indent: 10px
+}
+#relativeActor #actorName div.current {
+  color: #e3950f
+}
+#relativeActor #actorName div:nth-last-child(1) {
+  margin-right: 0
+}
+#videoList {
+  width: 100000px;
+  margin-top: 30px;
+  height: 401px;
+  -webkit-transition: .5s;
+  -webkit-transform: translateX(0)
+}
+#videoList > div {
+  margin-right: 30px;
+  height: 401px;
+  float: left
+}
+.section::after {
+  display: block;
+  clear: both;
+  content: "";
+  visibility: hidden;
+  height: 0
+}
+.section .sections {
+  float: left;
+  margin-right: 30px;
+  position: relative
+}
+#twelve .section .sections {
+  width: 265px;
+  height: 446px
+}
+#four .section .sections {
+  width: 412px;
+  height: 312px
+}
+#twelve {
+  width: 1740px;
+  margin: 0 auto
+}
+#twelve .section .sections:nth-child(6n) {
+  margin-right: 0
+}
+#four {
+  width: 1740px;
+  margin: 0 auto
+}
+#four .section .sections:nth-child(4n) {
+  margin-right: 0
+}
+.episodeText {
+  position: absolute;
+  background: rgba(0,0,0,.5);
+  height: 40px;
+  line-height: 40px;
+  font-size: 24px;
+  text-align: center;
+  padding: 0 14px;
+  color: #fff;
+  left: 4px;
+  bottom: 86px;
+  border-radius: 20px
+}

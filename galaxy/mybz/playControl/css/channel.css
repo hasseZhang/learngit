@@ -1,0 +1,637 @@
+.control-panel {
+    background:url(../images/zhibo/progress/play_bg.png) 0 0 repeat-x;
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:240px;
+    z-index:1
+}
+.control-panel .title {
+    width:1830px;
+    height:77px;
+    position:absolute;
+    top:150px;
+    left:74px;
+    font-size:30px
+}
+.control-panel .nextChanenl, .control-panel .playing {
+    position:relative;
+    line-height:38px;
+    height:38px
+}
+.control-panel .ti {
+    color:#ebaf08
+}
+.control-panel .playTime {
+    color:#e8e8e8;
+    margin-right:29px
+}
+.control-panel .channelName {
+    position:absolute;
+    left:290px;
+    width:1520px;
+    height:38px!important;
+    overflow:hidden;
+    color:#e8e8e8
+}
+.control-panel .progress {
+    background:url(../images/zhibo/progress/play_bar.png) 0 0 repeat-x;
+    height:8px;
+    width:1510px;
+    position:absolute;
+    top:121px;
+    left:74px;
+    border-radius:4px
+}
+.control-panel .progressBar {
+    background:#ebaf08;
+    height:8px;
+    width:0;
+    border-radius:4px;
+    position:relative
+}
+.control-panel .progressBar::after {
+    content:'';
+    background:url(../images/zhibo/progress/start.png) no-repeat;
+    width:20px;
+    height:20px;
+    position:absolute;
+    top:-6px;
+    right:-6px
+}
+.control-panel .progressBar.pauseBar::after {
+    content:'';
+    background:url(../images/zhibo/progress/pause_bar.png) no-repeat;
+    background-size: 100% 100%;
+    width:53px;
+    height:53px;
+    position:absolute;
+    top:-25px;
+    right:-25px;
+}
+.control-panel .progressBar::before {
+    content:attr(nowTime);
+    font-size:30px;
+    color:#fff;
+    height:38px;
+    position:absolute;
+    border-radius:4px;
+    padding:0 9px;
+    background:rgba(0, 0, 0, .7);
+    top:-60px;
+    right:0;
+    border:2px solid rgba(255, 255, 255, .7);
+    transform:translateX(50%)
+}
+.control-panel .infos {
+    position:absolute;
+    height:30px;
+    line-height:30px;
+    color:#fff;
+    font-size:30px;
+    top:110px;
+    left:1610px
+}
+.control-panel .pointer {
+    position:absolute;
+    width:199px;
+    height:199px;
+    top:-399px;
+    left:50%;
+    transform:translateX(-50%)
+}
+.control-panel .pointer.pause {
+    visibility:visible;
+    background:url(../images/zhibo/progress/pause.png) 0 0 no-repeat
+}
+.control-panel .pointer.rewind {
+    visibility:visible;
+    background:url(../images/zhibo/progress/rewind.png) 0 0 no-repeat
+}
+.control-panel .pointer.forward {
+    visibility:visible;
+    background:url(../images/zhibo/progress/forward.png) 0 0 no-repeat
+}
+.pauseTip {
+    background:url(../images/zhibo/progress/pause_tips.png) no-repeat;
+    width:130px;
+    height:130px;
+    position:absolute;
+    left:112px;
+    top:714px
+}
+#channelListWrap {
+    width:1920px;
+    height:1080px;
+    position:absolute;
+    left:0;
+    top:0;
+    z-index:1
+}
+#channelListWrap::after {
+    content:"";
+    display:none;
+    background:url(../images/zhibo/channelList/channelListBg1.png), url(../images/zhibo/channelList/channelListBg2.png);
+    background-size: 100% 100%;
+}
+#channelList {
+    width:1920px;
+    height:1080px;
+    position:absolute;
+    left:0;
+    top:0
+}
+#channelListWrap.left {
+    background:url(../images/zhibo/channelList/channelListBg1.png) 0 0 no-repeat
+}
+#channelListWrap.left #channelList #c_list, #channelListWrap.left #channelList #d_list {
+    display:none
+}
+#channelListWrap.left #channelList #b_list {
+    left:202px
+}
+#channelListWrap.right {
+    background:url(../images/zhibo/channelList/channelListBg2.png) 0 0 no-repeat
+}
+#channelListWrap.right #channelList #a_list,
+#channelListWrap.right #channelList #b_list {
+    display:none
+}
+#a_list {
+    position:absolute;
+    width:200px;
+    left:0;
+    top:95px;
+    overflow:hidden
+}
+#a_list #a_list_wrap {
+    width:200px;
+    transition:.5s
+}
+#a_list .a_list {
+    width:200px;
+    height:110px;
+    line-height:110px;
+    font-size:32px;
+    color:#fff;
+    text-align:center;
+    margin-bottom:20px
+}
+#a_list .current {
+    color:#ebaf08
+}
+#b_list {
+    position:absolute;
+    width:940px;
+    top:19px;
+    overflow:hidden
+}
+#b_list #b_list_wrap {
+    width:940px;
+    transition:.5s
+}
+#b_list .b_list {
+    width:940px;
+    height:110px;
+    margin-bottom:23px;
+    color:#fff;
+    position:relative
+}
+#b_list .channelTitle {
+    position:absolute;
+    top:15px;
+    height:32px;
+    line-height:32px;
+    font-size:32px;
+    text-align:left
+}
+#b_list .channelTitle div {
+    float:left
+}
+#b_list .channelNum {
+    margin-left:82px
+}
+#b_list .channelName {
+    margin-left:35px;
+    width:180px;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    white-space:nowrap;
+    text-align:left
+}
+#b_list .liveInfo {
+    position: absolute;
+    bottom: 15px;
+    left: 172px;
+    height: 32px;
+    line-height: 32px;
+    font-size: 32px;
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 300px;
+}
+#b_list .current {
+    color:#ebaf08
+}
+#b_list .recomCfav::after{
+    content:'';
+    display:block;
+    width:21px;
+    height:20px;
+    position:absolute;
+    left: 31px;
+    top:19px;
+    background:url(../images/zhibo/channelList/cfaved.png) no-repeat;
+    background-size: 100% 100%;
+}
+#b_list .recomCfav.focusBorder::after{
+    content:'';
+    display:block;
+    width:21px;
+    height:20px;
+    position:absolute;
+    left: 31px;
+    top:19px;
+    background:url(../images/zhibo/channelList/cfavedF.png) no-repeat;
+    background-size: 100% 100%;
+}
+#b_list .liveCorn::before {
+    content:'';
+    width:30px;
+    height:29px;
+    position:absolute;
+    left:123px;
+    top:66px;
+    background:url(../images/zhibo/channelList/liveCurrent.gif) 0 0 no-repeat
+}
+#b_list .liveCorn.focusBorder::before {
+    background:url(../images/zhibo/channelList/liveA.gif) 0 0 no-repeat
+}
+#b_list .tvodCorn.focusBorder::before {
+    background:url(../images/zhibo/channelList/tvodF.png) 0 0 no-repeat
+}
+#b_list .tvodCorn::before {
+    content:'';
+    width:30px;
+    height:29px;
+    position:absolute;
+    left:123px;
+    top:66px;
+    background:url(../images/zhibo/channelList/tvodCurrent.png) 0 0 no-repeat
+}
+#b_list .b_list .vip .channelName {
+    width:170px
+}
+#b_list .b_list .vip{
+    width:61px;
+    height:29px;
+    display:block;
+    position:absolute;
+    left:358px;
+    top:17px;
+    background-image:url(../../../css/images/public/vipCorner2.png);
+    background-size: cover;
+}
+#b_list .b_list .vip.focusBorder{
+    background-image:url(../../../css/images/public/vipCorner2.png);
+    background-size: cover;
+}
+#c_list {
+    position:absolute;
+    width:147px;
+    left:71px;
+    top:95px;
+    overflow:hidden
+}
+#c_list #c_list_wrap {
+    width:147px;
+    transition:.5s
+}
+#c_list .c_list {
+    width:147px;
+    height:110px;
+    line-height:110px;
+    font-size:32px;
+    color:#fff;
+    text-align:center;
+    margin-bottom:20px
+}
+#c_list .current{
+    background:url(../images/zhibo/channelList/c_list.png) 0 0 no-repeat;
+}
+#d_list .current{
+    background:url(../images/zhibo/channelList/d_list.png) 0 0 no-repeat;
+}
+
+#c_list .current,
+#d_list .current {
+    color:#ebaf08;
+    background-size: 100% 100%;
+}
+#d_list {
+    position:absolute;
+    width:742px;
+    left:218px;
+    top:95px;
+    overflow:hidden;
+    transition:.5s
+}
+#d_list #d_list_wrap {
+    width:606px;
+    min-height:1036px
+}
+#d_list .error {
+    width:606px;
+    height:1036px;
+    line-height:1036px;
+    font-size:32px;
+    text-indent:46px;
+    color:#fff
+}
+#d_list #d_list_wrap:empty::after {
+    content:'';
+    position:absolute;
+    left:50%;
+    top:50%;
+    -webkit-transform:translate(-50%, -50%);
+    width:200px;
+    height:200px;
+    background:url(../images/zhibo/channelList/loading.gif) 0 0 no-repeat
+}
+#d_list .d_list {
+    width:718px;
+    height:110px;
+    line-height:110px;
+    font-size:32px;
+    color:#fff;
+    text-align:center;
+    margin-bottom:20px;
+    position:relative
+}
+#d_list .startTime {
+    position: absolute;
+    height: 21px;
+    left: 22px;
+    top: 12px;
+    line-height: 21px
+}
+#d_list .name {
+    position:absolute;
+    height:110px;
+    left:180px;
+    top: 0;
+    line-height:110px;
+    width:350px;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    white-space:nowrap;
+    text-align: left
+}
+#d_list .startTime {
+    position:absolute;
+    width:180px;
+    height: 110px;
+    left:0px;
+    top: 0;
+    line-height:110px;
+    font-size:32px;
+}
+#d_list .tvod,
+#d_list .live {
+    color:#ebaf08
+}
+#d_list .focusBorder.tvod {
+    color:#fff
+}
+#d_list .state {
+    position:absolute;
+    width:100px;
+    height:110px;
+    left:590px;
+    top:0;
+    line-height:110px;
+    font-size:32px
+}
+#d_list .reserve::after {
+    content:'';
+    position:absolute;
+    display:block;
+    left:550px;
+    top:36px;
+    width:35px;
+    height:36px;
+    background: url(../images/zhibo/channelList/reserve.png) no-repeat;
+    background-size: 100% 100%;
+    z-index: 1
+}
+#d_list .reserve.focusBorder::after{
+    background: url(../images/zhibo/channelList/reserveF.png) no-repeat;
+    background-size: 100% 100%;
+    z-index: 1
+}
+#d_list .focusBorder .state,
+#d_list .focusBorder .live,
+#d_list .focusBorder .name {
+    color:#1b0f01
+}
+#d_list .hasReserve {
+    color:#ebaf08;
+    position:absolute;
+    width:136px;
+    height:110px;
+    left:590px;
+    top:0;
+    line-height:110px;
+    font-size:32px
+}
+#d_list .hasReserve::after {
+    content:'';
+    position:absolute;
+    display:block;
+    left:-44px;
+    top:34px;
+    width:42px;
+    height:43px;
+    background: url(../images/zhibo/channelList/hasReserve.png) no-repeat;
+    background-size: 100% 100%;
+    z-index: 2;
+}
+#focus {
+    position:absolute;
+    top:0;
+    left:0;
+    will-change:left top width height;
+    width:0;
+    height:0;
+    background: url(../images/zhibo/channelList/b_listF.png);
+}
+#focus.d_listF {
+    background: url(../images/zhibo/channelList/d_listF.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+}
+
+#b_list .moreSelect {
+    transition: 1s;
+}
+#b_list .moreSelect .guides {
+    position: absolute;
+    top:20px;
+    left: 490px;
+    width: 200px;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 47px;
+    text-align: center;
+    background: rgba(0, 0, 0, .5);
+    font-size: 32px;
+    color: #fff
+}
+#b_list .moreSelect .guides.focusBorder {
+    color:#191001;
+    background: -webkit-linear-gradient(270deg, #F3A600 0%, #EB8F0C 100%)
+}
+#b_list .moreSelect .cfav,
+#b_list .moreSelect .cfav.cfaved {
+    position:absolute;
+    top:20px;
+    left: 739px;
+    width: 200px;
+    height: 70px;
+    line-height: 70px;
+    padding-right: 45px;
+    box-sizing: border-box;
+    border-radius: 47px;
+    background: rgba(0, 0, 0, .5);
+    font-size: 32px;
+    color: #fff;
+    text-align: right;
+}
+#b_list .moreSelect .cfav::after,#b_list .moreSelect .cfav.focusBorder::after { 
+    content:'';
+    position:absolute;
+    display:block;
+    left:25px;
+    top:22px;
+    width:36px;
+    height:32px;
+    background-size: 100% 100%;
+}
+#b_list .moreSelect .cfav::after {
+    background-image:url(../images/zhibo/channelList/noCfav.png);
+}
+#b_list .moreSelect .cfav.focusBorder::after {
+    background-image:url(../images/zhibo/channelList/noCfavF.png);
+}
+#b_list .moreSelect .cfav.focusBorder,
+#b_list .moreSelect .cfav.cfaved.focusBorder {
+    color:#1b0f01;
+    background: -webkit-linear-gradient(270deg, #F3A600 0%, #EB8F0C 100%);
+}
+#b_list .moreSelect .cfav.cfaved::after,
+#b_list .moreSelect .cfav.cfaved.focusBorder::after {
+    content:'';
+    position:absolute;
+    display:block;
+    left:25px;
+    top:22px;
+    width:36px;
+    height:32px;
+    background-size: 100% 100%;
+}
+#b_list .moreSelect .cfav.cfaved::after {
+    background-image:url(../images/zhibo/channelList/cfaved.png);
+}
+#b_list .moreSelect .cfav.cfaved.focusBorder::after {
+    background-image:url(../images/zhibo/channelList/cfavedF.png);
+}
+#pip {
+    position:absolute;
+    width:472px;
+    height:262px;
+    left:1410px;
+    top:736px;
+    z-index:0
+}
+#pip.noPip .loading, #pip.play .loading {
+    display:none
+}
+#pip.play {
+    background:0 0
+}
+#pip .pipCue {
+    position:absolute;
+    width:127px;
+    height:30px;
+    font-size:20px;
+    text-indent:10px;
+    line-height:30px;
+    color:#fff;
+    top:0;
+    right:0;
+    border-bottom-left-radius:15px;
+    background:rgba(0, 0, 0, .5)
+}
+#pip .pipCue span {
+    color:#ebaf08
+}
+#pip .pipLock {
+    position:absolute;
+    width:20px;
+    height:24px;
+    background:url(../images/zhibo/pip/pipLock.png) 0 0 no-repeat;
+    top:8px;
+    left:8px
+}
+#a_list .a_list.focusBorder, #b_list .b_list.focusBorder, #c_list .c_list.focusBorder, #d_list .d_list.focusBorder {
+    color:#1b0f01
+}
+.advertPause{
+    width: 1150px;
+    height: 550px;
+    padding: 0;
+    margin: 0 auto;
+    position: relative;
+    top: 23%;
+}
+.advertPause .pic{
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.advertPause .rightTip{
+    padding: 5px 10px;
+    font-size: 24px;
+    color: #fff;
+    background: rgba(0, 0, 0, .3);
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.advertRightBottom{
+    width: 631px;
+    height: 296px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+}
+.advertRightBottom .pic{
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.advertVolume{
+    width: 631px;
+    height: 296px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+}
+.advertVolume .pic{
+    width: 100%;
+    height: 100%;
+    border: 0;
+}

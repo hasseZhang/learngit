@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 1280px;
+    height: 720px;
+    background: url('../images/bg.jpg') no-repeat;
+}
+.allTeam{
+    position: absolute;
+    top: 100px;
+    left: 60px;
+    width: 1159px;
+    height: 531px;
+}
+.allTeam>div {
+    position: absolute;
+    width: 222px;
+    height: 169px;
+}
+.ol1, .ol2, .ol3 {
+    box-shadow: 2px 2px 6px 0px black;
+}
+.ol1 {
+    top: 0px;
+}
+.ol2 {
+    top: 181px;
+}
+.ol3 {
+    top: 362px;
+}
+.col1 {
+    left: 0px;
+}
+.col2 {
+    left: 235px;
+}
+.col3 {
+    left: 469px;
+}
+.col4 {
+    left: 703px;
+}
+.col5 {
+    left: 937px;
+}
+
+.text {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 218px;
+    height: 50px;
+    line-height: 60px;
+    font-size: 20px;
+    text-align: center;
+    background: url('../images/mask.png') no-repeat;
+    background-size: 100% 90%;
+    background-position: 0 bottom;
+    color: white;
+    padding: 0 5px;
+}
+img {
+    width: 100%;
+    height: 100%;
+}
+#pageUpBtn, #pageDownBtn {
+    position: absolute;
+    top: 542px;
+    width: 98px;
+    height: 40px;
+    line-height: 40px;
+    color: white;
+    text-align: center;
+    border-radius: 9px;
+    font-size: 21px;
+    background: #19283c;
+}
+#pageUpBtn.focusBorder, #pageDownBtn.focusBorder {
+    background: url('../images/focusBtn.png') no-repeat;
+    background-size: 100% 100%;
+    border: none;
+    box-shadow: none;
+}
+#pageUpBtn {
+    left: 435px;
+}
+img {
+    width: 100%;
+    height: 100%;
+}
+#pageDownBtn {
+    left: 628px;
+}
+#pageNumBox{
+    width: 91px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    position: absolute;
+    font-size: 18px;
+    top: 542px;
+    left: 536px;
+    color: white;
+}
+#pageNumBox span {
+    font-size: 18px;
+}
+#noData {
+    position: absolute;
+    top: 100px;
+    left: 60px;
+    width: 1159px;
+    height: 531px;
+    line-height: 531px;
+    text-align: center;
+    color: white;
+    font-size: 32px;
+}
+.allTeam .focusBorder {
+    background: url('../images/') no-repeat;
+    background-size: 100% 100%;
+    -webkit-transform: scale(1.1);
+    border: 2px solid white;
+    box-shadow: 0 0 3px 1px white;
+}
+.none {
+    display: none;
+}
+

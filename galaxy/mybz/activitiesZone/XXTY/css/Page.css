@@ -1,0 +1,141 @@
+body {
+    position:absolute;
+    width:1920px;
+    height:1080px;
+    left:0;
+    top:0;
+    background:0 0
+}
+img {
+    width:100%;
+    height:100%
+}
+#wrap {
+    position:absolute;
+    width:1920px;
+    height:1080px;
+    left:0;
+    top:0
+}
+#wrap #container {
+    position:absolute;
+    width:1694px;
+    height:804px;
+    left:113px;
+    top:153px
+}
+#container #videoList {
+    position:absolute;
+    width:1694px;
+    height:639px;
+    left:0;
+    top:0
+}
+#container #videoList .sug {
+    position:absolute;
+    width:254px;
+    height:309px;
+    -webkit-box-shadow:0 0 0 2px #03618e
+}
+#sug0 {
+    left:0;
+    top:0
+}
+#sug1 {
+    left:1442px;
+    top:0
+}
+#sug2 {
+    left:0;
+    top:329px
+}
+#sug3 {
+    left:1442px;
+    top:329px
+}
+#video {
+    position:absolute;
+    width:1133px;
+    height:638px;
+    left:281px;
+    top:0;
+    -webkit-box-shadow:0 0 0 2px #03618e
+}
+#container #subList {
+    position:absolute;
+    width:1693px;
+    height:114px;
+    left:0;
+    top:692px
+}
+#container #subList .section {
+    position:absolute;
+    width:215px;
+    height:114px;
+    top:0
+}
+#section0 {
+    left:0
+}
+#section1 {
+    left:248px
+}
+#section2 {
+    left:494px
+}
+#section3 {
+    left:740px
+}
+#section4 {
+    left:986px
+}
+#section5 {
+    left:1233px
+}
+#section6 {
+    left:1479px
+}
+#wrap #footer {
+    position:absolute;
+    width:1920px;
+    height:51px;
+    left:0;
+    top:1029px
+}
+#wrap #footer #icon {
+    position:absolute;
+    width:38px;
+    height:33px;
+    left:128px;
+    top:7px;
+    background:url(../images/icon.png) no-repeat
+}
+#wrap #footer #mar {
+    position:absolute;
+    width:1728px;
+    height:51px;
+    top:-2px;
+    left:192px;
+    line-height:51px;
+    font-size:27px;
+    color:#fff
+}
+#container #videoList .sug.focusBorder, .section.focusBorder {
+    -webkit-transform:scale(1.05);
+    -webkit-box-shadow:0 0 0 2px #fff, 0 0 0 4px #fff, 0 0 12px 6px #fff
+}
+.section.focusBorder {
+    border-radius:13px
+}
+#video.focusBorder {
+    -webkit-transform:scale(1);
+    -webkit-box-shadow:0 0 0 2px #fff, 0 0 0 4px #fff, 0 0 12px 6px #fff
+}
+.sys_volume {
+    left:504px;
+    top:924px
+}
+.sys_volume_mute {
+    left:138px;
+    top:620px
+}

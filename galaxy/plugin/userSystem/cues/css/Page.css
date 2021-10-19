@@ -1,0 +1,20 @@
+#us_cue {
+  position: absolute;
+  padding: 0 87px;
+  height: 96px;
+  line-height: 96px;
+  background: rgba(0,0,0,.85);
+  border-radius: 7px;
+  font-size: 33px;
+  color: #fff;
+  left: 50%;
+  top: 900px;
+  -webkit-transform: translateX(-50%);
+  white-space: nowrap
+}
+#us_cue img {
+  width: 46px;
+  height: 46px;
+  -webkit-transform: translateY(10px);
+  margin-right: 27px
+}

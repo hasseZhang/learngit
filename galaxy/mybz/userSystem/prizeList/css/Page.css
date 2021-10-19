@@ -1,0 +1,222 @@
+body {
+  background: url(../images/bg.jpg) no-repeat
+}
+img {
+  width: 100%;
+  height: 100%
+}
+#menuContainer {
+  width: 225px;
+  background: 0 0
+}
+#menuContainer .logo {
+  height: 96px
+}
+#menuContainer .content li {
+  position: relative;
+  height: 68px;
+  font-size: 28px;
+  line-height: 68px;
+  margin-bottom: 32px
+}
+#menuContainer .content li.current::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 32px;
+  display: inline-block;
+  right: 0;
+  top: 18px;
+  background-color: #4bb5ff
+}
+#listWrap {
+  width: 1040px;
+  height: 678px;
+  top: 81px;
+  right: 15px;
+  z-index: -1
+}
+.listContent {
+  position: absolute;
+  width: 1040px;
+  height: 678px;
+  top: 5px;
+  right: -16px
+}
+.listContent .prize_item {
+  float: left;
+  width: 332px;
+  height: 196px
+}
+.listContent .prize_item .prize_content  .sellOut {
+  position: absolute;
+  width: 312px;
+  height: 176px;
+  left: 0;
+  top: 0;
+  background: rgba(0,0,0,.2) url(../images/sellOut.png) center center no-repeat
+}
+.listContent .prize_item .prize_content {
+  position: relative;
+  top: 10px;
+  left: 10px;
+  width: 312px;
+  height: 176px
+}
+.listContent .prize_item .prize_content .prize_poster {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 312px;
+  height: 176px
+}
+.exch {
+  position: absolute;
+  width: 49px;
+  height: 19px;
+  right: 6px;
+  top: 6px;
+  background: url(../images/exch.png) no-repeat
+}
+.no_content {
+  background: url(../images/no_data.png) no-repeat
+}
+.listContent .prize_item.focusBorder .prize_content {
+  -webkit-transform: scale(1.12);
+  -webkit-box-shadow: 0 0 0 3px #fff;
+  z-index: 1
+}
+#vipPanel {
+  position: absolute;
+  width: 246px;
+  height: 46px;
+  left: 252px;
+  top: 26px;
+  border-radius: 10px
+}
+#vipPanel img {
+  border-radius: 10px
+}
+#vipPanel.focusBorder {
+  -webkit-box-shadow: 0 0 0 3px #fff
+}
+#pageNum {
+  position: absolute;
+  width: 200px;
+  height: 30px;
+  top: 38px;
+  right: 54px;
+  line-height: 30px;
+  text-align: right;
+  font-size: 20px;
+  color: #fff
+}
+
+/*  奖品兑换列表样式 */
+/* .module45 .blockWrap::after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden
+}
+
+.module45 .blocks {
+  float: left;
+  width: 558px;
+  height: 313px;
+  margin-right: 33px;
+  margin-bottom: 30px;
+  position: relative;
+  background: -webkit-linear-gradient(left, #0080DB 0, #29D2F1 100%);
+  font-family: PingFangSC-Semibold, PingFang SC;
+  font-weight: 600;
+}
+
+.module45 .blocks:nth-child(3n) {
+  margin-right: 0
+} */
+.listContent .prize_item.focusBorder .WE_prize_content {
+  -webkit-transform: scale(1.12);
+  -webkit-box-shadow: 0 0 0 3px #fff;
+  z-index: 1
+}
+.WE_prize_content{
+  position: relative;
+  top: 10px;
+  left: 10px;
+  width: 312px;
+  height: 176px;
+  background: -webkit-linear-gradient(left, #0080DB 0, #29D2F1 100%);
+}
+.WE_prize_content .images {
+  width: 100%;
+  height: 176px
+}
+
+.WE_prize_content .prizeName {
+  position: absolute;
+  width: 120px;
+  height: 83px;
+  line-height: 35px;
+  color: #fff;
+  font-size: 24px;
+  left: 16px;
+  top: 9px;
+  /* overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical; */
+}
+
+.WE_prize_content .prizePic {
+  position: absolute;
+  width: 176px;
+  height: 176px;
+  right: 0;
+  top: 0;
+  background-color: #2C333D
+}
+
+.listContent .prize_item .WE_prize_content .sellOut {
+  position: absolute;
+  width: 176px;
+  height: 176px;
+  right: 0px;
+  top: 0px;
+  background: rgba(0, 0, 0, .5) url(../images/sellOut.png) center center no-repeat
+}
+
+.WE_prize_content .prizePoint {
+  position: absolute;
+  width: 120px;
+  height: 36px;
+  line-height: 36px;
+  color: #ffcf06;
+  font-size: 18px;
+  left: 16px;
+  top: 101px;
+}
+
+.WE_prize_content .prizePoint img {
+  width: 20px;
+  height: 20px;
+  -webkit-transform: translateY(1px)
+}
+
+.WE_prize_content .prizePoint span {
+  margin-left: 5px;
+  margin-right: 5px
+}
+
+.WE_prize_content .prizeNum {
+  position: absolute;
+  width: 120px;
+  height: 36px;
+  line-height: 36px;
+  color: #fff;
+  font-size: 18px;
+  left: 16px;
+  bottom: 7px;
+}

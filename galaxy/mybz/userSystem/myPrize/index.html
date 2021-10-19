@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="page-view-size" content="1280*720">
+    <title>我的奖品</title>
+    <link rel="stylesheet" href="/pub/galaxy/css/public.css">
+    <link rel="stylesheet" href="css/Page.css">
+    <script src="/pub/galaxy/puppy/common.js"></script>
+    <link rel="stylesheet" href="/pub/galaxy/plugin/cues/css/Page.css">
+    <link rel="stylesheet" href="../tools/address/css/Page.css">
+    <script src="/pub/galaxy/plugin/cues/js/Page.js"></script>
+    <script src="../tools/address/js/Page.js"></script>
+
+
+    <script src="../service/service.js"></script>
+    <script src="js/Page.js"></script>
+</head>
+
+<body onload="load()" onunload="unload()">
+    <div id="addName">收货信息</div>
+    <div id="address">
+        <div id="linkAddress"></div>
+        <div id="linkTel"></div>
+        <div id="linkName"></div>
+    </div>
+    <div id="changeAddress"></div>
+    <div id="tab0">会员奖品</div>
+    <div id="tab1">吉豆奖品</div>
+
+    <div id="list">
+        <div class="listTitle">
+            <div class="t0">奖品</div>
+            <div class="t1">奖品名称</div>
+            <div class="t2">发放状态</div>
+            <div class="t3">领取时间</div>
+        </div>
+        <div id="progressBar" class="hide">
+            <div id="strip"></div>
+        </div>
+    </div>
+    <div id="prizeWarp" class="hide"></div>
+    <div id="page" class="hide">
+        <div id="pageUp">上一页</div>
+        <div id="pageNum"></div>
+        <div id="pageDown">下一页</div>
+    </div>
+</body>
+
+</html>

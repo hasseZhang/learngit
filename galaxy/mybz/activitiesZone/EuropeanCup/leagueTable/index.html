@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>积分排行榜</title>
+    <link rel="stylesheet" href="../../../../css/public.css">    
+    <link rel="stylesheet" href="/pub/galaxy/plugin/cues/css/Page.css">
+    <link rel="stylesheet" href="css/page.css">
+    <script src="../../../../puppy/common.js"></script>
+    <script src="Page/page.js"></script>    
+    <script src="/pub/galaxy/plugin/cues/js/Page.js"></script>
+</head>
+<body onload="load()" onunload="unload()">
+    <canvas id="caBg" width="1920" height="1080"></canvas>
+    <div id="content">
+        <div id="left">
+        </div>
+        <div id="right">
+            <div id="title"></div>
+            <div id="myPoints">                
+            </div>
+			<div id="itemContent">
+                <div id="itemList"></div>
+            </div>					
+        </div>
+    </div>
+    <div id="telActivity" class="hide">
+        <div id="telActivityContent">
+            <h3>手机号输入</h3>
+            <div class="inputWrap">
+                <div id="inputArea">请按数字键输入手机号</div>
+            </div>
+            <p>手机号将用于活动奖品发放</p>
+            <p>以及比分排名计算</p>
+            <p>不可修改，请谨慎填写</p>
+            <p id="phoneError" style="padding-top: 30px;color: #F97901;" class="hide">手机号输入有误</p>
+            <div id="telActivityOk">确认</div>
+            <div id="telActivityBack">取消</div>
+        </div>
+    </div>
+    <div id="detialActivity" class="hide">
+        <div id="detialActivityContent">
+            <ul>
+                <li style="text-align: left;">每日更新</li>
+                <li style="font-size: 38px;">积分明细</li>
+                <li style="text-align: right;">[返回]<span style="color: #fff;">关闭</span></li>
+            </ul>
+            <div class="detialTable">
+                <div class="tableHeader">
+                    <div class="header1">获取方式</div>
+                    <div class="header2">比赛积分</div>
+                    <div class="header3">积分翻倍特权</div>
+                    <div class="header4">获取时间</div>
+                </div>
+                <div id="detialContent">
+                    <div id="detialList"></div>
+                </div>               
+            </div>
+        </div>
+    </div>
+</body>
+</html>

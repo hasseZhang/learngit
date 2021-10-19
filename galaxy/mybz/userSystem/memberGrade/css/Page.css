@@ -1,0 +1,156 @@
+body {
+  background: url(../images/bg.png) no-repeat;
+  background-color: transparent
+}
+
+img {
+  width: 100%;
+  height: 100%
+}
+
+.warn {
+  position: absolute;
+  right: 60px;
+  top: 28px;
+  color: #fff;
+  font-size: 18px
+}
+
+#left {
+  position: absolute;
+  width: 375px;
+  left: 34px;
+  top: 67px
+}
+
+#left .grade {
+  position: absolute;
+  width: 321px;
+  height: 186px;
+  left: 27px;
+  top: 10px;
+  border-radius: 5px
+}
+
+#left #grade1 {
+  top: 216px
+}
+
+#left #grade2 {
+  top: 422px
+}
+
+#left .grade .activeState {
+  position: absolute;
+  height: 23px;
+  right: 8px;
+  top: 8px;
+  padding: 5px;
+  color: #fff;
+  font-size: 16px;
+  background: #262533;
+  border-radius: 3px
+}
+
+#left .grade.focusBorder .arrow {
+  position: absolute;
+  width: 18px;
+  height: 67px;
+  left: 334px;
+  top: 60px;
+  background: url(../images/arrow.png) no-repeat
+}
+
+#right {
+  position: absolute;
+  width: 776px;
+  height: 597px;
+  left: 445px;
+  top: 77px
+}
+
+#right .medalNum {
+  position: absolute;
+  width: 200px;
+  height: 23px;
+  line-height: 23px;
+  text-align: right;
+  right: 26px;
+  top: 15px;
+  color: #fff;
+  font-size: 16px
+}
+
+#right .medalNum span:first-child {
+  display: inline-block;
+  width: 102px;
+  height: 23px;
+  margin-right: 4px;
+  text-align: left;
+  background: url(../images/medal.png) 83px 0 no-repeat
+}
+
+#right .time {
+  position: absolute;
+  right: 26px;
+  top: 41px;
+  font-size: 16px;
+  color: #fff
+}
+
+#right .detail {
+  position: absolute;
+  width: 776px;
+  left: 33px;
+  top: 12px
+}
+
+#right #detail1 {
+  top: 199px
+}
+
+#right #detail2 {
+  top: 387px
+}
+
+#right .name {
+  position: absolute;
+  width: 106px;
+  height: 43px;
+  line-height: 43px;
+  text-align: center;
+  left: 0;
+  top: 0;
+  font-size: 23px;
+  color: #eca600
+}
+
+#right .name::before {
+  content: '';
+  position: absolute;
+  width: 106px;
+  height: 2px;
+  bottom: 2px;
+  left: -2px;
+  background: url(../images/line.png) no-repeat
+}
+
+#right .brief {
+  position: absolute;
+  width: 729px;
+  height: 112px;
+  top: 70px;
+  line-height: 28px;
+  font-size: 17px;
+  padding: 0 14px 0 0;
+  color: #fff;
+  text-indent: 34px;
+  text-align: justify
+}
+
+.grade.focusBorder {
+  -webkit-transform: scale(1.14);
+  -webkit-box-shadow: 0 0 0 3px #fff;
+  border-radius: 5px;
+  z-index: 1
+}

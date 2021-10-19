@@ -1,0 +1,196 @@
+body {
+  width: 1920px;
+  height: 1080px;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background: url(../images/bg.jpg) no-repeat transparent;
+}
+
+#exchangeWords {
+  position: absolute;
+  display: inline-block;
+  top: 100px;
+  left: 50%;
+  margin-left: -230px;
+  width: 460px;
+  height: 70px;
+  background: url(../images/pointExchangeWords.png) no-repeat;
+}
+
+#line {
+  position: absolute;
+  display: inline-block;
+  top: 200px;
+  left: 50%;
+  margin-left: -500px;
+  width: 1000px;
+  height: 2px;
+  background: url(../images/line.png) no-repeat;
+}
+
+#exchangeList {
+  position: absolute;
+  display: inline-block;
+  top: 280px;
+  left: 50%;
+  margin-left: -750px;
+  height: 640px;
+  width: 1500px;
+  overflow: hidden;
+}
+
+#exchangeList .exchangeItem{
+  position: relative;
+  height: 320px;
+  color: #ffffff;
+  transition: .5s;
+  -webkit-transition: .5s;
+}
+
+#exchangeList .exchangeItem .pic {
+  display: inline-block;
+  position: absolute;
+  left: 30px;
+  top: 20px;
+  width: 240px;
+  height: 320px;
+}
+
+#exchangeList .exchangeItem img { 
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#exchangeList .exchangeItem .name {
+  position: absolute;
+  left: 320px;
+  top: 60px;
+  font-size: 24px;
+}
+
+#exchangeList .exchangeItem .price {
+  position: absolute;
+  left: 320px;
+  top: 110px;
+  font-size: 24px;
+}
+
+#exchangeList .exchangeItem .description {
+  position: absolute;
+  left: 320px;
+  top: 160px;
+  font-size: 24px;
+}
+
+#exchangeList .descriptionLabel {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 73px;
+}
+
+#exchangeList .descriptionInfo {
+  display: inline-block;
+  position: absolute;
+  left: 74px;
+  width: 820px;
+}
+
+#exchangeList .exchangeItem .exchangeBtn {
+  position: absolute;
+  right: 80px;
+  top: 140px;
+  width: 150px;
+  height: 50px;
+  background: url(../images/allowExchange.png) no-repeat transparent;
+  background-size: cover;
+}
+
+#exchangeList .exchangeItem .exchangeBtn.subscribed {
+  position: absolute;
+  right: 80px;
+  top: 140px;
+  width: 150px;
+  height: 50px;
+  background: url(../images/subscribed.png) no-repeat transparent;
+  background-size: cover;
+}
+
+#exchangeList .exchangeItem .exchangeBtn.focusBorder {
+  background: url(../images/exchangeFocus.png) no-repeat transparent;
+  background-size: cover;
+}
+
+#exchangeList .exchangeItem .exchangeBtn.subscribed.focusBorder {
+  background: url(../images/subscribedFocus.png) no-repeat transparent;
+  background-size: cover;
+}
+
+#tokenError {
+  display: none;
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+  background: url(../images/tokenError.png) 0 0 no-repeat;
+}
+
+#blackList {
+  display: none;
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+  background: url(../images/blackList.png) 0 0 no-repeat;
+}
+
+#alreadyBuy {
+  display: none;
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+  background: url(../images/alreadyBuy.png) 0 0 no-repeat;
+}
+
+#alreadyBuy #showInfo {
+  display: inline-block;
+  position: absolute;
+  font-size: 40px;
+  line-height: 60px;
+  color: #ffffff;
+  top: 470px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+#netError {
+  display: none;
+  width: 1920px;
+  height: 1080px;
+  background: url(../images/netError.png) no-repeat transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+#progressBar {
+  height: 994px;
+  width: 15px;
+  background-color: rgba(254, 254, 254, .05);
+  position: absolute;
+  right: 26px;
+  top: 43px;
+  border-radius: 10px
+}
+
+#progressBar #strip {
+  position: absolute;
+  height: 110px;
+  width: 11px;
+  top: 0;
+  left: 2px;
+  background: -webkit-linear-gradient(left, #5a5a5a, #919191);
+  border-radius: 6px;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="page-view-size" content="1920*1080">
+    <title>myOrder</title>
+    <link rel="stylesheet" href="../../css/public.css">
+    <link rel="stylesheet" href="css/Page.css">
+    <link rel="stylesheet" href="../../plugin/mineMenu/css/menu.css">
+    <link rel="stylesheet" href="../../plugin/activeCardPanel/css/Page.css">
+    <script src="../../puppy/common.js"></script>
+    <script src="../../plugin/mineMenu/js/menu.js"></script>
+    <script src="../../plugin/activeCardPanel/js/Page.js"></script>
+    <script src="js/myOrder.js"></script>
+    <script src="js/Page.js"></script>
+</head>
+
+<body onload="load()" onunload="unload()">
+    <div id="pointExchangeBtn"></div>
+    <div id="activeCardBtn"></div>
+    <div class="cardError hide">
+        <div class="cardInfo"></div>
+        <div class="btn ensure">确认</div>
+    </div>
+    <div class="toWatchPanel hide">
+        <div class="btn" id="toWatch">立即观看</div>
+        <div class="btn" id="return">返回</div>
+    </div>
+    <!-- 订购历史 -->
+    <div class="pkgOrderListPanel hide">
+        <div class="pkgName"></div>
+        <div class="pkgContent"></div>
+    </div>
+    <!-- 48小时后取消续订提示 -->
+    <div class="orderHours hide">
+        <div class="button" id="hoursBack">返 回</div>
+    </div>
+    <!-- 取消续订 -->
+    <div class="panel hide">
+        <div class="typeTxtCue">您正在进行取消续订的操作请输入验证码</div>
+        <div id="resetMsg">请输入右侧验证码</div>
+        <div class="validate"><div id="ensureBox"></div><span id="randomCode"></span></div>
+        <div id="errMsg" class="hide">验证码输入错误请重新输入</div>
+        <div class="button" id="ensure">再看看</div>
+        <div class="button" id="cancel">确定取消</div>
+    </div>
+    <div class="error hide"></div>
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+#msgBox,
+#msgBox1,
+#msgBox2,
+#msgBox3,
+#msgBox4,
+#msgBox5 {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1280px;
+    height: 720px;
+    background: rgba(0, 0, 0, .5);
+}
+
+.tip-box {
+    position: absolute;
+    top: 206px;
+    left: 370px;
+    width: 537px;
+    height: 302px;
+}
+
+.succ-bg {
+    background: url('../images/reserSucc.png') no-repeat;
+}
+
+.succed-bg {
+    background: url('../images/reserOk.png') no-repeat;
+}
+
+.fail-bg {
+    background: url('../images/reserFail.png') no-repeat;
+}
+
+.play-fail-bg {
+    background: url('../images/playFail.png') no-repeat;
+}
+
+.play-fail-bg {
+    background: url('../images/playFail.png') no-repeat;
+}
+
+#middle-text {
+    position: absolute;
+    color: #1fcbff;
+    left: 240px;
+    top: 108px;
+    font-size: 25px;
+}
+
+#middle-text2 {
+    position: absolute;
+    color: white;
+    left: 96px;
+    top: 108px;
+    font-size: 25px;
+}
+
+.btns {
+    width: 142px;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    background: url('../images/elbg.png') no-repeat;
+    position: absolute;
+}
+
+.sub-btn {
+    top: 214px;
+    left: 185px;
+}
+
+.order-btn {
+    top: 214px;
+    left: 96px;
+}
+
+.back-btns {
+    top: 214px;
+    left: 291px;
+}
+
+.btns.focusBorder {
+    background: url('../images/focus.png') no-repeat;
+}
+
+#text {
+    display: block;
+    height: 70px;
+    text-align: center;
+    line-height: 70px;
+    color: #fff;
+    font-size: 26px;
+    color: #1fcbff;
+    margin: 75px 40px;
+}
+
+.repeatMsg {
+    width: 536px;
+    height: 303px;
+    position: absolute;
+    left: 372px;
+    top: 200px;
+    z-index: 3;
+}
+
+.repeatSuccBg {
+    background: url('../images/repeatSucc.png') center no-repeat;
+}
+
+.repeatBg {
+    background: url('../images/isRepeat.png') center no-repeat;
+}
+
+.repeatSucc {
+    position: absolute;
+    left: 85px;
+    bottom: 40px;
+}
+
+.isRepeat {
+    position: absolute;
+    right: 85px;
+    bottom: 40px;
+}

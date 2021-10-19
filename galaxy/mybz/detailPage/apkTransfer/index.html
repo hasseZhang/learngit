@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="page-view-size" content="1920*1080">
+	<title>youku中间页</title>
+	<link rel="stylesheet" href="../../../plugin/apk/Page.css">
+	<script src="../../../puppy/common.js"></script>
+	<script src="../../../plugin/apk/page.js"></script>
+	<script>
+		var time = null;
+
+		function load() {
+			var searchInfo = $.search.get();
+
+			var contentId = searchInfo.contentId;
+
+			var playIndex = searchInfo.playIndex || 0;
+
+			var categoryId = searchInfo.categoryId || 'youku';
+
+			var type = searchInfo.type;
+
+			var jSessionID = Authentication.CTCGetConfig('SessionID');
+
+			var downloadUrl = "";
+
+			var userId = $.getVariable("EPG:userId");
+
+			var contentName = "暂无";
+
+			var node = 'huawei';
+
+			var platform = $.getVariable("EPG:isTest") ? 'dx_test' : 'dx_online';
+
+			var origin = $.getVariable("EPG:domain");
+
+			var info = [];
+
+			var sign = $.getVariable("EPG:isTest") ? 'youku_ceshi' : 'youku';
+
+			var appName = "cn.cibntv.ott.sdk";
+
+			var serverVersion = '';
+
+			var loading = false;
+
+			var chargeSpIds = $.auth.getchargeSpIds(contentId)
+
+			$.s.detail.get({
+				id: contentId
+			}, {
+				success: function (data) {
+
+					var detailItemInfo = null;
+
+					data.vodName && (contentName = data.vodName);
+
+					if (type === "vod") {
+						detailItemInfo = {};
+						detailItemInfo.fileId = data.vodForeignId;
+						$.UTIL.each(data.mediaInfos, function (value) {
+							if (value.mediaType === "1") {
+								detailItemInfo.mediaId = value.mediaId;
+								detailItemInfo.filename = value.fileName;
+								detailItemInfo.vid = value.mediaForeignId;
+							}
+						})
+						info.push(detailItemInfo)
+					} else {
+						$.UTIL.each(data.sceneIdList, function (value) {
+							detailItemInfo = {};
+							detailItemInfo.fileId = value.vodForeignId;
+							detailItemInfo.sceneId = value.sceneId;
+							if (type === "xilieju") {
+								detailItemInfo.sceneInfo = value.latestTime;
+								detailItemInfo.sceneName = value.sceneName;
+							}
+							if (type === "series") {
+								detailItemInfo.sceneInfo = value.sceneNum;
+							}
+							$.UTIL.each(value.mediaInfos, function (itemValue) {
+								if (itemValue.mediaType === "1") {
+									detailItemInfo.mediaId = itemValue.mediaId;
+									detailItemInfo.filename = itemValue.fileName;
+									detailItemInfo.vid = itemValue.mediaForeignId;
+								}
+							})
+							info.push(detailItemInfo)
+						})
+					}
+					detailItemInfo = data = null;
+
+					var params = "{ \"intentType\":0, \"appName\":\"" +
+						appName + "\",\"extra\":[{\"name\":\"userId\",\"value\":\"" + userId +
+						"\"},{\"name\":\"jSessionID\",\"value\":\"" + jSessionID +
+						"\"},{\"name\":\"playIndex\",\"value\":\"" + playIndex +
+						"\"},{\"name\":\"node\",\"value\":\"" + node +
+						"\"},{\"name\":\"type\",\"value\":\"" + type +
+						"\"},{\"name\":\"platform\",\"value\":\"" + platform +
+						"\"},{\"name\":\"origin\",\"value\":\"" + origin +
+						"\"},{\"name\":\"contentId\",\"value\":\"" + contentId +
+						"\"},{\"name\":\"categoryId\",\"value\":\"" + categoryId +
+						"\"},{\"name\":\"contentName\",\"value\":\"" + contentName +
+						"\"},{\"name\":\"chargeSpIds\",\"value\":\"" + chargeSpIds +
+						"\"},{\"name\":\"version\",\"value\":\"" + $.getVariable("EPG:version") +
+						"\"},{\"name\":\"stbtype\",\"value\":\"" + $.getVariable("EPG:STBType") +
+						"\"},{\"name\":\"stbid\",\"value\":\"" + $.getVariable("EPG:stbId") +
+						"\"},{\"name\":\"startParams\",\"value\":" +
+						JSON.stringify(info) + "}]}";
+
+					APK.pullApk(sign, appName, params);
+					top.APKTopic.once('EVENT_IPTV_RESUME', function () {
+						$.back();
+					});
+				},
+				error: function () {
+					$.back()
+				}
+			})
+		}
+
+		function unload() {
+			APK.clearTime();
+		}
+	</script>
+</head>
+
+<body onload="load()" onunload="unload()">
+</body>
+
+</html>

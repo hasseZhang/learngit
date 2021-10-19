@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="page-view-size" content="1920*1080">
+<title>phoneBind</title>
+<link rel="stylesheet" href="../../css/public.css">
+<link rel="stylesheet" href="css/Page.css">
+<link rel="stylesheet" href="../../plugin/mineMenu/css/menu.css">
+<script src="../../puppy/common.js"></script>
+<script src="../../plugin/mineMenu/js/menu.js"></script>
+<script src="js/Page.js"></script>
+</head>
+<body onload="load()" onunload="unload()">
+	<div class="container">
+		<div class="pageTop">
+			<div class="codeLeft">
+				<div id="GDCode"><img src="" alt=""></div>
+				<div class="text">扫码下载，吉智视频app</div>
+			</div>
+			<div class="codeMiddle">
+				<div id="middleBg"></div>
+				<div id="phoneImg"></div>
+				<div class="text">打开吉智视频app进入扫一扫</div>
+			</div>
+			<div class="codeRight">
+				<div id="QRCode"><img src="" alt=""></div>
+				<div class="text">扫描二维码，绑定IPTV</div>
+			</div>
+		</div>
+		<div class="step"></div>
+		<div class="userIntro" id="userIntro"><img src="" alt=""></div>
+		<div class="phonetitle">绑定手机体验，智能语音遥控</div>
+		<div id="totalNum">当前绑定了<span class="txt"></span>部手机</div>
+		<div id="moreBindNum" class="hide">最多绑定3个手机号码</div>
+		<div id="phoneList">
+    	</div>
+	</div>
+	<div class="scrollBar"></div>
+	<!-- 放大的二维码 -->
+	<div id="biggerCode" class="biggerCode hide">
+		<div id="codeImg" class="codeImg">
+			<img src="" alt="">
+		</div>
+		<div class="codeText"></div>
+	</div>
+</body>
+</html>

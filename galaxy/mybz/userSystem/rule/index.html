@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="page-view-size" content="1280*720">
+    <title>积分规则</title>
+    <link rel="stylesheet" href="/pub/galaxy/css/public.css">
+    <link rel="stylesheet" href="css/Page.css">
+    <link rel="stylesheet" href="/pub/galaxy/plugin/cues/css/Page.css">
+    <script src="/pub/galaxy/puppy/common.js"></script>
+    <script src="../service/service.js"></script>
+    <!-- <script src="/pub/galaxy/plugin/cues/js/Page.js"></script> -->
+    <script>
+        var content = "",isError = !1;
+            USER_SERVCICE.pointRule({}, {
+            async: !1,
+            success: function (result) {
+                1e3 == result.code && result.data ? content = result.data : isError = !0
+            },
+            error: function () {
+                isError = !0
+            }
+        })
+    </script>
+    <script src="js/Page.js"></script>
+</head>
+
+<body onload="load()" onunload="unload()">
+    <div id="cue">按<span>“返回”</span>键返回上一页</div>
+    <div id="wrap">
+        <div id="inner">
+            <div id="content"></div>
+        </div>
+    </div>
+    <div id="progressBar" class="hide">
+        <div id="strip"></div>
+    </div>
+</body>
+
+</html>

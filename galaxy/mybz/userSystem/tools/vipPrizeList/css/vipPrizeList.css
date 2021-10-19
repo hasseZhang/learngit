@@ -1,0 +1,103 @@
+#progressBar {
+  height: 612px;
+  width: 10px;
+  background-color: rgba(254,254,254,.05);
+  position: absolute;
+  right: 17px;
+  top: 70px;
+  border-radius: 7px
+}
+#progressBar .strip {
+  position: absolute;
+  height: 73px;
+  width: 7px;
+  top: 0;
+  left: 2px;
+  background: url(../images/strip.png) no-repeat;
+  -webkit-transition: top .6s .1s
+}
+#listWrap {
+  position: absolute;
+  width: 1040px;
+  height: 678px;
+  top: 43px;
+  right: 13px;
+  overflow: hidden
+}
+.listContent {
+  position: absolute;
+  width: 1040px;
+  height: 678px;
+  top: 5px;
+  right: 0
+}
+.listContent > div {
+  overflow: inherit!important
+}
+.panel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 536px;
+  height: 303px;
+  -webkit-transform: translate(-50%,-50%);
+  background: url(../images/panel.png) no-repeat
+}
+.panel .title {
+  position: absolute;
+  top: 61px;
+  width: 100%;
+  text-align: center;
+  font-size: 27px;
+  height: 40px;
+  line-height: 40px;
+  color: #fff
+}
+.panel .botton {
+  position: absolute;
+  width: 140px;
+  height: 40px;
+  top: 199px;
+  border: 2px solid rgba(255,255,255,.15);
+  -webkit-box-sizing: border-box;
+  border-radius: 27px;
+  text-align: center;
+  color: #fff;
+  font-size: 24px;
+  line-height: 36px
+}
+.panel .botton#leftBtn {
+  left: 93px
+}
+.panel .botton#rightBtn {
+  left: 300px
+}
+.botton.focusBorder {
+  background: -webkit-linear-gradient(left,rgba(237,165,2,1) 0%,rgba(234,139,13,1) 100%);
+  border: none;
+  line-height: 40px
+}
+.no_content {
+  position: absolute;
+  width: 431px;
+  height: 490px;
+  left: 525px;
+  top: 131px
+}
+.mostShow {
+  position: absolute;
+  width: 571px;
+  height: 30px;
+  background: url(../images/mostshow.png) no-repeat center center;
+  left: 440px;
+  bottom: 5px
+}
+.mostShow div {
+  position: absolute;
+  font-size: 20px;
+  color: #828282;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+  height: 30px;
+  line-height: 28px
+}

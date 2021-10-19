@@ -1,0 +1,137 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="page-view-size" content="1280*720">
+    <title>球队详情</title>
+    <link rel="stylesheet" href="css/page.css">
+    <script src="../../../../puppy/common.js"></script>
+    <script src="../../../../../resources/Refactoring/common_v6.js"></script>
+    <script src="../components/ajax/js/getData.js"></script>
+    <script src="js/page.js"></script>
+</head>
+<body onload="initPage()">
+    <div class="allData">
+        <div class="Logo" id="logo"></div>
+        <!-- <div id="teamImg"><img src=""></div>
+        <div class="team-name" id="teamName"></div>
+        <div class="teamCity" id="teamCity">
+            <span>所在城市:</span>
+            <span id="teamCityName"></span>
+        </div>
+        <div class="teamRom" id="teamRom">
+            <span>主场:</span>
+            <span id="team_room"></span>
+        </div> -->
+        <div class="dataShow" id="dataShow">
+            <ul class="showUl" id="showUl" style="list-style: none">
+                <li id="l0">
+                    <div class="time"></div>
+                    <div class="title"></div>
+                    <div class="city" id="c0_1">
+                        <img src="">
+                        <span></span>
+                    </div>
+                    <div class="scord"></div>
+                    <div class="city2" id="c0_2">
+                        <span></span>
+                        <img src="">
+                    </div>
+                    <div class="btn-box">
+                        <span id="btn0_1" class="btn1">全场</span>
+                        <span id="btn0_2" class="btn2">统计</span>
+                        <span id="btn0_3" class="btn3">集锦</span>
+                    </div>
+                </li>
+                <li id="l1">
+                    <div class="time"></div>
+                    <div class="title"></div>
+                    <div class="city" id="c1_1">
+                        <img src="">
+                        <span></span>
+                    </div>
+                    <div class="scord"></div>
+                    <div class="city2" id="c1_2">
+                        <span></span>
+                        <img src="">
+                    </div>
+                    <div class="btn-box">
+                        <span id="btn1_1" class="btn1">全场</span>
+                        <span id="btn1_2" class="btn2">统计</span>
+                        <span id="btn1_3" class="btn3">集锦</span>
+                    </div>
+                </li>
+                <li id="l2">
+                    <div class="time"></div>
+                    <div class="title"></div>
+                    <div class="city" id="c2_1">
+                        <img src="">
+                        <span></span>
+                    </div>
+                    <div class="scord"></div>
+                    <div class="city2" id="c2_2">
+                        <span></span>
+                        <img src="">
+                    </div>
+                    <div class="btn-box">
+                        <span id="btn2_1" class="btn1">全场</span>
+                        <span id="btn2_2" class="btn2">统计</span>
+                        <span id="btn2_3" class="btn3">集锦</span>
+                    </div>
+                </li>
+                <li id="l3">
+                    <div class="time"></div>
+                    <div class="title"></div>
+                    <div class="city" id="c3_1">
+                        <img src="">
+                        <span></span>
+                    </div>
+                    <div class="scord"></div>
+                    <div class="city2" id="c3_2">
+                        <span></span>
+                        <img src="">
+                    </div>
+                    <div class="btn-box">
+                        <span id="btn3_1" class="btn1">全场</span>
+                        <span id="btn3_2" class="btn2">统计</span>
+                        <span id="btn3_3" class="btn3">集锦</span>
+                    </div>
+                </li>
+                <li id="l4">
+                    <div class="time"></div>
+                    <div class="title"></div>
+                    <div class="city" id="c4_1">
+                        <img src="">
+                        <span></span>
+                    </div>
+                    <div class="scord"></div>
+                    <div class="city2" id="c4_2">
+                        <span></span>
+                        <img src="">
+                    </div>
+                    <div class="btn-box">
+                        <span id="btn4_1" class="btn1">全场</span>
+                        <span id="btn4_2" class="btn2">统计</span>
+                        <span id="btn4_3" class="btn3">集锦</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div id="controlPage" class="none">
+            <!--分页-->
+            <div id="pageUpBtn">
+                上一页
+            </div>
+            <div id="pageDownBtn">
+                下一页
+            </div>
+            <div id="pageNumBox">
+                <span id="pageNum">0</span>/<span id="pageSize">0</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

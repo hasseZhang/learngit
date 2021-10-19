@@ -1,0 +1,675 @@
+body {
+    width: 1920px;
+    height: 1080px;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background: url(../images/bg.jpg) no-repeat transparent
+}
+
+.autoText {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap
+}
+
+#container {
+    width: 1920px;
+    height: 1080px;
+    position: relative
+}
+
+#container #listContainer {
+    position: absolute;
+    left: 302px;
+    top: 0;
+    height: 1080px;
+    width: 1618px
+}
+
+#container #progressBar {
+    height: 994px;
+    width: 15px;
+    background-color: rgba(254, 254, 254, .05);
+    position: absolute;
+    right: 26px;
+    top: 43px;
+    border-radius: 10px
+}
+
+#container #progressBar #strip {
+    position: absolute;
+    height: 110px;
+    width: 11px;
+    top: 0;
+    left: 2px;
+    background: -webkit-linear-gradient(left, #5a5a5a, #919191);
+    border-radius: 6px;
+    transition: top .6s .1s
+}
+
+#container #noMo {
+    position: absolute;
+    width: 741px;
+    height: 605px;
+    left: 706px;
+    top: 378px
+}
+
+#container #noMo {
+    background: url(../images/noPkg.png) no-repeat
+}
+
+.sfb #listContainer .moContent {
+    position: absolute;
+    width: 1618px;
+    height: 1025px;
+    top: 85px;
+    left: 0;
+    overflow: hidden;
+}
+
+.dp #listContainer .moContent {
+    position: absolute;
+    width: 1618px;
+    height: 1045px;
+    top: 35px;
+    left: 0;
+    overflow: hidden
+}
+
+.sfb #listContainer .moContent .mo_item {
+    float: left;
+    height: 313px;
+    width: 1618px;
+    position: relative
+}
+
+.dp #listContainer .moContent .mo_item {
+    float: left;
+    height: 342px;
+    width: 1618px;
+    position: relative
+}
+
+.sfb #listContainer .moContent .mo_item .poster {
+    position: absolute;
+    width: 218px;
+    height: 269px;
+    left: 120px;
+    top: 20px
+}
+
+.dp #listContainer .moContent .mo_item .poster {
+    position: absolute;
+    width: 220px;
+    height: 302px;
+    left: 120px;
+    top: 20px
+}
+
+#listContainer .moContent .mo_item .poster .vip {
+    width: 79px;
+    height: 34px;
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    background: url(../../../css/images/public/SinglepointVip.png) no-repeat
+}
+
+#listContainer .moContent .mo_item .poster .mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/unforward.png) no-repeat;
+    visibility: hidden
+}
+
+#listContainer .moContent .mo_item.focusBorder .mask {
+    visibility: visible
+}
+
+#listContainer .moContent .mo_item .poster img {
+    width: 100%;
+    height: 100%
+}
+
+#listContainer .moContent .mo_item .text {
+    position: absolute;
+    left: 444px;
+    width: 994px;
+    color: #fff;
+    font-size: 26px
+}
+
+#listContainer .moContent .mo_item .text span {
+    color: #cfcfcf
+}
+
+#listContainer .moContent .mo_item .name {
+    top: 18px;
+    width: auto
+}
+
+#listContainer .moContent .mo_item .price {
+    top: 65px
+}
+
+#listContainer .moContent .mo_item .endTime .end {
+    color: #ff4448
+}
+
+#listContainer .moContent .mo_item .endTime {
+    top: 110px
+}
+
+#listContainer .moContent .mo_item .des {
+    top: 156px
+}
+
+#listContainer .moContent .mo_item .des .desContent {
+    position: absolute;
+    left: 124px;
+    width: 910px;
+    top: 0;
+    line-height: 1.5
+}
+
+#listContainer .moContent .mo_item.focusBorder .poster {
+    box-shadow: 0 0 0 5px #fff, 0 0 16px 5px #fff;
+    -webkit-transform: scale(1.05)
+}
+
+#listContainer .moContent .mo_item .name .cardType {
+    position: absolute;
+    top: 2px;
+    right: -148px;
+    width: 123px;
+    height: 46px;
+}
+
+#listContainer .moContent .mo_item .name .poionExchange {
+    position: absolute;
+    display: inline-block;
+    z-index: 2;
+    width: 157px;
+    height: 53px;
+    top: 0;
+    right: -171px;
+    background: url(../images/poionExchange.png) no-repeat;
+    background-size: 157px 53px;
+}
+
+.cardType1 {
+    background: url(../images/threeDay.png) no-repeat;
+}
+
+.cardType2 {
+    background: url(../images/week.png) no-repeat;
+}
+
+.cardType3 {
+    background: url(../images/month.png) no-repeat;
+}
+
+.cardType4 {
+    background: url(../images/quarter.png) no-repeat;
+}
+
+.cardType5 {
+    background: url(../images/halfYear.png) no-repeat;
+}
+
+.cardType6 {
+    background: url(../images/year.png) no-repeat;
+}
+
+.cardType7 {
+    background: url(../images/twoYear.png) no-repeat;
+}
+
+/* #container #mostShow {
+    position: absolute;
+    width: 499px;
+    height: 57px;
+    background: url(../images/mostshow.png) no-repeat;
+    left: 1379px;
+    bottom: 20px
+} */
+
+#container #loading {
+    position: absolute;
+    left: 60%;
+    top: 50%;
+    background: url(../images/loading.gif) no-repeat;
+    width: 200px;
+    height: 200px;
+    margin-top: -100px;
+    margin-left: -100px
+}
+
+#listContainer .moContent .mo_item .cancelBtn,
+#listContainer .moContent .mo_item .orderBtn {
+    position: absolute;
+    top: 27px;
+    width: 216px;
+    height: 66px;
+    line-height: 66px;
+    text-align: center;
+    color: #fff;
+    font-size: 38px;
+    border-radius: 3px;
+    background: #424655;
+    box-shadow: 0 0 0 3px #a0a5b1
+}
+
+#listContainer .moContent .mo_item .cancelBtn[renew='2'],
+#listContainer .moContent .mo_item .cancelBtn[renew='1'] {
+    background: rgba(104, 101, 123, 0.8);
+    color: #20202A;
+}
+
+#listContainer .moContent .mo_item .cancelBtn {
+    left: 1090px;
+}
+
+#listContainer .moContent .mo_item .orderBtn {
+    left: 1329px;
+}
+
+#listContainer .moContent .mo_item .cancelBtn.focusBorder,
+#listContainer .moContent .mo_item .orderBtn.focusBorder {
+    background: -webkit-linear-gradient(right, #e3802f, #e2ab13);
+    background-origin: border-box;
+    color: #000;
+    box-shadow: 0 0 0 3px rgba(52, 56, 65, 0)
+}
+
+.error {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1980px;
+    height: 1080px;
+    background: url(../images/error.png) no-repeat;
+    z-index: 1
+}
+
+.panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1980px;
+    height: 1080px;
+    background: url(../images/cancelBg.png) no-repeat;
+    z-index: 1
+}
+
+.panel .typeTxtCue {
+    position: absolute;
+    top: 400px;
+    left: 770px;
+    width: 390px;
+    text-align: center;
+    color: #fff;
+    font-size: 32px;
+    line-height: 70px;
+    z-index: 2;
+}
+
+.panel .button {
+    position: absolute;
+    width: 210px;
+    height: 60px;
+    top: 700px;
+    border: 3px solid #393638;
+    border-radius: 40px;
+    text-align: center;
+    color: #fff;
+    font-size: 36px;
+    line-height: 60px
+}
+
+.panel .button#ensure {
+    left: 698px
+}
+
+.panel .button#cancel {
+    left: 1007px
+}
+
+.panel .button.focusBorder {
+    color: #1b0f01
+}
+
+.panel .validate {
+    position: absolute;
+    top: 560px;
+    left: 625px;
+    height: 200px;
+}
+
+.panel #errMsg {
+    position: absolute;
+    left: 678px;
+    top: 645px;
+    color: #D0021B;
+    font-size: 26px;
+}
+
+.validate #ensureBox {
+    display: inline-block;
+    width: 439px;
+    height: 72px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 0 20px;
+    font-size: 26px;
+    margin-right: 10px;
+    line-height: 72px;
+}
+
+.panel #resetMsg {
+    position: absolute;
+    top: 560px;
+    left: 645px;
+    width: 439px;
+    height: 72px;
+    font-size: 32px;
+    color: #9B9B9B;
+    line-height: 72px;
+    margin-right: 10px;
+    z-index: 999;
+}
+
+.validate #ensureBox.focusBorder {
+    outline: 3px solid #fff;
+}
+
+.validate span {
+    display: inline-block;
+    width: 178px;
+    height: 72px;
+    /* background-color: #fff; */
+    color: #A5720D;
+    text-align: center;
+    line-height: 72px;
+    font-size: 38px;
+    vertical-align: top;
+}
+
+.button.focusBorder {
+    background: -webkit-linear-gradient(right, #e3802f, #e2ab13);
+    background-origin: border-box;
+    border: 3px solid rgba(52, 56, 65, 0)
+}
+
+#container #listContainer .moContent .mo_item .name .underLine {
+    position: absolute;
+    top: -10px;
+    right: -258px;
+    width: 215px;
+    height: 73px;
+    background: url(../images/icon_underline.png) no-repeat
+}
+
+#listContainer .noOrder {
+    position: absolute;
+    width: 1389px;
+    height: 231px;
+    top: 118px;
+    left: 120px;
+    background: url(../images/noOrder.png) no-repeat;
+    background-size: 1389px 231px;
+}
+
+#listContainer .recTitle {
+    position: absolute;
+    width: 178px;
+    height: 42px;
+    top: 406px;
+    left: 121px;
+    background: url(../images/recTitle.png) no-repeat;
+    background-size: 178px 42px;
+}
+
+#listContainer .moContent .mo_item.noPackage .name {
+    top: 43px;
+}
+
+#listContainer .moContent .mo_item.noPackage .price {
+    top: 105px
+}
+
+#listContainer .moContent .mo_item.noPackage .des {
+    top: 167px
+}
+
+#listContainer .moContent .mo_item.noPackage .orderBtn {
+    left: 1223px
+}
+
+.toWatchPanel {
+    position: absolute;
+    width: 804px;
+    height: 453px;
+    left: 558px;
+    top: 314px;
+    background: url(../images/toWatchPanel.png) no-repeat;
+    background-size: 804px 453px;
+    z-index: 1;
+}
+
+.toWatchPanel .btn {
+    position: absolute;
+    top: 297px;
+    width: 215px;
+    height: 66px;
+    line-height: 60px;
+    border-radius: 33px;
+    text-align: center;
+    font-size: 36px;
+    color: #fff;
+    border: 3px solid rgba(255, 255, 255, .15);
+    -webkit-box-sizing: border-box
+}
+
+.toWatchPanel #toWatch {
+    left: 140px
+}
+
+.toWatchPanel #return {
+    left: 449px
+}
+
+.move {
+    -webkit-transform: translateY(395px);
+}
+
+.sfb #pointExchangeBtn {
+    position: absolute;
+    width: 317px;
+    height: 52px;
+    left: 420px;
+    top: 29px;
+    background: url(../images/pointExchangeBtn.png) no-repeat;
+    border-radius: 7px;
+}
+
+.sfb #activeCardBtn {
+    position: absolute;
+    width: 240px;
+    height: 52px;
+    left: 760px;
+    top: 29px;
+    background: url(../images/activeCardBtn.png) no-repeat;
+    border-radius: 7px;
+}
+
+.sfb #pointExchangeBtn.focusBorder,
+.sfb #activeCardBtn.focusBorder {
+    -webkit-box-shadow: 0 0 0 5px #fff, 0 0 16px 5px #fff
+}
+
+.cardError .btn.focusBorder,
+.toWatchPanel .btn.focusBorder {
+    background: -webkit-linear-gradient(right, #e3802f, #e2ab13);
+    background-origin: border-box;
+    border: 3px solid rgba(52, 56, 65, 0);
+    color: #1b0f01
+}
+
+/* 48小时取消续订 */
+.orderHours {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1980px;
+    height: 1080px;
+    background: url(../images/orderHours.png) no-repeat;
+    z-index: 2
+}
+
+.orderHours .button#hoursBack {
+    position: absolute;
+    width: 210px;
+    height: 60px;
+    top: 600px;
+    left: 850px;
+    border-radius: 40px;
+    text-align: center;
+    font-size: 36px;
+    line-height: 60px;
+    background: -webkit-linear-gradient(right, #e3802f, #e2ab13);
+    background-origin: border-box;
+    border: 3px solid rgba(52, 56, 65, 0);
+    color: #1b0f01
+}
+
+/* 48小时取消续订 */
+.cardError .cardInfo {
+    position: absolute;
+    width: 480px;
+    color: #fff;
+    font-size: 38px;
+    text-align: center;
+    left: 160px;
+    top: 180px;
+}
+
+.cardError {
+    position: absolute;
+    left: 558px;
+    top: 313px;
+    width: 804px;
+    height: 450px;
+    background: url(../images/activeError.png) no-repeat;
+    z-index: 1
+}
+
+.cardError .btn {
+    position: absolute;
+    width: 210px;
+    height: 60px;
+    top: 340px;
+    border: 3px solid #393638;
+    border-radius: 40px;
+    text-align: center;
+    color: #fff;
+    font-size: 36px;
+    line-height: 60px
+}
+
+.cardError .btn.ensure {
+    left: 280px;
+}
+
+.pkgOrderListPanel {
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+    left: 0;
+    top: 0;
+    background: url(../images/pkgOrderListPanel.png) no-repeat;
+    background-size: 100% 100%;
+    z-index: 1;
+}
+
+.pkgOrderListPanel .pkgName {
+    position: absolute;
+    width: 1272px;
+    height: 105px;
+    line-height: 105px;
+    left: 324px;
+    top: 183px;
+    text-align: center;
+    font-size: 40px;
+    color: #fff;
+}
+
+.pkgOrderListPanel .pkgContent {
+    position: absolute;
+    width: 1098px;
+    height: 471px;
+    left: 410px;
+    top: 288px;
+    padding-top: 78px;
+    box-sizing: border-box
+}
+
+.pkgOrderListPanel .pkgContent .orderInfo {
+    float: left;
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    color: #fff
+}
+
+.pkgOrderListPanel .pkgContent .orderInfo div {
+    display: inline-block;
+    text-align: center;
+    font-size: 26px
+}
+
+.pkgOrderListPanel .pkgContent .orderInfo span {
+    display: inline-block;
+    position: relative;
+    top: -2px;
+    padding: 0 15px
+}
+
+.pkgOrderListPanel .pkgContent .orderInfo .orderWay {
+    width: 300px
+}
+
+.pkgOrderListPanel .pkgContent .orderInfo .orderType {
+    width: 276px
+}
+
+.pkgOrderListPanel .pkgContent .orderInfo .orderTime {
+    width: 522px
+}
+
+.pkgOrderListPanel #pkgProgressBar {
+    height: 471px;
+    width: 13px;
+    background-color: rgba(254, 254, 254, .05);
+    position: absolute;
+    left: 1492px;
+    top: 291px;
+    border-radius: 10px
+}
+
+.pkgOrderListPanel #pkgProgressBar .strip {
+    position: absolute;
+    height: 120px;
+    width: 11px;
+    top: 0;
+    left: 3px;
+    background: -webkit-linear-gradient(left, #5a5a5a, #919191);
+    border-radius: 6px;
+    transition: top .6s .1s
+}

@@ -1,0 +1,884 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    background: url(../images/bg.jpg) no-repeat;
+    font-family: '微软雅黑';
+    position: relative
+}
+
+#pkgListStyle {
+    width: 1920px;
+    height: 1080px;
+    background: url(../images/bg.jpg) no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#coordinateListStyle {
+    width: 1920px;
+    height: 1080px;
+    /* background: url(../images/bg1.png) no-repeat; */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.arrow {
+    position: absolute;
+    left: 620px;
+    width: 55.5px;
+    height: 31.5px
+}
+
+#up {
+    top: 216px;
+    background: url(../images/up.png) no-repeat
+}
+
+#down {
+    background: url(../images/down.png) no-repeat;
+    bottom: 100px
+}
+
+.priceBtnArrow {
+    position: absolute;
+    right: 290px;
+    width: 55.5px;
+    height: 31.5px;
+}
+
+#priceBtnDown {
+    top: 120px;
+    background: url(../images/upPage.png) no-repeat
+}
+
+#priceBtnUp {
+    background: url(../images/nextPage.png) no-repeat;
+    bottom: 50px
+}
+
+#pkgChoseList {
+    position: absolute;
+    right: 161px;
+    top: 185px;
+    width: 310px;
+    height: 820px
+}
+
+#pkgChoseList .pkgTypeContainer {
+    position: absolute;
+    top: 50%
+}
+
+#pkgChoseList .pkgTypeContainer .pkgTypeBtn {
+    width: 358px;
+    height: 235px;
+    margin-bottom: 40px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+
+/* 超级周末S */
+
+#pkgChoseList .pkgTypeContainer .pkgTypeBtn.month1 {
+    background: url(../images/month1.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+#pkgChoseList .pkgTypeContainer .pkgTypeBtn.focusBorder.month1 {
+    background: url(../images/monthF1.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/* 超级周末E */
+
+#pkgChoseList .pkgTypeContainer .pkgTypeBtn.month {
+    background: url(../images/month.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+#pkgChoseList .pkgTypeContainer .pkgTypeBtn.focusBorder.month {
+    background: url(../images/monthF.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+#pkgChoseList .pkgTypeContainer .pkgTypeBtn.threeMonth {
+    background: url(../images/threeMonth.png) no-repeat
+}
+
+#pkgChoseList .pkgTypeContainer .pkgTypeBtn.focusBorder.threeMonth {
+    background: url(../images/threeMonthF.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+#pkgChoseList .pkgTypeContainer .pkgTypeBtn.renewSeason {
+    background: url(../images/renewSeason.png) no-repeat;
+}
+
+#pkgChoseList .pkgTypeContainer .pkgTypeBtn.focusBorder.renewSeason {
+    background: url(../images/renewSeasonF.png) no-repeat;
+}
+
+#pkgChoseList .pkgTypeContainer .pkgTypeBtn.renewMonth {
+    position: relative;
+    background: url(../images/renewMonth.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/* 连续包月首月优惠start */
+
+#pkgChoseList .pkgTypeContainer .pkgTypeBtn.firstRenewMonth {
+    position: relative;
+    line-height: 0;
+    padding-top: 148px;
+    box-sizing: border-box;
+    background: url(../images/renewMonth.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/* 首月优惠活动角标 */
+
+#pkgChoseList .pkgTypeContainer .pkgTypeBtn.firstRenewMonth .corner {
+    position: absolute;
+    left: -2px;
+    top: -11px;
+    width: 125px;
+    height: 101px
+}
+
+#pkgChoseList .pkgTypeContainer .pkgTypeBtn.firstRenewMonth p {
+    line-height: 50px;
+    font-size: 25px;
+}
+
+#pkgChoseList .pkgTypeContainer .pkgTypeBtn.focusBorder.renewMonth {
+    background: url(../images/renewMonthF.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+#pkgChoseList .pkgTypeContainer .pkgTypeBtn.focusBorder.firstRenewMonth {
+    background: url(../images/renewMonthF.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/*  连续包季首月优惠end */
+
+#pkgChoseList .pkgTypeContainer .pkgTypeBtn.firstRenewSeason {
+    position: relative;
+    line-height: 0;
+    padding-top: 148px;
+    box-sizing: border-box;
+    background: url(../images/renewSeason.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+#pkgChoseList .pkgTypeContainer .pkgTypeBtn.firstRenewSeason .corner {
+    position: absolute;
+    left: -2px;
+    top: -11px;
+    width: 125px;
+    height: 101px
+}
+
+#pkgChoseList .pkgTypeContainer .pkgTypeBtn.firstRenewSeason p {
+    line-height: 50px;
+    font-size: 25px;
+}
+
+#pkgChoseList .pkgTypeContainer .pkgTypeBtn.focusBorder.firstRenewSeason {
+    background: url(../images/renewSeasonF.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+
+/*#pkgChoseList .pkgTypeContainer .pkgTypeBtn.renewMonth::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 8px;
+  width: 72px;
+  height: 72px;
+  background: url(../images/hot.png) no-repeat
+}
+ #pkgChoseList .pkgTypeContainer .pkgTypeBtn.firstRenewMonth::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 8px;
+  width: 72px;
+  height: 72px;
+  background: url(../images/first.png) no-repeat
+} */
+
+#pkgChoseList .pkgTypeContainer .pkgTypeBtn.piece {
+    background: url(../images/piece.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+#pkgChoseList .pkgTypeContainer .pkgTypeBtn.focusBorder.piece {
+    background: url(../images/pieceF.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+#pkgChoseList .pkgTypeContainer .pkgTypeBtn.year {
+    background: url(../images/year.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+#pkgChoseList .pkgTypeContainer .pkgTypeBtn.year.focusBorder {
+    background: url(../images/yearF.png) no-repeat;
+    background-size: 100% 100%;
+}
+
+#pkgChoseList .pkgTypeContainer .pkgTypeBtn {
+    font-size: 33px;
+    color: #d5a97c;
+    line-height: 315px;
+    position: relative;
+}
+
+#pkgChoseList .pkgTypeContainer .pkgTypeBtn .singOrigin{
+    line-height: 50px;
+    font-size: 25px;
+    position: absolute;
+    left: 65px;
+    bottom: -28px;
+    text-decoration: line-through;
+}
+
+#pkgChoseList .pkgTypeContainer .pkgTypeBtn.isDiscount {
+    position: relative;
+    line-height: 320px;
+    font-size: 27px;
+}
+
+
+/* 优惠券及特价活动角标 */
+
+#pkgChoseList .pkgTypeContainer .pkgTypeBtn.isDiscount .corner {
+    position: absolute;
+    left: -2px;
+    top: -11px;
+    width: 125px;
+    height: 101px;
+}
+
+#pkgChoseList .pkgTypeContainer .pkgTypeBtn.isDiscount .corner img {
+    display: block;
+}
+
+#pkgChoseList .pkgTypeContainer .pkgTypeBtn.focusBorder span {
+    color: #451f17
+}
+
+#pkgChoseList .pkgTypeContainer .pkgTypeBtn.focusBorder {
+    color: #451f17;
+    -webkit-transform: scale(1.1)
+}
+
+#pkgChoseList .pkgTypeContainer .pkgTypeBtn span {
+    font-size: 72px;
+    color: #f4d9a2
+}
+
+#pkgChoseList .pkgTypeContainer .pkgTypeBtn .num2 {
+    font-size: 20px;
+    width: 135px;
+    height: 19px;
+    line-height: 19px;
+    text-decoration: line-through;
+    margin: -130px auto 0 auto;
+}
+
+#pkgListContainter {
+    position: absolute;
+    left: 157px;
+    top: 300px;
+    width: 1021px;
+    height: 588px
+}
+
+#pkgListContainter .wrap {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%)
+}
+
+.pkgListWrap {
+    position: relative
+}
+
+.pkgList {
+    width: 1021px;
+    height: 198px;
+    background: url(../images/pkgBg.png) no-repeat;
+    margin-bottom: 6px;
+    position: relative;
+    line-height: 198px;
+    color: #fff
+}
+
+
+/* 左侧套餐包 */
+
+.pkgListWrap.focusBorder .pkgList {
+    background: url(../images/focus.png) no-repeat;
+    -webkit-transform: scale(1.05);
+    line-height: 108px;
+    color: #441e16
+}
+
+.pkgListWrap.current .pkgList {
+    line-height: 108px;
+    color: #f7c880
+}
+
+.pkgListWrap.focusBorder .ar {
+    position: absolute;
+    left: 1073px;
+    top: 66px;
+    width: 89px;
+    height: 40px;
+    background: url(../images/right.png) no-repeat
+}
+
+.pkgListWrap.current .ar {
+    position: absolute;
+    left: 1073px;
+    top: 66px;
+    width: 89px;
+    height: 40px;
+    background: url(../images/right.png) no-repeat
+}
+
+
+/* .pkgListWrap.vip .pkgList::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  left: 28px;
+  height: 56px;
+  width: 59px;
+  background: url(../images/mark.png) no-repeat
+}
+.pkgListWrap.vip.focusBorder .pkgList::before {
+  background: url(../images/markF.png) no-repeat
+} */
+
+.pkgList .pDes {
+    position: absolute;
+    top: 99px;
+    left: 24px;
+    width: 965px;
+    height: 79.5px;
+    line-height: 1.2;
+    visibility: hidden;
+    font-size: 27px
+}
+
+.pkgList .pName marquee {
+    position: absolute;
+    left: 7.5px
+}
+
+.pkgListWrap.focusBorder .pkgList .pDes {
+    visibility: visible
+}
+
+.pkgListWrap.current .pkgList .pDes {
+    visibility: visible
+}
+
+
+/* 套餐包活动角标 */
+
+.pkgList .pCorner {
+    position: absolute;
+    left: -7px;
+    top: -5px;
+    width: 165px;
+    height: 121px
+}
+
+.pkgList .pCorner img {
+    width: 100%;
+    height: 100%
+}
+
+.pkgListWrap.focusBorder .pkgList .pCorner {
+    position: absolute;
+    left: -16px;
+    top: -16px;
+}
+
+.pkgList .pName {
+    position: absolute;
+    width: 100%;
+    height: 192px;
+    text-align: center;
+    font-size: 39px
+}
+
+.pkgList .pPrice {
+    position: absolute;
+    right: 42px;
+    width: 406.5px;
+    text-align: right;
+    height: 192px;
+    font-size: 33px
+}
+
+.pkgDes {
+    position: absolute;
+    left: 1365px;
+    top: 313.5px;
+    width: 447px;
+    height: 765px;
+    color: #fff;
+    font-size: 33px;
+    line-height: 3
+}
+
+#error {
+    position: absolute;
+    background: url(../images/error.png) no-repeat;
+    width: 1920px;
+    height: 1080px
+}
+
+#error .btn {
+    position: absolute;
+    width: 210px;
+    height: 60px;
+    top: 610px;
+    border: 3px solid #393638;
+    border-radius: 40px;
+    text-align: center;
+    color: #fff;
+    font-size: 36px;
+    line-height: 60px
+}
+
+#error .btn.focusBorder,
+#noCouponBack.focusBorder {
+    background: -webkit-linear-gradient(right, #e3802f, #e2ab13);
+    background-origin: border-box;
+    border: 3px solid rgba(52, 56, 65, 0);
+    color: #000
+}
+
+#error #retry {
+    left: 689px
+}
+
+#error #return {
+    left: 1007px
+}
+
+#noCoupon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 804px;
+    height: 454px;
+    background: url(../images/errorbg.png) no-repeat;
+    -webkit-transform: translate(-50%, -50%);
+}
+
+#noCouponTitle {
+    position: absolute;
+    top: 66px;
+    width: 100%;
+    text-align: center;
+    font-size: 36px;
+    height: 40px;
+    line-height: 40px;
+    color: #fff
+}
+
+#noCouponBack {
+    position: absolute;
+    width: 210px;
+    height: 60px;
+    top: 76%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    border: 3px solid #393638;
+    border-radius: 40px;
+    text-align: center;
+    color: #fff;
+    font-size: 36px;
+    line-height: 60px
+}
+
+#elasticFrame {
+    position: absolute;
+    background: url(../images/elasticFrame.png) no-repeat;
+    width: 1920px;
+    height: 1080px
+}
+
+#elasticFrame #efreturn {
+    position: absolute;
+    width: 240px;
+    height: 75px;
+    top: 620px;
+    left: 840px;
+    background: url(../images/V6返回键.png) no-repeat;
+}
+
+#userAgreement {
+    position: absolute;
+    background: url(../images/userAgreement.png) no-repeat;
+    width: 1920px;
+    height: 1080px;
+    z-index: 999;
+}
+
+.outContent {
+    position: absolute;
+    top: 279px;
+    left: 473px;
+    width: 973px;
+    height: 453px;
+    overflow: hidden;
+    /* border:1px solid red; */
+}
+
+.innerContent {
+    width: 973px;
+    color: #333333;
+    font-size: 30px;
+    line-height: 42px;
+    word-break: break-all;
+    font-family: PingFangSC-Regular;
+}
+
+#scrollBorder {
+    position: absolute;
+    top: 320px;
+    right: 435px;
+    width: 24px;
+    height: 382px;
+    background: url(../images/scrollBorder.jpg) no-repeat;
+}
+
+#scroll {
+    position: absolute;
+    top: 320px;
+    right: 435px;
+    width: 24px;
+    height: 40px;
+    background: url(../images/scroll.png) no-repeat;
+}
+
+#userAgreementEntey {
+    position: absolute;
+    bottom: 35px;
+    left: 157px;
+    font-size: 24px;
+    color: #fff;
+}
+
+#userAgreementEntey span {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(../images/gouxuaninit.png);
+    vertical-align: middle;
+}
+
+#userAgreementEntey.focusBorder {
+    color: #EDA601;
+}
+
+#userAgreementEntey.focusBorder span {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background: url(../images/gouxuanok.png);
+    vertical-align: middle;
+}
+
+
+/* 套装样式 */
+
+#coordinateListStyle .coordinateList {
+    position: relative;
+    width: 944px;
+    height: 694px;
+    top: 192px;
+    left: 188px;
+}
+
+.coordinateList .wrap {
+    position: absolute;
+    top: 50%;
+    left: 49px;
+    -webkit-transform: translateY(-50%);
+}
+
+#coordinateListStyle .pkgItem {
+    position: relative;
+    width: 849px;
+    height: 221px;
+    /* line-height: 221px; */
+    background: url(../images/pkgItem.png) no-repeat;
+}
+
+.pkgItemlineTwo {
+    margin: 40px 0;
+}
+
+#coordinateListStyle .arrowHead {
+    position: absolute;
+    width: 55px;
+    height: 97px;
+    top: 493px;
+    left: 1216px;
+    background: url(../images/arrowHead.png) no-repeat;
+}
+
+#coordinateListStyle .coordinatePrice {
+    position: absolute;
+    width: 381px;
+    height: 436px;
+    top: 312px;
+    left: 1333px;
+    text-align: center;
+    background: url(../images/coordinatePrice.png) no-repeat;
+}
+
+.coordinatePrice.focusBorder {
+    -webkit-box-shadow: 0 0 0 5px #fff, 0 0 16px 5px #fff;
+    -webkit-transform: scale(1.02);
+}
+
+.coordinatePrice .tzName {
+    height: 52px;
+    margin-top: 72px;
+    font-size: 47px;
+    line-height: 64px;
+    font-family: FZZhengHeiS-M-GB;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 1);
+    background: linear-gradient(0deg, rgba(92, 46, 14, 1) 0%, rgba(186, 116, 64, 1) 98.73046875%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.coordinatePrice .countPrice {
+    position: absolute;
+    top: 173px;
+    left: 0;
+    width: 381px;
+    text-align: center;
+    font-size: 34px;
+    line-height: 34px;
+    font-family: Lantinghei SC;
+    font-weight: bold;
+    color: rgba(92, 46, 14, 1);
+}
+
+.coordinatePrice .primePrice {
+    position: absolute;
+    left: 0;
+    bottom: 136px;
+    width: 381px;
+    text-align: center;
+    font-size: 30px;
+    font-family: Lantinghei SC;
+    font-weight: 600;
+    text-decoration: line-through;
+    color: rgba(92, 46, 14, 1);
+    line-height: 46px;
+}
+
+.coordinatePrice .countPrice span {
+    font-size: 60px;
+    font-family: FZLanTingHei-H-GBK;
+    font-weight: bold;
+    color: rgba(92, 46, 14, 1);
+    line-height: 91px;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.35);
+    vertical-align: -10px;
+}
+
+.pkgItem .pkgItemName {
+    position: relative;
+    top: 10px;
+    left: 33px;
+    width: 230px;
+    height: 182px;
+    line-height: 182px;
+    text-align: center;
+}
+
+.pkgItem .pkgItemName p {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 33px;
+    line-height: 45px;
+    color: rgba(78, 40, 9, 1);
+    font-family: FZZhengHeiS-M-GB;
+}
+
+.pkgItem .pkgItemDes {
+    position: absolute;
+    left: 320px;
+    top: 10px;
+    width: 312px;
+    height: 182px;
+    line-height: 182px;
+}
+
+.pkgItem .pkgItemDes p {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 24px;
+    line-height: 39px;
+    color: rgba(74, 45, 21, 1);
+    font-family: MicrosoftYaHei;
+}
+
+.pkgItem .pkgItemType {
+    position: absolute;
+    width: 150px;
+    top: 63px;
+    right: 60px;
+    font-size: 25px;
+    color: rgba(78, 40, 9, 1);
+    font-weight: bold;
+    text-align: right;
+}
+
+.pkgItem .pkgItemPrice {
+    position: absolute;
+    bottom: 87px;
+    right: 60px;
+    font-size: 22px;
+    color: rgba(78, 40, 9, 1);
+    text-align: right;
+}
+
+.pkgItem .pkgItemPrice span {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#noActivity {
+    width: 1920px;
+    height: 1080px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../images/noActivityBg.png);
+}
+
+#noActivityContent {
+    position: absolute;
+    top: 317px;
+    left: 561px;
+    width: 799px;
+    height: 446px;
+    background: linear-gradient(180deg, rgba(31, 31, 39, 1) 0%, rgba(2, 2, 2, 1) 100%);
+    border-radius: 12px;
+    border: 1px solid rgba(31, 31, 37, 1);
+}
+
+#noActivityContent p {
+    position: absolute;
+    width: 799px;
+    font-size: 38px;
+    font-family: PingFang-SC-Medium, PingFang-SC;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 1);
+    line-height: 38px;
+    letter-spacing: 5px;
+    text-align: center;
+}
+
+.text2 {
+    bottom: 200px;
+}
+
+.text1 {
+    bottom: 248px;
+}
+
+#noActivityBack {
+    position: absolute;
+    top: 293px;
+    left: 293px;
+    width: 214px;
+    height: 68px;
+    background: linear-gradient(90deg, rgba(236, 151, 0, 1) 0%, rgba(235, 128, 12, 1) 100%);
+    border-radius: 34px;
+    font-size: 32px;
+    font-family: PingFang-SC-Medium, PingFang-SC;
+    font-weight: 500;
+    color: rgba(77, 39, 26, 1);
+    line-height: 68px;
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+.orderRetain{
+    width: 1920px;
+    height: 1080px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.orderRetain img{
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.orderRetain .confirmBtn{
+    height: 67px;
+    line-height: 67px;
+    font-size: 36px;
+    color: #fff;
+    padding: 0 36px;
+    border-radius: 30px;
+    background-color: rgba(0,0,0,.3);
+    position: absolute;
+    top: 726px;
+    left: 635px;
+}
+
+.orderRetain .cancelBtn{
+    height: 67px;
+    line-height: 67px;
+    font-size: 36px;
+    color: #fff;
+    padding: 0 36px;
+    border-radius: 30px;
+    background-color: rgba(0,0,0,.3);
+    position: absolute;
+    top: 726px;
+    left: 1076px;
+}
+
+.orderRetain .focusBorder{
+    background: -webkit-linear-gradient(90deg, #ECA700, #EB8A0D);
+}

@@ -1,0 +1,18 @@
+body {
+  background-color: #000;
+}
+
+#msg {
+  position: absolute;
+  left: 50%;
+  bottom: 100px;
+  color: #fff;
+  font-size: 30px;
+  text-align: center;
+  padding: 5px 60px;
+  display: inline-block;
+  background: rgba(231, 176, 176, 0.25);
+  border-radius: 25px;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+}

@@ -1,0 +1,243 @@
+.menu {
+    background: url('../images/bg.png') no-repeat bottom;
+    position: absolute;
+    top: 0;
+    width: 559px;
+    height: 1080px
+}
+.menu .shadow {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 559px;
+    height: 187px;
+    background: url('../images/shadow.png') no-repeat;
+    z-index: 1
+}
+.menu.simpleList .shadow {
+    display: none
+}
+.se .menu .shadow {
+    background: url('../images/shadow_se.png') no-repeat
+}
+.menu .logo {
+    position: absolute;
+    width: 300px;
+    height: 68px;
+    right: 0;
+    top: 120px;
+    background: no-repeat center center
+}
+.menu .menuLine {
+    position: absolute;
+    width: 2px;
+    height: 1080px;
+    left: 255px;
+    top: 0;
+    background: url('../images/menuline.png') no-repeat;
+    visibility: hidden
+}
+.menu .arrow {
+    width: 24px;
+    height: 49px;
+    position: absolute;
+    top: 510px;
+    left: 225px;
+    background: url('../images/leftarrow.png') no-repeat
+}
+.menu .secondClass {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    height: 858px;
+    width: 300px;
+    position: absolute;
+    bottom: 0;
+    left: 256px;
+    overflow: hidden
+}
+.menu .secondClass #secondContent {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    height: 99999px;
+    -webkit-transition: transform 0.6s
+}
+.menu .firstClass #firstContent {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    height: 99999px;
+    -webkit-transition: transform 0.6s
+}
+.menu .secondClass li {
+    float: left;
+    width: 100%;
+    height: 102px;
+    line-height: 102px;
+    font-size: 42px;
+    color: #fefefe;
+    text-align: center;
+    margin-bottom: 48px;
+    position: relative
+}
+.menu .firstClass {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    height: 944px;
+    width: 200px;
+    overflow: hidden;
+    opacity: 0;
+    -webkit-transition: opacity, width 0.8s, 0.4s
+}
+.menu .firstClass li {
+    float: left;
+    width: 100%;
+    height: 102px;
+    line-height: 102px;
+    font-size: 42px;
+    color: #fefefe;
+    text-align: center;
+    margin-bottom: 54px
+}
+.menu li.ykzq.focusBorder {
+    background: -webkit-linear-gradient(right,#00BBFB,#0092FE);
+    color: #ffffff;
+}
+
+.menu li.focusBorder {
+    background: -webkit-linear-gradient(right,#e3802f,#e2ab13);
+    color: #1b0f01
+}
+.menu li.current.ykzq {
+    color: transparent;
+    background: -webkit-linear-gradient(right,#00BBFB,#0092FE);
+    -webkit-background-clip: text
+}
+.menu li.current {
+    color: transparent;
+    background: -webkit-linear-gradient(right,#e3802f,#e2ab13);
+    -webkit-background-clip: text
+}
+.menu .secondClass #secondContent li.current.ykzq::after {
+    content: "";
+    background-color: #00BBFB;
+    width: 8px;
+    height: 48px;
+    position: absolute;
+    right: 0;
+    top: 26px;
+    display: inline-block
+}
+.menu .secondClass #secondContent li.current::after {
+    content: "";
+    background-color: #e2ab13;
+    width: 8px;
+    height: 48px;
+    position: absolute;
+    right: 0;
+    top: 26px;
+    display: inline-block
+}
+.menu .secondClass #secondContent li.current.focusBorder::after {
+    width: 0;
+    height: 0
+}
+.menu li.current.ykzq.focusBorder {
+    color: #ffffff;
+    background: -webkit-linear-gradient(right,#00BBFB,#0092FE);
+    -webkit-background-clip: unset
+}
+.menu li.current.focusBorder {
+    color: #1b0f01;
+    background: -webkit-linear-gradient(right,#e3802f,#e2ab13);
+    -webkit-background-clip: unset
+}
+.dsj .menu .logo {
+    background-image: url('../images/logo/logo_dsj.png')
+}
+.dy .menu .logo {
+    background-image: url('../images/logo/logo_dy.png')
+}
+.js .menu .logo {
+    background-image: url('../images/logo/logo_js.png')
+}
+.se .menu .logo {
+    background-image: url('../images/logo/logo_se.png')
+}
+.xw .menu .logo {
+    background-image: url('../images/logo/logo_xw.png')
+}
+.zy .menu .logo {
+    background-image: url('../images/logo/logo_zy.png')
+}
+.jlp .menu .logo {
+    background-image: url('../images/logo/logo_jlp.png')
+}
+.yy .menu .logo {
+    background-image: url('../images/logo/logo_music.png')
+}
+.sk .menu .logo {
+    background-image: url('../images/logo/logo_kkkk.png')
+}
+.vipdy .menu .logo {
+    background-image: url('../images/logo/logo_vipdy.png')
+}
+.vipdsj .menu .logo {
+    background-image: url('../images/logo/logo_vipdsj.png')
+}
+.vipse .menu .logo {
+    background-image: url('../images/logo/logo_vipse.png')
+}
+.vipzy .menu .logo {
+    background-image: url('../images/logo/logo_vipzy.png')
+}
+.contentMoveR {
+    -webkit-transform: translateX(221px)
+}
+.contentMoveR .firstClass {
+    width: 256px;
+    opacity: 1
+}
+.menu.simpleList {
+    background: url('../images/spBg.png') no-repeat bottom
+}
+.menu.simpleList .secondClass {
+    width: 338px;
+    left: 221px
+}
+.menu.simpleList .logo {
+    width: 338px
+}
+#content.ttxbccgk .logo,
+#content.ttxbcczk .logo,
+#content.ttxbczce .logo,
+#content.ttxbczcs .logo,
+#content.ttxbczcy .logo,
+#content.ttxbgzge .logo,
+#content.ttxbgzgs .logo,
+#content.ttxbgzgy .logo,
+#content.ttxbxxenj .logo,
+#content.ttxbxxlnj .logo,
+#content.ttxbxxsnj .logo,
+#content.ttxbxxssnj .logo,
+#content.ttxbxxwnj .logo,
+#content.ttxbxxynj .logo {
+    background-image: url('../images/logo/logo_ttxb.png');
+    color: #fefefe;
+    font-size: 40px;
+    text-align: center;
+    text-indent: 40px
+}
+.ttxb {
+    position: absolute;
+    width: 243px;
+    height: 57px;
+    left: 60px;
+    top: 27px;
+    background: url('../images/logo/ttxb.png') no-repeat
+}
